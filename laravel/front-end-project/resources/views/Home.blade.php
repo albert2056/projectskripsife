@@ -1,7 +1,7 @@
 <div>
     <ul>
-        @foreach ($products as $product)
-            <li>{{ $product['name'] }} - {{ $product['price'] }}</li>
+        @foreach ($users as $user)
+            <li>{{ $user['name'] }} - {{ $user['roleId'] }} - {{ $user['phoneNumber'] }} - {{ $user['email'] }}</li>
         @endforeach
     </ul>
 </div>
