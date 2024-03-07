@@ -1,0 +1,35 @@
+.content-title{
+    display:flex;
+    justify-content: center;
+    margin-bottom:20px;
+}
+
+.form{
+    display:flex;
+    justify-content: center;
+}
+
+.card{
+    width:80vh;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+
+.register{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+p{
+    margin-bottom:0;
+    margin-right:20px;
+}

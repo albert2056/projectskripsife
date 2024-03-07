@@ -14,6 +14,7 @@ class Users extends Model
         'roleId',
         'name',
         'phoneNumber',
-        'email'
+        'email',
+        'password'
     ];
 }

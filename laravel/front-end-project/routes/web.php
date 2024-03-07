@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [UserController::class, 'index']);
+Route::get('/err', [UserController::class, 'test']);
+
+Route::get('/signin', [LoginController::class, 'signin']);
+Route::post('/signin', [LoginController::class, 'login'])->name('login');

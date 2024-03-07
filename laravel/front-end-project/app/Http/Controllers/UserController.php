@@ -13,4 +13,9 @@ class UserController extends Controller
 
         return view('home', compact('users'));
     }
+
+    //for testing only must delete later
+    public function test() {
+        return view('welcome');
+    }
 }
