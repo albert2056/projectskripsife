@@ -32,16 +32,13 @@ class UserController extends Controller
     }
 
     public function adminHome() {
-        $response = Http::get('http://localhost:8080/api/user/findAll');
-        $users = $response->json();
-
-        if(session()->has('users')){
-            $userSession = session()->get('users');
-            if($userSession->role=='admin'){
-                return view('adminhome', compact('users'));
+        logger()->info('Admin req in dsvdsvdsv2:', ['user' => session()->get('user')]);
+        if(session()->has('user')) {
+            $user = session()->get('user'); 
+            if($user['role'] == 'admin') { 
+                return view('adminhome', compact('user')); 
             }
-        }
-        else{
+        } else {
             return redirect('/');
         }
     }

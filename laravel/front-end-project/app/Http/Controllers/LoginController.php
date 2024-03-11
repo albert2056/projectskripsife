@@ -23,19 +23,18 @@ class LoginController extends Controller
             $responseData = $response->json();
     
             if ($responseData['statusCode']!=null) {
-                Session::flush();
+                //Session::flush();
                 return redirect('/');
             }
     
             $user = $this->getUserResponse($responseData);
 
             if ($user) {
-                logger()->info('User Response:', ['user' => $user]);
                 if ($user->role == "user") {
                     $request->session()->put('user',$user);
                     return redirect('/userhome');
                 } else {
-                    $request->session()->put('users',$user);
+                    $request->session()->put('user',$user);
                     return redirect('/adminhome');
                 }
             } else {
