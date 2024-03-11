@@ -14,11 +14,6 @@ class UserController extends Controller
         return view('home', compact('users'));
     }
 
-    //for testing only must delete later
-    public function test() {
-        return view('welcome');
-    }
-
     public function userHome() {
         logger()->info('User req in dsvdsvdsv2:', ['user' => session()->get('user')]);
         if(session()->has('user')) {
