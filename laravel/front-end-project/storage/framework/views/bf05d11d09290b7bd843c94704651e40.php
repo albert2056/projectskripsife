@@ -1,7 +1,7 @@
 <div>
     <ul>
         <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li><?php echo e($user['name']); ?> - <?php echo e($user['roleId']); ?> - <?php echo e($user['phoneNumber']); ?> - <?php echo e($user['email']); ?></li>
+            <li><?php echo e($user['name']); ?> - <?php echo e($user['role']); ?> - <?php echo e($user['phoneNumber']); ?> - <?php echo e($user['email']); ?></li>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </ul>
 </div>

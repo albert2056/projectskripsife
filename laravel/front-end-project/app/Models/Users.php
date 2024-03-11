@@ -3,18 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class Users extends Authenticatable
 {
     use HasFactory;
     public $timestamps = false;
 
     protected $fillable = [
-        'roleId',
+        'role',
         'name',
         'phoneNumber',
         'email',
-        'password'
+        'password',
+        'statusCode',
+        'description'
     ];
 }

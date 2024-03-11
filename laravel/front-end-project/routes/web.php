@@ -17,6 +17,8 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('/err', [UserController::class, 'test']);
+Route::get('/userhome', [UserController::class, 'userhome'])->middleware('isUser');
+Route::get('/adminhome', [UserController::class, 'adminhome'])->middleware('isAdmin');
 
 Route::get('/signin', [LoginController::class, 'signin']);
 Route::post('/signin', [LoginController::class, 'login'])->name('login');

@@ -1,7 +1,8 @@
 <div>
-    <ul>
-        @foreach ($users as $user)
+    <p>User Home</p>
+    <div>
+        <ul>
             <li>{{ $user['name'] }} - {{ $user['role'] }} - {{ $user['phoneNumber'] }} - {{ $user['email'] }}</li>
-        @endforeach
-    </ul>
+        </ul>
+    </div>
 </div>

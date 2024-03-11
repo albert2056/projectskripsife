@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             <?php endif; ?>
-            <form action="<?php echo e(route('login')); ?>" method="post">
+            <form action="<?php echo e(route('login')); ?>" method="POST">
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="email">Email</label>
