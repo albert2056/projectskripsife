@@ -1,21 +1,21 @@
-<link rel="stylesheet" href="{{asset('css/register.css')}}">
+<link rel="stylesheet" href="<?php echo e(asset('css/register.css')); ?>">
     <div class="content-title">
         <h3>Register Here</h3>
     </div>
     <div class="form"> 
         <div class="card">
             <div class="card-body">
-                @if ($errors->any())
+                <?php if($errors->any()): ?>
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
-                @endif
-                <form action="{{route('register')}}" method="post">
-                    @csrf
+                <?php endif; ?>
+                <form action="<?php echo e(route('register')); ?>" method="post">
+                    <?php echo csrf_field(); ?>
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
@@ -52,4 +52,4 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/user/Register.blade.php ENDPATH**/ ?>

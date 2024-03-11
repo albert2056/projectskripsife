@@ -1,0 +1,18 @@
+.content-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom:20px;
+}
+
+ul{
+    margin:0;
+}
+
+td{
+    width:50%;
+}
+
+textarea{
+    border-radius: 5px;
+    border-color: lightgray;
+}

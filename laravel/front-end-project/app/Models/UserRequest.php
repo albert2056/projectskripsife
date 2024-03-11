@@ -6,18 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Authenticatable
+class UserRequest extends Authenticatable
 {
     use HasFactory;
     public $timestamps = false;
 
     protected $fillable = [
-        'role',
+        'roleId',
         'name',
         'phoneNumber',
         'email',
-        'password',
-        'statusCode',
-        'description'
+        'password'
     ];
 }
