@@ -1,0 +1,555 @@
+.createanaccount-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.createanaccount-createanaccount {
+  gap: 40px;
+  width: 686px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.createanaccount-frame352 {
+  gap: 10px;
+  display: flex;
+  padding: 48px;
+  overflow: hidden;
+  align-items: flex-start;
+  border-color: rgba(102, 102, 102, 0.30000001192092896);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 32px;
+  background-color: rgba(252, 252, 252, 1);
+}
+.createanaccount-createanaccount1 {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.createanaccount-frame353 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.createanaccount-text {
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  font-size: 32px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-haveanaccountlogin {
+  gap: 10px;
+  display: flex;
+  padding: 2px;
+  align-items: flex-start;
+}
+.createanaccount-text02 {
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-text03 {
+  color: rgba(51, 51, 51, 1);
+  text-decoration: NONE;
+}
+.createanaccount-textfield {
+  gap: 4px;
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.createanaccount-frame243 {
+  width: 549px;
+  height: 27px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.createanaccount-text05 {
+  color: rgba(102, 102, 102, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-textfield1 {
+  width: 549px;
+  height: 56px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(102, 102, 102, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+}
+.createanaccount-inputs {
+  top: 15px;
+  left: 24px;
+  width: 1px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+.createanaccount-rectangle1 {
+  width: 1px;
+  height: 24px;
+}
+.createanaccount-textfield2 {
+  gap: 4px;
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.createanaccount-frame2431 {
+  width: 549px;
+  height: 27px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.createanaccount-text07 {
+  color: rgba(102, 102, 102, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-textfield3 {
+  width: 549px;
+  height: 56px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(102, 102, 102, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+}
+.createanaccount-inputs1 {
+  top: 15px;
+  left: 24px;
+  width: 1px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+.createanaccount-rectangle11 {
+  width: 1px;
+  height: 24px;
+}
+.createanaccount-textfield4 {
+  gap: 4px;
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.createanaccount-text09 {
+  color: rgba(102, 102, 102, 1);
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-textfield5 {
+  width: 549px;
+  height: 56px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(102, 102, 102, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+}
+.createanaccount-frame244 {
+  gap: 16px;
+  top: 14px;
+  left: 24px;
+  width: 104px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.createanaccount-flagdropdown {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createanaccount-u-sflag {
+  width: 36px;
+  height: 26px;
+}
+.createanaccount-icons {
+  width: 24px;
+  height: 24px;
+}
+.createanaccount-inputs2 {
+  display: flex;
+  align-items: center;
+}
+.createanaccount-text11 {
+  color: rgba(17, 17, 17, 1);
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-rectangle12 {
+  width: 1px;
+  height: 24px;
+}
+.createanaccount-frame358 {
+  gap: 4px;
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.createanaccount-textfield6 {
+  gap: 4px;
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.createanaccount-frame2432 {
+  width: 549px;
+  height: 27px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+}
+.createanaccount-text13 {
+  color: rgba(102, 102, 102, 1);
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-passwordhidesee {
+  top: 0px;
+  left: 467.136962890625px;
+  width: 73px;
+  height: 27px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.createanaccount-icon {
+  top: 3px;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.createanaccount-group1 {
+  top: 4.0114288330078125px;
+  left: 2.9142837524414062px;
+  width: 18.187135696411133px;
+  height: 15.995744705200195px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.createanaccount-vector {
+  top: 0px;
+  left: 0px;
+  width: 17px;
+  height: 16px;
+  position: absolute;
+}
+.createanaccount-vector1 {
+  top: 4.741950988769531px;
+  left: 6.8882293701171875px;
+  width: 11px;
+  height: 9px;
+  position: absolute;
+}
+.createanaccount-text15 {
+  left: 32px;
+  color: rgba(102, 102, 102, 0.800000011920929);
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-textfield7 {
+  width: 549px;
+  height: 56px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(102, 102, 102, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 12px;
+}
+.createanaccount-frame357 {
+  width: 554px;
+  height: 74px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.createanaccount-frame355 {
+  top: 0px;
+  left: 0px;
+  width: 202px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.createanaccount-bulletpoint {
+  gap: 8px;
+  display: flex;
+  padding: 8px 8px 8px 0;
+  align-items: center;
+  justify-content: center;
+}
+.createanaccount-ellipse1 {
+  width: 8px;
+  height: 8px;
+}
+.createanaccount-text17 {
+  color: rgba(102, 102, 102, 0.6000000238418579);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-bulletpoint1 {
+  gap: 8px;
+  display: flex;
+  padding: 8px 8px 8px 0;
+  align-items: center;
+  justify-content: center;
+}
+.createanaccount-ellipse11 {
+  width: 8px;
+  height: 8px;
+}
+.createanaccount-text19 {
+  color: rgba(102, 102, 102, 0.6000000238418579);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-frame356 {
+  top: 0px;
+  left: 237px;
+  width: 309px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.createanaccount-bulletpoint2 {
+  gap: 8px;
+  width: 309px;
+  display: flex;
+  padding: 8px 8px 8px 0;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.createanaccount-ellipse12 {
+  width: 8px;
+  height: 8px;
+}
+.createanaccount-text21 {
+  color: rgba(102, 102, 102, 0.6000000238418579);
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-frame360 {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.createanaccount-button {
+  width: 549px;
+  height: 56px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background-color: rgba(51, 51, 51, 1);
+}
+.createanaccount-frame276 {
+  gap: 8px;
+  top: 14px;
+  left: 246.5px;
+  width: 57px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.createanaccount-text23 {
+  color: rgba(252, 252, 252, 1);
+  height: auto;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-frame361 {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.createanaccount-linktext {
+  gap: 10px;
+  display: flex;
+  padding: 8px 8px 8px 0;
+  align-items: flex-start;
+}
+.createanaccount-text25 {
+  color: rgba(51, 51, 51, 1);
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.createanaccount-text26 {
+  color: rgba(51, 51, 51, 1);
+  text-decoration: NONE;
+}
+.createanaccount-text27 {
+  color: rgba(17, 17, 17, 1);
+  text-decoration: UNDERLINE;
+}
+.createanaccount-text28 {
+  color: rgba(102, 102, 102, 1);
+}
+.createanaccount-text29 {
+  color: rgba(51, 51, 51, 1);
+}
+.createanaccount-text30 {
+  color: rgba(102, 102, 102, 1);
+  text-decoration: NONE;
+}
+.createanaccount-text31 {
+  color: rgba(17, 17, 17, 1);
+}

@@ -19,29 +19,19 @@ class LoginController extends Controller
         $url = "http://localhost:8080/api/login?email=$email&password=$password";
 
         $response = Http::post($url);
-        if ($response->successful()) {
-            $responseData = $response->json();
-    
-            if ($responseData['statusCode']!=null) {
-                //Session::flush();
-                return redirect('/');
-            }
-    
-            $user = $this->getUserResponse($responseData);
-
-            if ($user) {
-                if ($user->role == "user") {
-                    $request->session()->put('user',$user);
-                    return redirect('/userhome');
-                } else {
-                    $request->session()->put('user',$user);
-                    return redirect('/adminhome');
-                }
-            } else {
-                return redirect('/');
-            }
+        $responseData = $response->json();
+        if ($responseData['statusCode']!=null) {
+            //Session::flush();
+            return redirect()->back()->withInput()->with('error', $responseData['description']);
         } else {
-            return redirect('/');
+            $user = $this->getUserResponse($responseData);
+            if ($user->role == "user") {
+                $request->session()->put('user',$user);
+                return redirect('/userhome');
+            } else {
+                $request->session()->put('user',$user);
+                return redirect('/adminhome');
+            }
         }
     }
 

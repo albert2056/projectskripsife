@@ -18,11 +18,12 @@ class RegisterController extends Controller
         $userRequest->password = $request['password'];
     
         $response = Http::post('http://localhost:8080/api/user/create', $userRequest->toArray());
+        $responseData = $response->json();
     
-        if ($response->successful()) {
+        if ($responseData['statusCode']==null) {
             return redirect()->intended('/signin');
         } else {
-            return redirect()->back()->withInput()->with('error', 'Failed to register user. Please try again.');
+            return redirect()->back()->withInput()->with('error', $responseData['description']);
         }
     }
 
