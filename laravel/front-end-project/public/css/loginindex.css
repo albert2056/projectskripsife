@@ -374,3 +374,22 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+.alert{
+  width: 528px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border: none;
+  position: relative;
+}
+
+.alert.alert-danger {
+  height: auto;
+  font-style: Medium;
+  text-align: center;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  font-size: 22px;
+}

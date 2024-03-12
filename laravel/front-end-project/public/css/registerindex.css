@@ -563,3 +563,22 @@
 .createanaccount-text31 {
   color: rgba(17, 17, 17, 1);
 }
+
+.alert{
+  width: 549px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border: none;
+  position: relative;
+}
+
+.alert.alert-danger {
+  height: auto;
+  font-style: Medium;
+  text-align: center;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  font-size: 18px;
+}
