@@ -14,6 +14,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-left: 394px;
+  margin-right: 360px;
+  margin-top: 66px;
+  margin-bottom: 78px;
 }
 .createanaccount-frame352 {
   gap: 10px;
@@ -481,8 +485,13 @@
   align-items: flex-start;
   flex-shrink: 0;
   border-radius: 40px;
-  background-color: rgba(51, 51, 51, 1);
+  background-color: rgba(17, 17, 17, 1);
 }
+
+.createanaccount-button:hover {
+  background-color: rgb(0, 42, 255); 
+}
+
 .createanaccount-frame276 {
   gap: 8px;
   top: 14px;
