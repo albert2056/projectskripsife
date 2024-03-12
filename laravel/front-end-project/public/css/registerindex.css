@@ -482,6 +482,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
+  opacity: 0.25;
   align-items: flex-start;
   flex-shrink: 0;
   border-radius: 40px;
