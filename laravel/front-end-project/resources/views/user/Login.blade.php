@@ -119,33 +119,6 @@
                 </div>
               </div>
             </div>
-            <div class="signupoverlay-frame208">
-              <div class="signupoverlay-socialmediasignuplogin">
-                <div class="signupoverlay-frame7">
-                  <img
-                    src="external/socialmedialogoi816-12ud.svg"
-                    alt="SocialmedialogoI816"
-                    class="signupoverlay-socialmedialogo"
-                  />
-                  <span class="signupoverlay-text06">
-                    <span>Log in with Google</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="signupoverlay-divider">
-              <img
-                src="external/divideri817-c16h-200h.png"
-                alt="DividerI817"
-                class="signupoverlay-divider1"
-              />
-              <span class="signupoverlay-text08"><span>OR</span></span>
-              <img
-                src="external/divideri817-v6c-200h.png"
-                alt="DividerI817"
-                class="signupoverlay-divider2"
-              />
-            </div>
             <div class="signupoverlay-frame287">
               <div class="signupoverlay-textfield">
                 <div class="signupoverlay-frame243">

@@ -8,7 +8,7 @@
 }
 .signupoverlay-signupoverlay {
   width: 795px;
-  height: 861px;
+  height: 683px;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -18,8 +18,8 @@
   background-color: rgba(252, 252, 252, 1);
   margin-left: 323px;
   margin-right: 322px;
-  margin-top: 87px;
-  margin-bottom: 76px;
+  margin-top: 171px;
+  margin-bottom: 171px;
 }
 .signupoverlay-icons {
   top: 32px;
