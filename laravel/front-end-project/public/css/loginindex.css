@@ -7,32 +7,30 @@
   flex-direction: column;
 }
 .signupoverlay-signupoverlay {
-  width: 795px;
-  height: 683px;
   display: flex;
   overflow: hidden;
   position: relative;
   align-items: flex-start;
   flex-shrink: 0;
-  border-radius: 24px;
+  border-radius: 1vw;
   background-color: rgba(252, 252, 252, 1);
-  margin-left: 323px;
-  margin-right: 322px;
-  margin-top: 171px;
-  margin-bottom: 171px;
+  width: 54vw;
+  height: 90vh;
+  margin: 10vh auto;
 }
 .signupoverlay-icons {
-  top: 32px;
-  left: 731px;
-  width: 32px;
-  height: 32px;
+  top: 3%;
+  left: 90%;
+  width: 5%;
+  height: auto;
   position: absolute;
 }
 .signupoverlay-frame288 {
-  gap: 40px;
-  top: 40px;
-  left: 134px;
-  width: 528px;
+  gap: 5%;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   display: flex;
   position: absolute;
   align-items: center;
@@ -40,18 +38,18 @@
   justify-content: center;
 }
 .signupoverlay-frame209 {
-  gap: 24px;
+  gap: 1.1vh;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 .signupoverlay-logo {
-  width: 48px;
-  height: 48px;
+  width: 5vh; 
+  height: 5vh;
 }
 .signupoverlay-frame8 {
-  gap: 2px;
+  gap: 5%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -60,7 +58,7 @@
 .signupoverlay-text {
   color: rgba(51, 51, 51, 1);
   height: auto;
-  font-size: 32px;
+  font-size: 2.4vw;
   font-style: Medium;
   text-align: center;
   font-family: Poppins;
@@ -78,7 +76,7 @@
 .signupoverlay-text02 {
   color: rgba(51, 51, 51, 1);
   height: auto;
-  font-size: 16px;
+  font-size: 1.1vw;
   font-style: Regular;
   text-align: left;
   font-family: Poppins;
@@ -99,20 +97,6 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-}
-.signupoverlay-socialmediasignuplogin {
-  width: 528px;
-  height: 72px;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  align-items: flex-start;
-  flex-shrink: 0;
-  border-color: rgba(51, 51, 51, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 40px;
-  background-color: rgba(255, 255, 255, 1);
 }
 .signupoverlay-frame7 {
   gap: 16px;
@@ -170,22 +154,23 @@
   flex-grow: 1;
 }
 .signupoverlay-frame287 {
-  gap: 24px;
+  gap: 3vh;
+  width: 35vw;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 .signupoverlay-textfield {
-  gap: 4px;
-  width: 528px;
+  gap: 1vh;
+  width: 70vh;
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
   flex-direction: column;
 }
 .signupoverlay-frame243 {
-  width: 528px;
-  height: 27px;
+  width: 100vh;
+  height: 5.1vh;
   display: flex;
   position: relative;
   align-self: stretch;
@@ -195,7 +180,7 @@
   color: rgba(102, 102, 102, 1);
   height: auto;
   position: absolute;
-  font-size: 16px;
+  font-size: 1.1vw;
   font-style: Regular;
   text-align: left;
   font-family: Poppins;
@@ -205,8 +190,8 @@
   text-decoration: none;
 }
 .signupoverlay-textfield1 {
-  width: 528px;
-  height: 56px;
+  width: 71vh;
+  height: 7.5vh;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -214,11 +199,11 @@
   align-items: flex-start;
   border-color: rgba(102, 102, 102, 0.3499999940395355);
   border-style: solid;
-  border-width: 1px;
-  border-radius: 12px;
+  border-width: 0.1vw;
+  border-radius: 0.5vw;
 }
 .signupoverlay-frame286 {
-  gap: 8px;
+  gap: 3vh;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -232,8 +217,8 @@
   flex-direction: column;
 }
 .signupoverlay-frame2431 {
-  width: 528px;
-  height: 27px;
+  width: 100vh;
+  height: 5.1vh;
   display: flex;
   position: relative;
   align-self: stretch;
@@ -243,7 +228,7 @@
   color: rgba(102, 102, 102, 1);
   height: auto;
   position: absolute;
-  font-size: 16px;
+  font-size: 1.1vw;
   font-style: Regular;
   text-align: left;
   font-family: Poppins;
@@ -254,9 +239,9 @@
 }
 .signupoverlay-passwordhidesee {
   top: 0px;
-  left: 446.136962890625px;
-  width: 73px;
-  height: 27px;
+  left: 30vw;
+  width: 5vw;
+  height: 2vw;
   display: flex;
   position: absolute;
   align-items: flex-start;
@@ -298,11 +283,11 @@
   position: absolute;
 }
 .signupoverlay-text14 {
-  left: 32px;
+  left: 4vh;
   color: rgba(102, 102, 102, 0.800000011920929);
   height: auto;
   position: absolute;
-  font-size: 18px;
+  font-size: 1.1vw;
   font-style: Regular;
   text-align: right;
   font-family: Poppins;
@@ -312,8 +297,8 @@
   text-decoration: none;
 }
 .signupoverlay-textfield3 {
-  width: 528px;
-  height: 56px;
+  width: 71vh;
+  height: 7.5vh;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -327,7 +312,7 @@
 .signupoverlay-text16 {
   color: rgba(17, 17, 17, 1);
   height: auto;
-  font-size: 16px;
+  font-size: 1.1vw;
   font-style: Regular;
   text-align: right;
   font-family: Poppins;
@@ -337,15 +322,15 @@
   text-decoration: underline;
 }
 .signupoverlay-button {
-  width: 528px;
-  height: 64px;
+  width: 71vh;
+  height: 8.5vh;
   display: flex;
   opacity: 0.25;
   overflow: hidden;
   position: relative;
   align-items: flex-start;
   flex-shrink: 0;
-  border-radius: 40px;
+  border-radius: 4vw;
   background-color: rgba(17, 17, 17, 1);
 }
 .signupoverlay-button:hover {
@@ -353,10 +338,10 @@
 }
 
 .signupoverlay-frame276 {
-  gap: 8px;
-  top: 15px;
-  left: 227.5px;
-  width: 73px;
+  gap: 2%;
+  top: 2vh;
+  left: 45%;
+  width: 13%;
   display: flex;
   position: absolute;
   align-items: center;
@@ -365,7 +350,7 @@
 .signupoverlay-text18 {
   color: rgba(255, 255, 255, 1);
   height: auto;
-  font-size: 22px;
+  font-size: 1.5vw;
   font-style: Medium;
   text-align: center;
   font-family: Poppins;

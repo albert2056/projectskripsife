@@ -25,8 +25,9 @@
         line-height: 1.15;
         color: var(--dl-color-gray-black);
         background-image: url('external/loginbg.jpg');
-        width: 1440px;
-        height: 1024px;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; 
       }
     </style>
     <link
@@ -129,34 +130,17 @@
               <div class="signupoverlay-frame286">
                 <div class="signupoverlay-textfield2">
                   <div class="signupoverlay-frame2431">
-                    <span class="signupoverlay-text12">
+                    <span class="signupoverlay-text10">
                       <span>Password</span>
                     </span>
                     <div class="signupoverlay-passwordhidesee">
-                      <div class="signupoverlay-icon">
-                        <div class="signupoverlay-group1">
-                          <img
-                            src="external/vectori817-mh3x.svg"
-                            alt="VectorI817"
-                            class="signupoverlay-vector"
-                          />
-                          <img
-                            src="external/vectori817-7g9.svg"
-                            alt="VectorI817"
-                            class="signupoverlay-vector1"
-                          />
-                        </div>
-                      </div>
-                      <span class="signupoverlay-text14">
-                        <span>Hide</span>
-                      </span>
+                      
+                      
                     </div>
                   </div>
-                  <input type="password" name="password" class="signupoverlay-textfield3" id="password" value="">
+                  <input type="password" name="password" class="signupoverlay-textfield1" id="password" value="">
                 </div>
-                <span class="signupoverlay-text16">
-                  <span>Lupa Password?</span>
-                </span>
+                
               </div>
               <button class="signupoverlay-button" type="submit">
                 <div class="signupoverlay-frame276">
