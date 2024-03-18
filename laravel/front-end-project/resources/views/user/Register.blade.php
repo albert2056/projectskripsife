@@ -25,8 +25,9 @@
         line-height: 1.15;
         color: var(--dl-color-gray-black);
         background-image: url('external/loginbg.jpg');
-        width: 1440px;
-        height: 1070px;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; 
       }
     </style>
     <link
