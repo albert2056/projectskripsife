@@ -1,31 +1,45 @@
+@php
+     $navbarColor = ''; 
+     $navbarColor2 = '';
+    if (Route::currentRouteName() == 'home') {
+        $navbarColor = 'dark';
+    } else {
+        $navbarColor = 'light';
+    }
+
+    if (Route::currentRouteName() == 'home') {
+        $navbarColor2 = 'light';
+    } else {
+        $navbarColor2 = 'dark';
+    }
+@endphp
 
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-4">
+  <nav class="navbar navbar-expand-lg navbar-{{ $navbarColor }} fixed-top p-4">
       <div class="container-fluid">
-          <a class="navbar-brand pe-4" href="#">Navbar</a>
+          <a class="navbar-brand pe-4" href="/">Hayden</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-              </ul>
-          </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link px-4 {{ Request::is('/') ? 'active' : '' }}" href="/">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : '' }}" href="/packagechoose">Package</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 {{ Request::is('gownchoose') ? 'active' : '' }}" href="/gownchoose">Busana</a>
+                </li>
+            </ul>
+        </div>
           <div class="ml-auto d-flex align-items-center">
-              <!-- Your two buttons go here -->
-              <a class="nav-link me-2 pe-4" style="color: white" href="#">Button 1</a>
-              <button class="btn btn-custom" style="width: 130px; height: 62px; color: white">Button 2</button>
+              <a class="nav-link me-2 pe-4 text-{{ $navbarColor2 }}" href="/signup">Daftar</a>
+              {{-- <button class="btn btn-custom" style="width: 130px; height: 62px; color: white">Masuk</button> --}}
+              <a href="/signin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 130px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
+                <span style="margin: auto; font-size: 18px; font-weight: 500">Masuk</span>
+            </a>            
           </div>
       </div>
   </nav>
