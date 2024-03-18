@@ -1562,3 +1562,4 @@
 #53 /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/aam/Desk...')
 #54 {main}
 "} 
+[2024-03-18 08:20:22] local.INFO: Admin req in dsvdsvdsv2: {"user":{"App\\Models\\User":{"role":"admin","name":"admin1","email":"admin1","phoneNumber":"admin1"}}} 
