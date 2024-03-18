@@ -20,6 +20,7 @@ class LoginController extends Controller
 
         $response = Http::post($url);
         $responseData = $response->json();
+        // logger()->info('User Mid:', ['user' => $responseData]);
         if ($responseData['statusCode']!=null) {
             //Session::flush();
             return redirect()->back()->withInput()->with('error', $responseData['description']);
