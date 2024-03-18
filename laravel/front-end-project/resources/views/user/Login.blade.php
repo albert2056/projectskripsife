@@ -134,7 +134,7 @@
                       <span>Password</span>
                     </span>
                     <div class="signupoverlay-passwordhidesee">
-                      <div class="signupoverlay-icon">
+                      {{-- <div class="signupoverlay-icon">
                         <div class="signupoverlay-group1">
                           <img
                             src="external/vectori817-mh3x.svg"
@@ -147,17 +147,17 @@
                             class="signupoverlay-vector1"
                           />
                         </div>
-                      </div>
-                      <span class="signupoverlay-text14">
+                      </div> --}}
+                      {{-- <span class="signupoverlay-text14">
                         <span>Hide</span>
-                      </span>
+                      </span> --}}
                     </div>
                   </div>
                   <input type="password" name="password" class="signupoverlay-textfield1" id="password" value="">
                 </div>
-                <span class="signupoverlay-text16">
+                {{-- <span class="signupoverlay-text16">
                   <span>Lupa Password?</span>
-                </span>
+                </span> --}}
               </div>
               <button class="signupoverlay-button" type="submit">
                 <div class="signupoverlay-frame276">

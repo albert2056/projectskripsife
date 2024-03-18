@@ -25,8 +25,9 @@
         line-height: 1.15;
         color: var(--dl-color-gray-black);
         background-image: url('external/loginbg.jpg');
-        width: 1440px;
-        height: 1070px;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; 
       }
     </style>
     <link
@@ -147,23 +148,25 @@
                 </div>
                 <input type="text" name="name" class="createanaccount-textfield1" id="name" value="">
               </div>
-              <div class="createanaccount-textfield2">
-                <div class="createanaccount-frame2431">
-                  <span class="createanaccount-text07"><span>Email</span></span>
+              <div class="createanaccount-textfield">
+                <div class="createanaccount-frame243">
+                  <span class="createanaccount-text05"><span>Email</span></span>
                 </div>
-                <input type="text" name="email" class="createanaccount-textfield3" id="email" value="">
+                <input type="text" name="email" class="createanaccount-textfield1" id="email" value="">
               </div>
-              <div class="createanaccount-textfield4">
-                <span class="createanaccount-text09"><span>Phone</span></span>
-                <input type="text" name="phone" class="createanaccount-textfield5" id="phone" value="">
+              <div class="createanaccount-textfield">
+                <div class="createanaccount-frame243">
+                  <span class="createanaccount-text05"><span>Phone</span></span>
+                </div>
+                <input type="text" name="phone" class="createanaccount-textfield1" id="phone" value="">
               </div>
               <div class="createanaccount-frame358">
-                <div class="createanaccount-textfield6">
-                  <div class="createanaccount-frame2432">
-                    <span class="createanaccount-text13">
+                <div class="createanaccount-textfield">
+                  <div class="createanaccount-frame243">
+                    <span class="createanaccount-text05">
                       <span>Password</span>
                     </span>
-                    <div class="createanaccount-passwordhidesee">
+                    {{-- <div class="createanaccount-passwordhidesee">
                       <div class="createanaccount-icon">
                         <div class="createanaccount-group1">
                           <img
@@ -181,9 +184,9 @@
                       <span class="createanaccount-text15">
                         <span>Hide</span>
                       </span>
-                    </div>
+                    </div> --}}
                   </div>
-                  <input type="password" name="password" class="createanaccount-textfield7" id="password" value="">
+                  <input type="password" name="password" class="createanaccount-textfield1" id="password" value="">
                 </div>
                 <div class="createanaccount-frame357">
                   <div class="createanaccount-frame355">
@@ -197,25 +200,25 @@
                         <span>Use 8 or more characters</span>
                       </span>
                     </div>
-                    <div class="createanaccount-bulletpoint1">
+                    <div class="createanaccount-bulletpoint">
                       <img
                         src="external/ellipse1i103-cyb8-200h.png"
                         alt="Ellipse1I103"
-                        class="createanaccount-ellipse11"
+                        class="createanaccount-ellipse1"
                       />
-                      <span class="createanaccount-text19">
+                      <span class="createanaccount-text17">
                         <span>Use a number (e.g. 1234)</span>
                       </span>
                     </div>
                   </div>
                   <div class="createanaccount-frame356">
-                    <div class="createanaccount-bulletpoint2">
+                    <div class="createanaccount-bulletpoint">
                       <img
                         src="external/ellipse1i103-xdr-200h.png"
                         alt="Ellipse1I103"
-                        class="createanaccount-ellipse12"
+                        class="createanaccount-ellipse1"
                       />
-                      <span class="createanaccount-text21">
+                      <span class="createanaccount-text17">
                         <span>Use upper and lower case letters (e.g. Aa)</span>
                       </span>
                     </div>
@@ -236,7 +239,7 @@
                     </div>
                 @endif
                 {{-- <div class="createanaccount-frame361"></div> --}}
-                <div class="createanaccount-linktext">
+                {{-- <div class="createanaccount-linktext">
                   <span class="createanaccount-text25">
                     <span class="createanaccount-text26">
                       Dengan membuat akun, anda setuju dengan
@@ -247,7 +250,7 @@
                     <span class="createanaccount-text30"></span>
                     <span class="createanaccount-text31">Privacy Policy.</span>
                   </span>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
