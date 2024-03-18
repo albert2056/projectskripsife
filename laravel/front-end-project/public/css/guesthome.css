@@ -1,0 +1,340 @@
+.container1 {
+    height: 1024px; 
+    background-image: url('../external/guesthomebg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-main-page-text {
+    top: 232px;
+    left: 114px;
+    color: rgba(51, 51, 51, 1);
+    height: auto;
+    position: absolute;
+    font-size: 42px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+.home-main-page-text1 {
+    font-weight: 400;
+}
+
+.home-main-page-text2 {
+    font-weight: 700;
+}
+
+  .home-main-page-love {
+    top: 254px;
+    left: 440px;
+    width: 27px;
+    height: 24px;
+    position: absolute;
+  }
+
+  .home-main-page-text3 {
+    top: 378px;
+    left: 114px;
+    color: rgba(72, 32, 32, 1);
+    width: 512px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .home-main-page-rectangle {
+    top: 232px;
+    left: 0px;
+    width: 14px;
+    height: 126px;
+    position: absolute;
+  }
+
+  .section2 {
+    top: 542.25px;
+    left: 130.50479125976562px;
+    width: 225.49520874023438px;
+    height: 62px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 1;
+    background-color: rgba(255, 105, 105, 1);
+    border-radius: 12px;
+  }
+  .home-main-page-text4 {
+    top: 17.5px;
+    left: 38.895111083984375px;
+    color: rgba(255, 255, 255, 1);
+    width: 166px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .section3 {
+    gap: 8px;
+    top: 789px;
+    left: 307px;
+    width: 878px;
+    display: flex;
+    padding: 24px 96px;
+    position: absolute;
+    align-items: flex-start;
+    border-radius: 80px;
+    flex-direction: column;
+    background-color: rgba(236, 218, 196, 1);
+  }
+
+  /* unofficial */
+  .home-main-page-frame {
+    gap: 8px;
+    top: 789px;
+    left: 307px;
+    width: 878px;
+    display: flex;
+    padding: 24px 96px;
+    position: absolute;
+    align-items: flex-start;
+    border-radius: 80px;
+    flex-direction: column;
+    background-color: rgba(236, 218, 196, 1);
+  }
+  .home-main-page-frame14287 {
+    gap: 88px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .home-main-page-frame14284 {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .home-main-page-group12 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .home-main-page-ellipse8 {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+  .home-main-page-bridesmaid1 {
+    top: 6.666666507720947px;
+    left: 6.666666507720947px;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+  }
+  .home-main-page-text33 {
+    color: rgba(54, 48, 49, 1);
+    height: auto;
+    font-size: 32px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-text35 {
+    color: rgba(54, 48, 49, 1);
+    width: 170px;
+    height: auto;
+    font-size: 16px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-frame14285 {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .home-main-page-group121 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .home-main-page-ellipse81 {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+  .home-main-page-weddingcouple1 {
+    top: 6.666666507720947px;
+    left: 6.666666507720947px;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+  }
+  .home-main-page-text37 {
+    color: rgba(54, 48, 49, 1);
+    height: auto;
+    font-size: 32px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-text39 {
+    color: rgba(54, 48, 49, 1);
+    width: 170px;
+    height: auto;
+    font-size: 16px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-frame14286 {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .home-main-page-group122 {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .home-main-page-ellipse82 {
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+  }
+  .home-main-page-wedding1 {
+    top: 7px;
+    left: 7px;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+  }
+  .home-main-page-text41 {
+    color: rgba(54, 48, 49, 1);
+    height: auto;
+    font-size: 32px;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-text43 {
+    color: rgba(54, 48, 49, 1);
+    width: 170px;
+    height: auto;
+    font-size: 16px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-divczmbutton {
+    top: 955px;
+    left: 1318px;
+    width: 96px;
+    height: 50px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 105, 105, 1);
+  }
+  .home-main-page-ifawhatsapp {
+    top: 15px;
+    left: 19.520000457763672px;
+    width: 21px;
+    height: 24px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  .home-main-page-text45 {
+    top: -0.5px;
+    color: rgba(255, 255, 255, 1);
+    width: 21px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Font Awesome 5 Brands;
+    font-weight: 400;
+    line-height: 24px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .home-main-page-text46 {
+    top: 15px;
+    left: 44.646663665771484px;
+    color: rgba(255, 255, 255, 1);
+    width: 44px;
+    height: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: Medium;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 21px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+  
