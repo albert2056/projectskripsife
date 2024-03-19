@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\GownController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -31,3 +32,5 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/gownchoose', [GownController::class, 'gownChooseIndex']);
 
 Route::get('/packagechoose', [PackageController::class, 'packageChooseIndex']);
+
+Route::get('/bookpage', [BookController::class, 'bookIndex']);
