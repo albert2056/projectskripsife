@@ -1,0 +1,530 @@
+.container1 {
+    height: 1024px; 
+    background-image: url('../external/guesthomebg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.home-main-page-text {
+    top: 232px;
+    left: 114px;
+    color: rgba(51, 51, 51, 1);
+    height: auto;
+    position: absolute;
+    font-size: 42px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+.home-main-page-text1 {
+    font-weight: 400;
+}
+
+.home-main-page-text2 {
+    font-weight: 700;
+}
+
+.home-main-page-love {
+  top: 254px;
+  left: 440px;
+  width: 27px;
+  height: 24px;
+  position: absolute;
+}
+
+.home-main-page-text3 {
+  top: 378px;
+  left: 114px;
+  color: rgba(72, 32, 32, 1);
+  width: 512px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.home-main-page-rectangle {
+  top: 232px;
+  left: 0px;
+  width: 14px;
+  height: 126px;
+  position: absolute;
+}
+
+.section2 {
+  top: 542.25px;
+  left: 130.50479125976562px;
+  width: 225.49520874023438px;
+  height: 62px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: rgba(255, 105, 105, 1);
+  border-radius: 12px;
+}
+
+.home-main-page-text4 {
+  top: 17.5px;
+  left: 38.895111083984375px;
+  color: rgba(255, 255, 255, 1);
+  width: 166px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.section3 {
+  gap: 8px;
+  top: 789px;
+  left: 307px;
+  width: 878px;
+  display: flex;
+  padding: 24px 96px;
+  position: absolute;
+  align-items: flex-start;
+  border-radius: 80px;
+  flex-direction: column;
+  background-color: rgba(236, 218, 196, 1);
+}
+
+.home-main-page-frame {
+  gap: 88px;
+  display: flex;
+  align-items: flex-start;
+}
+  
+.home-main-page-frame1 {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home-main-page-group {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.home-main-page-ellipse {
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+
+.home-main-page-bridesmaid {
+  top: 6.666666507720947px;
+  left: 6.666666507720947px;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+}
+.home-main-page-text5 {
+  color: rgba(54, 48, 49, 1);
+  height: auto;
+  font-size: 32px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.home-main-page-text6 {
+  color: rgba(54, 48, 49, 1);
+  width: 170px;
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.home-main-page-frame2 {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home-main-page-group1 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.home-main-page-ellipse2 {
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.home-main-page-weddingcouple {
+  top: 6.666666507720947px;
+  left: 6.666666507720947px;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+}
+.home-main-page-text7 {
+  color: rgba(54, 48, 49, 1);
+  height: auto;
+  font-size: 32px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.home-main-page-text8 {
+  color: rgba(54, 48, 49, 1);
+  width: 170px;
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.home-main-page-frame3 {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.home-main-page-group2 {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.home-main-page-ellipse3 {
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+.home-main-page-wedding {
+  top: 7px;
+  left: 7px;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+}
+.home-main-page-text9 {
+  color: rgba(54, 48, 49, 1);
+  height: auto;
+  font-size: 32px;
+  font-style: SemiBold;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.home-main-page-text10 {
+  color: rgba(54, 48, 49, 1);
+  width: 170px;
+  height: auto;
+  font-size: 16px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.home-main-page-button1 {
+  top: 955px;
+  left: 1318px;
+  width: 96px;
+  height: 50px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 105, 105, 1);
+}
+.home-main-page-whatsapp {
+  top: 15px;
+  left: 19.520000457763672px;
+  width: 21px;
+  height: 24px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.home-main-page-text11 {
+  top: -0.5px;
+  color: rgba(255, 255, 255, 1);
+  width: 21px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Font Awesome 5 Brands;
+  font-weight: 400;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.home-main-page-text12 {
+  top: 15px;
+  left: 44.646663665771484px;
+  color: rgba(255, 255, 255, 1);
+  width: 44px;
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 21px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+  
+/* part 2 */
+.container2 {
+  height: 1024px; 
+  background-image: url('../external/playfulpopsofcoloratthissummerweddinginsonoma18940-64pd-1100h.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.frame4 {
+  top: 1137px;
+  left: 60px;
+  width: 1320px;
+  height: 280px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.text13 {
+  left: -91.0364990234375px;
+  color: rgba(255, 105, 105, 1);
+  width: 537px;
+  height: auto;
+  position: absolute;
+  font-size: 41.599998474121094px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 60px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text14 {
+  top: 113px;
+  color: rgba(51, 51, 51, 1);
+  width: 706px;
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  font-style: Medium;
+  text-align: justified;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 33px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text15 {
+  top: 1672px;
+  left: 661.8809204101562px;
+  color: rgba(255, 105, 105, 1);
+  width: 676px;
+  height: auto;
+  position: absolute;
+  font-size: 41.599998474121094px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 60px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text16 {
+  top: 1746px;
+  left: 626.751708984375px;
+  color: rgba(51, 51, 51, 1);
+  width: 788px;
+  height: auto;
+  position: absolute;
+  font-size: 22px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Poppins;
+  font-weight: 500;
+  line-height: 33px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-ellipse4 {
+  top: 1702px;
+  left: 213px;
+  width: 240px;
+  height: 230px;
+  position: absolute;
+}
+
+/* part 3 */
+.container3 {
+  height: 781px; 
+  /* background-image: url('../external/playfulpopsofcoloratthissummerweddinginsonoma18940-64pd-1100h.png'); */
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.text17 {
+  top: 2317.40478515625px;
+  left: 93px;
+  color: rgba(255, 105, 105, 1);
+  width: 537px;
+  height: auto;
+  position: absolute;
+  font-size: 41.599998474121094px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 60px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text18 {
+  top: 2411.47607421875px;
+  left: 141px;
+  color: rgba(51, 51, 51, 1);
+  width: 683px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Regular;
+  text-align: justified;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.frame-image {
+  top: 2196.40480041503906px;
+  left: 955px;
+  width: 366px;
+  height: 432px;
+  position: absolute;
+  border-radius: 20px;
+}
+
+/* part 4 */
+.container4 {
+  height: 709px; 
+  background-image: url('../external/rectangle291585-bxw-800h.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.frame-rectangle {
+  top: 3027.97607421875px;
+  left: 651px;
+  width: 779px;
+  height: 366px;
+  opacity: 0.70;
+  position: absolute;
+  border-radius: 70px;
+}
+
+.text19 {
+  top: 2954.97607421875px;
+  left: 601px;
+  color: rgba(255, 105, 105, 1);
+  width: 676px;
+  height: auto;
+  position: absolute;
+  font-size: 41.599998474121094px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Poppins;
+  font-weight: 700;
+  line-height: 60px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.angpao-img {
+  top: 2875.97607421875px;
+  left: 0px;
+  width: 638px;
+  height: 502px;
+  position: absolute;
+}
+
+.text20 {
+  top: 3060.28271484375px;
+  left: 707px;
+  color: rgba(51, 51, 51, 1);
+  width: 668px;
+  height: auto;
+  position: absolute;
+  font-size: 18px;
+  font-style: Regular;
+  text-align: justified;
+  font-family: Poppins;
+  font-weight: 400;
+  line-height: 30px;
+  font-stretch: normal;
+  text-decoration: none;
+}
