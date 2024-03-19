@@ -79,6 +79,7 @@
   left: 38.895111083984375px;
   color: rgba(255, 255, 255, 1);
   width: 166px;
+  background-color: rgba(255, 105, 105, 1);
   height: auto;
   position: absolute;
   font-size: 18px;
@@ -89,6 +90,16 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+  border: none;
+}
+
+.text4{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.text4:hover{
+  color: rgba(255, 255, 255, 1);
 }
 
 .section3 {

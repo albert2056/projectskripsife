@@ -40,9 +40,15 @@
       />
     </div>
     <div class="section2">
-        <span class="home-main-page-text4">
-          <span>Pesan Sekarang</span>
-        </span>
+      @if(session()->has('user'))
+        <button class="home-main-page-text4">
+          <a href="/bookpage" class="text4">Pesan Sekarang</a>
+        </button>
+      @else
+        <button class="home-main-page-text4">
+          <a href="/signin" class="text4">Pesan Sekarang</a>
+        </button>
+      @endif
     </div>
     <div class="section3">
         <div class="home-main-page-frame">
