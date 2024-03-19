@@ -38,8 +38,8 @@
             <div class="ml-auto d-flex align-items-center">
                 
                 
-                <a href="/signin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 130px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
-                  <span style="margin: auto; font-size: 18px; font-weight: 500">Pesen</span>
+                <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
+                  <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
               </a>            
             </div>
         </div>

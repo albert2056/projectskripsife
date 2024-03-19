@@ -52,6 +52,12 @@ body {
     font-size: 40px;
 }
 
+.text-custom2 {
+    color: #FF6969;
+    font-weight: bold;
+    font-size: 38px;
+}
+
 .nav-link {
     font-weight: 500;
 }
