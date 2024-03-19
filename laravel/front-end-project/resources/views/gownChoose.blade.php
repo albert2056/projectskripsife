@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" style="margin-bottom: 180px">
     <div class="row">
-        <div class="col text-center mb-5" style="margin-top: 120px; margin-left: 20px">
+        <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
             <h1 class="text-custom1">Pilih Busana Usher</h1>
         </div>
     </div>
