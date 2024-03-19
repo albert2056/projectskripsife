@@ -22,7 +22,7 @@ class LoginController extends Controller
         $responseData = $response->json();
         // logger()->info('User Mid:', ['user' => $responseData]);
         if ($responseData['statusCode']!=null) {
-            //Session::flush();
+            // Session::flush();
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } else {
             $user = $this->getUserResponse($responseData);
