@@ -7,11 +7,18 @@ use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
-    public function index() {
+    public function showUserHomePage() {
         // $response = Http::get('http://localhost:8080/api/user/findAll');
         // $users = $response->json();
 
-        return view('home');
+        return view('Home');
+    }
+
+    public function showAdminHomePage() {
+        // $response = Http::get('http://localhost:8080/api/user/findAll');
+        // $users = $response->json();
+
+        return view('Home');
     }
 
     public function userHome() {

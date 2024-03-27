@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\GownController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\OutfitController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +19,20 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/', [UserController::class, 'showAdminHomePage'])->name('home');
 Route::get('/userhome', [UserController::class, 'userhome'])->middleware('isUser');
 Route::get('/adminhome', [UserController::class, 'adminhome'])->middleware('isAdmin');
 
-Route::get('/signup', [RegisterController::class, 'signup']);
+Route::get('/signup', [RegisterController::class, 'showRegisterPage']);
 Route::post('/signup', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/signin', [LoginController::class, 'signin']);
+Route::get('/signin', [LoginController::class, 'showLoginPage']);
 Route::post('/signin', [LoginController::class, 'login'])->name('login');
 
-Route::get('/gownchoose', [GownController::class, 'gownChooseIndex']);
+Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
 
-Route::get('/packagechoose', [PackageController::class, 'packageChooseIndex']);
+Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 
-Route::get('/bookpage', [BookController::class, 'bookIndex']);
+Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
+
+Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage']);

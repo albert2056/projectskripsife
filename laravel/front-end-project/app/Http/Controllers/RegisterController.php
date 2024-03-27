@@ -27,7 +27,7 @@ class RegisterController extends Controller
         }
     }
 
-    public function signup()
+    public function showRegisterPage()
     {
         return view('user.Register');
     }
