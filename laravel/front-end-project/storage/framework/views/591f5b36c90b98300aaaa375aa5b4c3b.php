@@ -31,7 +31,7 @@
                       <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('gownchoose') ? 'active' : ''); ?>" href="/gownchoose">Busana</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('outfitchoose') ? 'active' : ''); ?>" href="/outfitchoose">Busana</a>
                   </li>
               </ul>
           </div>
@@ -62,7 +62,7 @@
                       <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('gownchoose') ? 'active' : ''); ?>" href="/gownchoose">Busana</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('outfitchoose') ? 'active' : ''); ?>" href="/outfitchoose">Busana</a>
                   </li>
               </ul>
           </div>

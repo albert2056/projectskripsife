@@ -36,7 +36,7 @@ class LoginController extends Controller
         }
     }
 
-    public function signin()
+    public function showLoginPage()
     {
         return view('user.Login');
     }

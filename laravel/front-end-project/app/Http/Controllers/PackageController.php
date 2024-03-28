@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
-    public function packageChooseIndex() {
+    public function showPackageChoosePage() {
         return view('packageChoose');
     }
+
+    // public function 
+
 }
