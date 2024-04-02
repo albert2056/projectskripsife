@@ -10,6 +10,11 @@ class PackageController extends Controller
         return view('packageChoose');
     }
 
-    // public function 
+    public function choosePackage(Request $request) {
+        $transactionRequest = session()->get('transactionRequest');
+        $transactionRequest->packageId = $request['packageId'];
+        session()->put('transactionRequest', $transactionRequest);
+        return redirect('/outfitchoose');
+    }
 
 }

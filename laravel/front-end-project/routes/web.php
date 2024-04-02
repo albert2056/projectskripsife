@@ -32,7 +32,9 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
+Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
 
 Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
+Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage']);

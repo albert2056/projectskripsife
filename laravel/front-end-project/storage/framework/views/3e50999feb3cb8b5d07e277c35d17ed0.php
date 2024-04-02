@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
 <div class="container" style="margin-bottom: 180px">
     <div class="row">
@@ -10,13 +10,13 @@
     </div>
 
     <div class="row mb-5" style="margin-left: 60px">
-        <form action="{{route('choosePackage')}}" method="POST" class="d-flex">
-            @csrf
+        <form action="<?php echo e(route('choosePackage')); ?>" method="POST" class="d-flex">
+            <?php echo csrf_field(); ?>
             <div class="col-md-6 mb-3">
                 <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">
                     
                     <div class="d-flex justify-content-center">
-                        <img src="{{ asset('Assets/paketCoupleImg.png') }}" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
+                        <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title text-center btn-text-card">Premium Package</h5>
@@ -37,7 +37,7 @@
             <div class="col-md-6 mb-3" >
                 <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">
                     <div class="d-flex justify-content-center">
-                        <img src="{{ asset('Assets/paketCoupleImg.png') }}" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
+                        <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title text-center btn-text-card">Standard Package</h5>
@@ -56,4 +56,6 @@
     
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/packageChoose.blade.php ENDPATH**/ ?>

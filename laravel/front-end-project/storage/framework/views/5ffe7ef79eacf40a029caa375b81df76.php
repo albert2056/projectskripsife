@@ -31,15 +31,15 @@
                       <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('gownchoose') ? 'active' : ''); ?>" href="/gownchoose">Busana</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('outfitchoose') ? 'active' : ''); ?>" href="/outfitchoose">Busana</a>
                   </li>
               </ul>
           </div>
             <div class="ml-auto d-flex align-items-center">
                 
                 
-                <a href="/signin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 130px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
-                  <span style="margin: auto; font-size: 18px; font-weight: 500">Pesen</span>
+                <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
+                  <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
               </a>            
             </div>
         </div>
@@ -62,7 +62,7 @@
                       <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('gownchoose') ? 'active' : ''); ?>" href="/gownchoose">Busana</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('outfitchoose') ? 'active' : ''); ?>" href="/outfitchoose">Busana</a>
                   </li>
               </ul>
           </div>
