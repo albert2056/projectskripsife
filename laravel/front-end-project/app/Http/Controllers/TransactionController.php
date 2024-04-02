@@ -26,7 +26,9 @@ class TransactionController extends Controller
         $bookRequest->wo = $request['wo'];
         $response = Http::post('http://localhost:8080/api/transaction/book', $bookRequest->toArray());
         $responseData = $response->json();
-        logger()->info('book resp:', ['book' => $responseData]);
+        if ($responseData['statusCode']!=null) {
+            return redirect()->back()->withInput()->with('error', $responseData['description']);
+        }
         $user = session()->get('user'); 
         $transactionRequest = new TransactionRequest();
         $transactionRequest->fill($responseData);

@@ -29,8 +29,7 @@
                                 <li>Transport Jakarta - Tangerang</li>
                             </ul>
                         </div>
-                        <input type="hidden" name="packageId" value="1">
-                        <button class="btn btn-primary btn-block btn-card">Pilih Paket</button>
+                        <button type="submit" name="packageId" value="1" class="btn btn-primary btn-block btn-card">Pilih Paket</button>
                     </div>
                 </div>
             </div>
@@ -48,8 +47,7 @@
                                 <li>Transport Jakarta - Tangerang</li>
                             </ul>
                         </div>
-                        <input type="hidden" name="packageId" value="2">
-                        <button class="btn btn-primary btn-card" style="margin-top: 85px">Pilih Paket</button>
+                        <button type="submit" name="packageId" value="2" class="btn btn-primary btn-block btn-card" style="margin-top: 85px">Pilih Paket</button>
                     </div>
                 </div>
             </div>

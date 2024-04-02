@@ -14,7 +14,7 @@ class PackageController extends Controller
         $transactionRequest = session()->get('transactionRequest');
         $transactionRequest->packageId = $request['packageId'];
         session()->put('transactionRequest', $transactionRequest);
-        logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
+        return redirect('/outfitchoose');
     }
 
 }
