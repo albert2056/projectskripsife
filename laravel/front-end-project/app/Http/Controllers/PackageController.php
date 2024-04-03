@@ -12,7 +12,7 @@ class PackageController extends Controller
 
     public function choosePackage(Request $request) {
         $transactionRequest = session()->get('transactionRequest');
-        $transactionRequest->packageId = $request['packageId'];
+        $transactionRequest->packageId = (int) $request['packageId'];
         session()->put('transactionRequest', $transactionRequest);
         logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
         return redirect('/outfitchoose');
