@@ -17,7 +17,7 @@ class RegisterController extends Controller
         $userRequest->email = $request['email'];
         $userRequest->password = $request['password'];
     
-        $response = Http::post('http://localhost:8080/api/user/create', $userRequest->toArray());
+        $response = Http::post('http://localhost:8080/api/register', $userRequest->toArray());
         $responseData = $response->json();
     
         if ($responseData['statusCode']==null) {

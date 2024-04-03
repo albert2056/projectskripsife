@@ -11,7 +11,7 @@
 </div> --}}
 
 <link rel="stylesheet" href="{{asset('css/guesthome.css')}}"/>
-<div class="container1">
+<div class="container1">  
     <div class="section1">
         <span class="home-main-page-text">
             <span class="home-main-page-text1">

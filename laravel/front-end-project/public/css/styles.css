@@ -46,6 +46,10 @@ body {
     background-color: #FF8787;
 }
 
+.btn-custom:active {
+    background-color: #FF8787;
+}
+
 .text-custom1 {
     color: #FF6969;
     font-weight: bold;
