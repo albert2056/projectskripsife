@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         $response = Http::post($url);
         $responseData = $response->json();
-        // logger()->info('User Mid:', ['user' => $responseData]);
+        logger()->info('User Mid:', ['user' => $responseData]);
         if ($responseData['statusCode']!=null) {
             // Session::flush();
             return redirect()->back()->withInput()->with('error', $responseData['description']);
@@ -44,6 +44,7 @@ class LoginController extends Controller
     protected function getUserResponse($responseData)
     {
         $user = new User();
+        $user->id = $responseData['id'];
         $user->role = $responseData['role'];
         $user->name = $responseData['name'];
         $user->email = $responseData['email'];  
