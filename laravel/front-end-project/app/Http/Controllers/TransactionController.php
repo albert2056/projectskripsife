@@ -32,6 +32,7 @@ class TransactionController extends Controller
         $user = session()->get('user'); 
         $transactionRequest = new TransactionRequest();
         $transactionRequest->fill($responseData);
+        $transactionRequest->userId = $user['id'];
         $transactionRequest->updatedBy = $user['email'];
         session()->put('transactionRequest', $transactionRequest);
         return redirect('/packagechoose');
