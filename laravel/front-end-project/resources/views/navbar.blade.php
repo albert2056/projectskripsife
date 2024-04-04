@@ -25,13 +25,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link px-4 {{ Request::is('/') ? 'active' : '' }}" href="/">Portfolio</a>
+                      <a class="nav-link px-4 {{ Request::is('portfolio') ? 'active' : '' }}" href="/portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : '' }}" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 {{ Request::is('outfitchoose') ? 'active' : '' }}" href="/outfitchoose">Busana</a>
+                      <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : '' }}" href="/outfitcategorypreview">Busana</a>
                   </li>
               </ul>
           </div>
@@ -41,9 +41,9 @@
                 <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
                   <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
               </a>   
-              <a href="/signout" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
+              {{-- <a href="/signout" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
                 <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
-            </a>            
+            </a> --}}
             </div>
         </div>
     </nav>
@@ -65,7 +65,7 @@
                       <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : '' }}" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 {{ Request::is('outfitchoose') ? 'active' : '' }}" href="/outfitchoose">Busana</a>
+                      <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : '' }}" href="/outfitcategorypreview">Busana</a>
                   </li>
               </ul>
           </div>
@@ -81,8 +81,6 @@
     </nav>
   </header>
 @endif
-
-
 
 
 <script>

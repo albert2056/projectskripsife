@@ -17,7 +17,7 @@
                     <img src="{{ asset('Assets/gaunImg.png') }}" style="width: 400px; height: 430px" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-block btn-card">Pilih Busana</button>
+                    <a class="btn btn-primary btn-block btn-card" style="display: inline-flex; justify-content: center; align-items: center;" href="/outfitcategory">Pilih Busana</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     <img src="{{ asset('Assets/kebayaImg.png') }}" style="width: 400px; height: 430px" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card">Pilih Busana</button>
+                    <a class="btn btn-primary btn-block btn-card" style="display: inline-flex; justify-content: center; align-items: center;" href="/outfitcategory">Pilih Busana</a>
                 </div>
             </div>
         </div>
