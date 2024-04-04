@@ -34,6 +34,7 @@ Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage']);
+Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']);
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
@@ -44,3 +45,5 @@ Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage']);
+
+Route::get('/invoice', [TransactionController::class, 'showInvoicePage']);

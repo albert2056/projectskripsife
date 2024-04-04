@@ -14,6 +14,10 @@ class OutfitController extends Controller
         return view('outfitCategory');
     }
 
+    public function showOutfitPreview() {
+        return view('outfitCategoryPreview');
+    }
+
     public function showOutfitByCategoryId() {
         return view();
     }

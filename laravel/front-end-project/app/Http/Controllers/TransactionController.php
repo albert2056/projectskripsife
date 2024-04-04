@@ -17,6 +17,10 @@ class TransactionController extends Controller
         return view('bookForm');
     }
 
+    public function showInvoicePage() {
+        return view('invoice');
+    }
+
     public function book(Request $request) {
         $bookRequest = new BookRequest();
         $bookRequest->name = $request['name'];
