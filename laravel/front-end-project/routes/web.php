@@ -34,7 +34,9 @@ Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage']);
-Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']);
+Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin']);
+Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
+Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage']);
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');

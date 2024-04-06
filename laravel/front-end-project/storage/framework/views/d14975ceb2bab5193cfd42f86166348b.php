@@ -39,7 +39,7 @@
     <h1 class="text-custom1" style="letter-spacing: 2px">Pasangan Berbahagia Yang Mempercayai <br> Hari Bahagianya Bersama Kami</h1>
 </div>
 
-<div class="container" style="margin-bottom: 50px">
+<div class="container" style="margin-bottom: 150px">
     <div class="row row-cols-1 row-cols-md-3 g-5">
         <div class="col">
             <div class="card">

@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6 text-left mb-5" style="margin-top: 140px;">
@@ -20,7 +21,7 @@
 
                 <div class="form-group">
                     <label for="inputUsher" style="margin-bottom: 10px; font-size: 18px">Jumlah Usher</label>
-                    <input type="number" class="form-control" id="totalUsher" name="totalUsher" style="margin-bottom: 30px;">
+                    <input type="number" class="form-control" id="totalUsher" name="totalUsher" style="margin-bottom: 30px;" min="0" max="8">
                 </div>
 
                 <div class="form-group">
