@@ -21,5 +21,12 @@ class OutfitController extends Controller
     public function showOutfitByCategoryId() {
         return view();
     }
+
+    public function outfitChoose(Request $request) {
+        $outfitCategoryId = (int) $request['outfitCategoryId'];
+        session()->put('outfitCategoryId', $outfitCategoryId);
+        logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
+        return redirect('/outfitcategory');
+    }
 }
 
