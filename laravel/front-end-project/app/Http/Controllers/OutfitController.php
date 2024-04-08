@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class OutfitController extends Controller
 {
@@ -11,7 +12,14 @@ class OutfitController extends Controller
     }
 
     public function showOutfitByOutfitCategoryIdPage() {
-        return view('outfitCategory');
+        $outfitCategoryId = session()->get('outfitCategoryId');
+        $url = "http://localhost:8080/api/outfit/findByOutfitCategoryId?outfitCategoryId=$outfitCategoryId";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        logger()->info('outz:', ['outz' => $responseData]);
+
+        return view('outfitCategory', ['outfits'=>$responseData]);
     }
 
     public function showOutfitPreview() {
