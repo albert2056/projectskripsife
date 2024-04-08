@@ -1,9 +1,11 @@
-<?php $__env->startSection('content'); ?>
+@extends('template')
+
+@section('content')
 
 <style>
     .card {
         width: 400px;
-        height: 600px;
+        height: 620px;
         background-color: rgba(255, 218, 217, 0.7);
         position: relative;
         border: none;
@@ -17,7 +19,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 340px;
-        height: 440px;
+        height: 480px;
         background-color: #F2F2F2;
         display: flex;
         flex-direction: column;
@@ -27,11 +29,11 @@
     }
 
     .overlay-content {
-        color: #333333;
-        margin-top: 15px;
+        color: black;
+        margin: 10px;
+        margin-right: 215px;
         letter-spacing: 1px;
-        font-size: 22px;
-        font-weight: 500;
+
     }
 
     .card-body {
@@ -47,6 +49,7 @@
         font-size: 18px;
         font-weight: 500;
         border-radius: 12px;
+        margin-top: 25px;
     }   
 
     .btn-card-custom:hover {
@@ -60,7 +63,6 @@
     .btn-plus {
         justify-content: right;
         display: flex; 
-        /* align-items: flex-end;  */
         font-size: 32px;
         color: #FF6969;
         margin-bottom: 20px;
@@ -69,13 +71,13 @@
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
-    <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
+    <h1 class="text-custom1" style="letter-spacing: 2px">Pasangan Berbahagia Yang Mempercayai <br> Hari Bahagianya Bersama Kami</h1>
 </div>
 
 
 <div class="container" style="margin-bottom: 150px">
     <div class="btn-plus" style="text-decoration: none;">
-        <a href="/outfitcreateform" style="color: #FF6969;">
+        <a href="/portfoliocreateform" style="color: #FF6969;">
             <i class="fa-solid fa-plus" style="margin-bottom: 10px;"></i>
         </a>
     </div>
@@ -83,14 +85,14 @@
         <div class="col">
             <div class="card">
                 <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                     <div class="overlay-content">
-                        <p> Red Gown </p>
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
-                    <a href="/outfitcreateform">
+                    <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
                 </div>
@@ -100,14 +102,14 @@
         <div class="col">
             <div class="card">
                 <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                     <div class="overlay-content">
-                        <p> Red Gown </p>
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
-                    <a href="/outfitcreateform">
+                    <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
                 </div>
@@ -117,14 +119,14 @@
         <div class="col">
             <div class="card">
                 <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                     <div class="overlay-content">
-                        <p> Red Gown </p>
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
-                    <a href="/outfitcreateform">
+                    <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
                 </div>
@@ -134,14 +136,14 @@
         <div class="col">
             <div class="card">
                 <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                     <div class="overlay-content">
-                        <p> Red Gown </p>
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
-                    <a href="/outfitcreateform">
+                    <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
                 </div>
@@ -151,26 +153,42 @@
         <div class="col">
             <div class="card">
                 <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                     <div class="overlay-content">
-                        <p> Red Gown </p>
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
                     </div>
                 </div>
                 <div class="card-body text-center">
                     <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
-                    <a href="/outfitcreateform">
+                    <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
                 </div>
             </div>
         </div>
+
+        <div class="col">
+            <div class="card">
+                <div class="card-overlay">
+                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                    <div class="overlay-content">
+                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <a href="/portfoliocreateform">
+                        <button class="btn btn-secondary btn-card-custom">Edit</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
 
     </div>
     
 </div>
 
 
-
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/outfitCategoryAdmin.blade.php ENDPATH**/ ?>
+@endsection
