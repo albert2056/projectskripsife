@@ -36,12 +36,16 @@ Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
 Route::post('/outfitchoose', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
 
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage']);
-Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']);
+Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin']);
+Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
+Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage']);
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
+Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage']);
+Route::get('/portfoliocreateform', [PortfolioController::class, 'createPortfolioPage']);
 
 Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');

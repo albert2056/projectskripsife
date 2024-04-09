@@ -22,6 +22,10 @@ class OutfitController extends Controller
         return view('outfitCategory', ['outfits'=>$responseData]);
     }
 
+    public function showOutfitByOutfitCategoryIdPageAdmin() {
+        return view ('outfitCategoryAdmin');
+    }
+
     public function showOutfitPreview() {
         return view('outfitCategoryPreview');
     }
@@ -35,6 +39,10 @@ class OutfitController extends Controller
         session()->put('outfitCategoryId', $outfitCategoryId);
         logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
         return redirect('/outfitcategory');
+    }
+    
+    public function createOutfitPage() {
+        return view('outfitCreateFormAdmin');
     }
 }
 

@@ -10,4 +10,12 @@ class PortfolioController extends Controller
         return view('portfolio');
     }
     
+    public function showPortfolioAdminPage() {
+        return view('portfolioAdmin');
+    }
+
+    public function createPortfolioPage() {
+        return view('portfolioCreateForm');
+    }
+
 }
