@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
 <style>
     .card {
@@ -65,15 +65,15 @@
     <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
 </div>
 
-<div class="container" style="margin-bottom: 150px">
+<div class="container" style="margin-bottom: 50px">
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        @foreach ($outfits as $datas)
+        <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col">
                 <div class="card">
                     <div class="card-overlay">
-                        <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         <div class="overlay-content">
-                            <p> {{ $datas['name'] }} </p>
+                            <p> <?php echo e($datas['name']); ?> </p>
                         </div>
                     </div>
                     <div class="card-body text-center">
@@ -81,11 +81,17 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
+
+        
+
     </div>
     
 </div>
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/outfitCategory.blade.php ENDPATH**/ ?>

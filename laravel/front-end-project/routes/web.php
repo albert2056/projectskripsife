@@ -33,6 +33,8 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage']);
+Route::post('/outfitchoose', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
+
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage']);
 Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin']);
 Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
