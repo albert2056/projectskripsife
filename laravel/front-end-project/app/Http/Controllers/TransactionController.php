@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\BookRequest;
 use App\Models\TransactionRequest;
+use Carbon\Carbon;
 
 class TransactionController extends Controller
 {
@@ -18,7 +19,14 @@ class TransactionController extends Controller
     }
 
     public function showInvoicePage() {
-        return view('invoice');
+        $transactionRequest = session()->get('transactionRequest');
+        $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
+        $responseData = $response->json();
+        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $responseData['eventDate'] = $eventDate;
+        $user = session()->get('user');
+        logger()->info('responseData:', ['responseData' => $responseData]);
+        return view('invoice', ['transaction'=>$responseData, 'user'=>$user]);
     }
 
     public function book(Request $request) {
@@ -40,5 +48,9 @@ class TransactionController extends Controller
         $transactionRequest->updatedBy = $user['email'];
         session()->put('transactionRequest', $transactionRequest);
         return redirect('/packagechoose');
+    }
+
+    public function getInvoice() {
+
     }
 }

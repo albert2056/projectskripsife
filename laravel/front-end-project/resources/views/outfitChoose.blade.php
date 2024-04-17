@@ -10,7 +10,7 @@
     </div>
 
     <div class="row mb-5" style="margin-left: 60px">
-        <form action="{{route('outfitChoose')}}" method="POST" class="d-flex">
+        <form action="{{route('outfitCategoryChoose')}}" method="POST" class="d-flex">
             @csrf
             <div class="col-md-6 mb-3">
                 <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">

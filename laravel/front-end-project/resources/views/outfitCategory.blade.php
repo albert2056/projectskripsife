@@ -66,24 +66,26 @@
 </div>
 
 <div class="container" style="margin-bottom: 150px">
-    <div class="row row-cols-1 row-cols-md-3 g-5">
-        @foreach ($outfits as $datas)
-            <div class="col">
-                <div class="card">
-                    <div class="card-overlay">
-                        <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                        <div class="overlay-content">
-                            <p> {{ $datas['name'] }} </p>
+    <form action="{{route('outfitChoose')}}" method="POST" class="d-flex">
+        @csrf
+        <div class="row row-cols-1 row-cols-md-3 g-5">
+            @foreach ($outfits as $datas)
+                <div class="col">
+                    <div class="card">
+                        <div class="card-overlay">
+                            <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <div class="overlay-content">
+                                <p> {{ $datas['name'] }} </p>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value={{ $datas['id'] }}>Pilih</button>
                         </div>
                     </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-primary btn-card-custom">Pilih</button>
-                    </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
-    
+            @endforeach
+        </div>
+    </form>
 </div>
 
 

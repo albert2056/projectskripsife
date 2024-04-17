@@ -22,6 +22,15 @@ class OutfitController extends Controller
         return view('outfitCategory', ['outfits'=>$responseData]);
     }
 
+    public function outfitChoose(Request $request) {
+        $outfitId = (int) $request['outfitId'];
+        logger()->info('outfitId:', ['outfitId' => $outfitId]);
+        $transactionRequest = session()->get('transactionRequest');
+        $transactionRequest->outfitId = (int) $request['outfitId'];
+        logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
+        return redirect('/invoice');
+    }
+
     public function showOutfitByOutfitCategoryIdPageAdmin() {
         return view ('outfitCategoryAdmin');
     }
@@ -34,7 +43,7 @@ class OutfitController extends Controller
         return view();
     }
 
-    public function outfitChoose(Request $request) {
+    public function outfitCategoryChoose(Request $request) {
         $outfitCategoryId = (int) $request['outfitCategoryId'];
         session()->put('outfitCategoryId', $outfitCategoryId);
         logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
