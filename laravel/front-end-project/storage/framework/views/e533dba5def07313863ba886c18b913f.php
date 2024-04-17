@@ -65,29 +65,27 @@
     <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
 </div>
 
-<div class="container" style="margin-bottom: 50px">
-    <div class="row row-cols-1 row-cols-md-3 g-5">
-        <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="col">
-                <div class="card">
-                    <div class="card-overlay">
-                        <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                        <div class="overlay-content">
-                            <p> <?php echo e($datas['name']); ?> </p>
+<div class="container" style="margin-bottom: 150px">
+    <form action="<?php echo e(route('outfitChoose')); ?>" method="POST" class="d-flex">
+        <?php echo csrf_field(); ?>
+        <div class="row row-cols-1 row-cols-md-3 g-5">
+            <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-overlay">
+                            <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <div class="overlay-content">
+                                <p> <?php echo e($datas['name']); ?> </p>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value=<?php echo e($datas['id']); ?>>Pilih</button>
                         </div>
                     </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-primary btn-card-custom">Pilih</button>
-                    </div>
                 </div>
-            </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
-
-        
-
-    </div>
-    
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+    </form>
 </div>
 
 
