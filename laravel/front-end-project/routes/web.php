@@ -41,7 +41,9 @@ Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPrevie
 Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage']);
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
+Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage']);
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
+Route::get('/packagecreateform', [PackageController::class, 'createPackagePage']);
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
 Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage']);

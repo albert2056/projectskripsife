@@ -14,6 +14,8 @@
     }
 ?>
 
+
+
 <?php if(session()->has('user')): ?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-<?php echo e($navbarColor); ?> fixed-top p-4">
@@ -25,13 +27,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : ''); ?>" href="/portfolio">Portfolio</a>
+                    <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '')); ?>" href="/portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
+                    <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : ''); ?>" href="/outfitcategorypreview">Busana</a>
+                    <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '')); ?>" href="/outfitcategorypreview">Busana</a>
                   </li>
               </ul>
           </div>
@@ -46,6 +48,8 @@
         </div>
     </nav>
   </header>
+
+  
 <?php else: ?> 
 <header>
     <nav class="navbar navbar-expand-lg navbar-<?php echo e($navbarColor); ?> fixed-top p-4">
@@ -57,13 +61,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : ''); ?>" href="/portfolio">Portfolio</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '')); ?>" href="/portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : ''); ?>" href="/packagechoose">Package</a>
+                    <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagechoose">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : ''); ?>" href="/outfitcategorypreview">Busana</a>
+                      <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '')); ?>" href="/outfitcategorypreview">Busana</a>
                   </li>
               </ul>
           </div>

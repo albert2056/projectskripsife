@@ -12,27 +12,27 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{route('book')}}" method="POST">  {{-- coba dicek routenya --}}
+            <form action="{{route('book')}}" method="POST" onsubmit="return validatePortfolioForm()">  {{-- coba dicek routenya --}}
                 @csrf
                 <div class="form-group">
-                    <label for="inputName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Ex: John & Jane" style="margin-bottom: 30px;" value="">
+                    <label for="inputCoupleName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>
+                    <input type="text" class="form-control" id="coupleName" name="coupleName" placeholder="Ex: John & Jane" style="margin-bottom: 30px;" value="">
                 </div>
 
                 <div class="form-group">
-                    <label for="inputDate" style="margin-bottom: 10px; font-size: 18px" >Tanggal Pernikahan</label>
+                    <label for="inputEventDate" style="margin-bottom: 10px; font-size: 18px" >Tanggal Pernikahan</label>
                     <input type="date" class="form-control" id="eventDate" name="eventDate" style="margin-bottom: 30px;">
                 </div>
 
                 <div class="form-group">
-                    <label for="inputImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
+                    <label for="inputImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar (Multiple)</label>
                     <input type="file" class="form-control" id="image" name="image[]" multiple style="margin-bottom: 30px;">
                 </div>
                  
 
                 <div class="form-group">
-                    <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
-                    <input type="text" class="form-control" id="outfitName" name="outfitName" style="margin-bottom: 30px;" value="">
+                    <label for="inputOutfitNamePort" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
+                    <input type="text" class="form-control" id="outfitNamePort" name="outfitNamePort" style="margin-bottom: 30px;" value="">
                 </div>
 
                 <div class="form-group">
@@ -54,5 +54,7 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/validate.js') }}"></script>
 
 @endsection
