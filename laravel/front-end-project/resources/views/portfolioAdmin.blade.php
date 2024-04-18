@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -125,7 +125,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px">Delete</button>
+                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
                     <a href="/portfoliocreateform">
                         <button class="btn btn-secondary btn-card-custom">Edit</button>
                     </a>
@@ -190,5 +190,6 @@
     
 </div>
 
+<script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection

@@ -12,7 +12,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{route('book')}}" method="POST">  {{-- coba dicek routenya --}}
+            <form action="{{route('book')}}" method="POST" onsubmit="return validateOutfitForm()">  {{-- coba dicek routenya --}}
                 @csrf
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
@@ -34,8 +34,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
-                    <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
+                    <label for="inputOutfitImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
+                    <input type="file" class="form-control" id="outfitImage" name="outfitImage" style="margin-bottom: 30px;">
                 </div>                
                 
                 <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
@@ -47,5 +47,7 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/validate.js') }}"></script>
 
 @endsection

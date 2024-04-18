@@ -10,7 +10,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="<?php echo e(route('book')); ?>" method="POST">  
+            <form action="<?php echo e(route('book')); ?>" method="POST" onsubmit="return validateOutfitForm()">  
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
@@ -32,8 +32,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
-                    <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
+                    <label for="inputOutfitImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
+                    <input type="file" class="form-control" id="outfitImage" name="outfitImage" style="margin-bottom: 30px;">
                 </div>                
                 
                 <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
@@ -45,6 +45,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validateOutfitForm() {
+        var outfitName = document.getElementById("outfitName").value;
+        var outfitCategory = document.getElementById("outfitCategory").value;
+        var outfitQuantity = document.getElementById("outfitQuantity").value;
+        var outfitImage = document.getElementById("outfitImage").value;
+        
+        if (outfitName.trim() == '' || outfitCategory.trim() == '' || outfitQuantity.trim() == '' || outfitImage.trim() == '') {
+            alert("Please fill in all fields.");
+            return false;
+        }
+        
+        return true;
+    }
+</script>
 
 <?php $__env->stopSection(); ?>
 

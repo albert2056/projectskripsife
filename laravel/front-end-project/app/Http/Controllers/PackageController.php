@@ -18,4 +18,12 @@ class PackageController extends Controller
         return redirect('/outfitchoose');
     }
 
+    public function showPackageAdminPage() {
+        return view ('packageAdmin');
+    }
+
+    public function createPackagePage() {
+        return view('packageCreateForm');
+    }
+
 }
