@@ -10,7 +10,7 @@
     
     <div class="row">
         <div class="col-md-6">
-            <form action="<?php echo e(route('book')); ?>" method="POST">
+            <form action="<?php echo e(route('book')); ?>" method="POST" onsubmit="return validateBookForm()">
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="inputName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>
@@ -51,6 +51,8 @@
         </div>
     </div>
 </div>
+
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

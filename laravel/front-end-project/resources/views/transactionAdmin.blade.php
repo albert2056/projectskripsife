@@ -79,7 +79,7 @@
                     <td>Tokyo</td>
                     <td>14 Mar, 2023</td>
                     <td>
-                        <p class="status shipped">Shipped</p>
+                        <p class="status paid">Paid</p>
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">

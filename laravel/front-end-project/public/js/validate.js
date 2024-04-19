@@ -46,3 +46,19 @@ function validatePackageForm() {
     
     return true;
 }
+
+//book
+function validateBookForm() {
+    var name = document.getElementById("name").value;
+    var totalUsher = document.getElementById("totalUsher").value;
+    var eventDate = document.getElementById("eventDate").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var venue = document.getElementById("venue").value;
+    
+    if (name.trim() == '' || totalUsher.trim() == '' || eventDate.trim() == '' || phoneNumber.trim() == '' || venue.trim() == '') {
+        alert("Please fill in all fields.");
+        return false;
+    }
+    
+    return true;
+}

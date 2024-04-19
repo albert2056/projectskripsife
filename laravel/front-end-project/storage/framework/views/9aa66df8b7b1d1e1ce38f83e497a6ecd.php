@@ -46,21 +46,7 @@
     </div>
 </div>
 
-<script>
-    function validateOutfitForm() {
-        var outfitName = document.getElementById("outfitName").value;
-        var outfitCategory = document.getElementById("outfitCategory").value;
-        var outfitQuantity = document.getElementById("outfitQuantity").value;
-        var outfitImage = document.getElementById("outfitImage").value;
-        
-        if (outfitName.trim() == '' || outfitCategory.trim() == '' || outfitQuantity.trim() == '' || outfitImage.trim() == '') {
-            alert("Please fill in all fields.");
-            return false;
-        }
-        
-        return true;
-    }
-</script>
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

@@ -12,7 +12,7 @@
     
     <div class="row">
         <div class="col-md-6">
-            <form action="{{route('book')}}" method="POST">
+            <form action="{{route('book')}}" method="POST" onsubmit="return validateBookForm()">
                 @csrf
                 <div class="form-group">
                     <label for="inputName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>
@@ -53,5 +53,7 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/validate.js') }}"></script>
 
 @endsection
