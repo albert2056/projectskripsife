@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 a:3:{s:6:"_token";s:40:"sT9n1HDYhkGHdZi392LYxBJWiqljK6ddkS8hLXUf";s:9:"_previous";a:1:{s:3:"url";s:21:"http://127.0.0.1:8000";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}}
+=======
+a:3:{s:6:"_token";s:40:"jUm36Fu4nt2u1X7OvjfvHmqv5hmODRrsCI7VcOs2";s:9:"_previous";a:1:{s:3:"url";s:21:"http://127.0.0.1:8000";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}}
+>>>>>>> 9c4b29400aea017b4a379565d3cb889d35a3d3d5
