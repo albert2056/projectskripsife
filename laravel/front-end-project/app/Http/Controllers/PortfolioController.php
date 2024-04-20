@@ -18,4 +18,8 @@ class PortfolioController extends Controller
         return view('portfolioCreateForm');
     }
 
+    public function showPortfolioDetailPage() {
+        return view('portfolioDetail');
+    }
+
 }
