@@ -7,12 +7,6 @@
         <h1 style="margin-top: 20px; margin-left: 20px">Transaction History</h1>
         <div class="input-group">
             <input type="search" placeholder="Search Data...">
-            <img src="<?php echo e(asset('Assets/search.png')); ?>" style="" alt="">
-        </div>
-        <div class="export__file">
-            <label for="export-file" class="export__file-btn" title="Export File"></label>
-            <input type="checkbox" id="export-file">
-            
         </div>
     </section>
     <section class="table__body">
@@ -38,11 +32,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check" style=""></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>
@@ -56,11 +50,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>
@@ -73,15 +67,15 @@
                     <td>
                         <p class="status paid">Paid</p>
                     </td>
-                    <td> <strong> 
+                    <td>
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
-                    </strong></td>
+                    </td>
                 </tr>
 
                 <tr>
@@ -94,11 +88,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>
@@ -112,11 +106,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>
@@ -130,11 +124,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>
@@ -148,47 +142,11 @@
                     </td>
                     <td> <strong> 
                         <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
+                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                           </button>
                           
                           <button class="icon-button">
-                            <i class="fas fa-trash"></i>
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 8</td>
-                    <td>Aayat Ali Khan </td>
-                    <td>Islamabad</td>
-                    <td>28 Feb, 2023</td>
-                    <td>
-                        <p class="status notPaid">Not Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
-                          </button>
-                          
-                          <button class="icon-button">
-                            <i class="fas fa-trash"></i>
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 9</td>
-                    <td>Alson GC </td>
-                    <td>Dhaka</td>
-                    <td>22 Dec, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <i class="fas fa-check"></i>
-                          </button>
-                          
-                          <button class="icon-button">
-                            <i class="fas fa-trash"></i>
+                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
                           </button>    
                     </strong></td>
                 </tr>

@@ -18,6 +18,10 @@ class TransactionController extends Controller
         return view('bookForm');
     }
 
+    public function showUserTransactionPage() {
+        return view('transaction');
+    }
+
     public function showInvoicePage() {
         $transactionRequest = session()->get('transactionRequest');
         $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
@@ -27,6 +31,7 @@ class TransactionController extends Controller
         $user = session()->get('user');
         logger()->info('responseData:', ['responseData' => $responseData]);
         return view('invoice', ['transaction'=>$responseData, 'user'=>$user]);
+        // return view('invoice');
     }
 
     public function book(Request $request) {
