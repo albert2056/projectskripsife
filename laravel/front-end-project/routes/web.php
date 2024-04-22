@@ -55,5 +55,6 @@ Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage']);
+Route::get('/transaction', [TransactionController::class, 'showUserTransactionPage']);
 
 Route::get('/invoice', [TransactionController::class, 'showInvoicePage']);

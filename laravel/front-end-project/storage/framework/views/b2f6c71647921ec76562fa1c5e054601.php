@@ -10,7 +10,7 @@
             <td class="w-full align-top">
             <div>
                 <p class="h-12">Invoice</p>
-                
+                <p class="h-9"><?php echo e($transaction['name']); ?></p>
                 <p class="h-9" style="margin-bottom: 40px">Aloft TB Simatupang</p>
             </div>
             </td>
@@ -23,13 +23,13 @@
                     <td class="border-r pr-4">
                         <div>
                         <p class="whitespace-nowrap text-slate-400 text-right h-9">Date</p>
-                        
+                        <p class="whitespace-nowrap font-bold text-main text-right h-9"><?php echo e($transaction['eventDate']); ?></p>
                         </div>
                     </td>
                     <td class="pl-4">
                         <div>
                         <p class="whitespace-nowrap text-slate-400 text-right h-9">Invoice #</p>
-                        
+                        <p class="whitespace-nowrap font-bold text-main text-right h-9"><?php echo e($transaction['id']); ?></p>
                         </div>
                     </td>
                     </tr>
@@ -49,8 +49,8 @@
             <td class="w-1/2 align-top">
             <div class="text-med text-neutral-600">
                 <p class="font-bold text-med">Billed To</p>
-                
-                
+                <p><?php echo e($transaction['name']); ?></p>
+                <p><?php echo e($user['phoneNumber']); ?></p>
             </div>
             </td>
             <td class="w-1/2 align-top text-right">
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-            
+            <?php if($transaction['packageId'] == 1): ?>
                <td class="border-b py-3 pl-2">Premium Package</td> 
                <td class="border-b py-3 pl-2 text-left">Rp550,000</td>
             <?php else: ?>
@@ -87,9 +87,9 @@
                 <td class="border-b py-3 pl-2 text-left">Rp400,000</td>
             <?php endif; ?>
             
+            <td class="border-b py-3 pl-2 text-center"><?php echo e($transaction['totalUsher']); ?></td>
             
-            
-            
+            <td class="border-b py-3 pl-2 pr-3 text-right">Rp<?php echo e($transaction['totalPrice']); ?></td>
         </tr>
         <tr>
             <td class="border-b py-3 pl-2" style="color: #5E6470; font-size: 14px" colspan="5">
@@ -111,7 +111,7 @@
                             <div class="whitespace-nowrap text-slate-400">Net total:</div>
                             </td>
                             <td class="border-b p-3 text-right">
-                            
+                            <div class="whitespace-nowrap font-bold text-main">Rp<?php echo e($transaction['totalPrice']); ?></div>
                             </td>
                         </tr>
                         <tr>
@@ -119,7 +119,7 @@
                             <div class="whitespace-nowrap font-bold text-white">Total:</div>
                             </td>
                             <td class="bg-main p-3 text-right">
-                            
+                            <div class="whitespace-nowrap font-bold text-white">Rp<?php echo e($transaction['totalPrice']); ?></div>
                             </td>
                         </tr>
                         <tr>

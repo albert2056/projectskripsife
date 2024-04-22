@@ -5,14 +5,15 @@
         $navbarColor = 'dark';
     }else if(Request::is('portfoliodetail')) {
         $navbarColor = 'dark';
-     }
-    else {
+    }else {
         $navbarColor = 'light';
     }
 
     if (Route::currentRouteName() == 'home') {
         $navbarColor2 = 'light';
-    } else {
+    }else if(Request::is('portfoliodetail')) {
+        $navbarColor2 = 'light';
+    }else {
         $navbarColor2 = 'dark';
     }
 ?>
@@ -75,7 +76,7 @@
               </ul>
           </div>
             <div class="ml-auto d-flex align-items-center">
-                <a class="nav-link me-2 pe-4 text-<?php echo e($navbarColor); ?>" href="/signup">Daftar</a>
+                <a class="nav-link me-2 pe-4 text-<?php echo e($navbarColor2); ?>" href="/signup">Daftar</a>
                 
                 <a href="/signin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 130px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
                   <span style="margin: auto; font-size: 18px; font-weight: 500">Masuk</span>
