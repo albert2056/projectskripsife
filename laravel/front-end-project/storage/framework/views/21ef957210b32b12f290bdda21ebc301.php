@@ -42,61 +42,18 @@
 
 <div class="container" style="margin-bottom: 50px">
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
+        <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col">
+                <div class="card">
+                    <div class="card-overlay">
+                        <img src="<?php echo e(asset('Assets/outfit/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <div class="overlay-content">
+                            <p> <?php echo e($datas['name']); ?> </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/busanaImg.png')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
     
 </div>

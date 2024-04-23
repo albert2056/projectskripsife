@@ -53,22 +53,7 @@
     </div>
 </div>
 
-<script>
-    function validatePortfolioForm() {
-        var coupleName = document.getElementById("coupleName").value;
-        var eventDate = document.getElementById("eventDate").value;
-        var image = document.getElementById("image").value;
-        var outfitNamePort = document.getElementById("outfitNamePort").value;
-        var venue = document.getElementById("venue").value;
-        
-        if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitNamePort.trim() == '' || venue.trim() == '') {
-            alert("Please fill in all fields.");
-            return false;
-        }
-        
-        return true;
-    }
-</script>
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

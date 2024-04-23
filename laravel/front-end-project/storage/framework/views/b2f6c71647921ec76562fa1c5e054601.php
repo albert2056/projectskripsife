@@ -11,7 +11,7 @@
             <div>
                 <p class="h-12">Invoice</p>
                 <p class="h-9"><?php echo e($transaction['name']); ?></p>
-                <p class="h-9" style="margin-bottom: 40px">Aloft TB Simatupang</p>
+                <p class="h-9" style="margin-bottom: 40px"><?php echo e($transaction['venue']); ?> </p>
             </div>
             </td>
 
@@ -71,35 +71,31 @@
         <thead>
         <tr>
             <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Service</td>
+            <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-left font-bold text-main">Price</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-center font-bold text-main">Total Usher</td>
             
-            <td class="border-b-2 border-main pb-3 pl-2 pr-3 text-right font-bold text-main">Price - DP</td>
         </tr>
         </thead>
         <tbody>
         <tr>
             <?php if($transaction['packageId'] == 1): ?>
                <td class="border-b py-3 pl-2">Premium Package</td> 
+               <td class="border-b py-3 pl-2 text-left">Test outfit</td>
                <td class="border-b py-3 pl-2 text-left">Rp550,000</td>
             <?php else: ?>
                 <td class="border-b py-3 pl-2">Standard Package</td> 
+                <td class="border-b py-3 pl-2 text-left">Test outfit</td>
                 <td class="border-b py-3 pl-2 text-left">Rp400,000</td>
             <?php endif; ?>
             
             <td class="border-b py-3 pl-2 text-center"><?php echo e($transaction['totalUsher']); ?></td>
             
-            <td class="border-b py-3 pl-2 pr-3 text-right">Rp<?php echo e($transaction['totalPrice']); ?></td>
-        </tr>
-        <tr>
-            <td class="border-b py-3 pl-2" style="color: #5E6470; font-size: 14px" colspan="5">
-                Kebaya + Makeup + Hairdo + Hairpiece + Label Angpao + Angpao Kosong + Transport Jkt/Tgr
-            </td>
         </tr>
         
         <tr>
             <td colspan="5">
-            <table class="w-full border-collapse border-spacing-0">
+            <table class="w-full border-collapse border-spacing-0" style="margin-top: 75px">
                 <tbody>
                 <tr>
                     <td class="w-full"></td>

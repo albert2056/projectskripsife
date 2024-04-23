@@ -31,12 +31,24 @@ class OutfitController extends Controller
         return redirect('/invoice');
     }
 
-    public function showOutfitByOutfitCategoryIdPageAdmin() {
-        return view ('outfitCategoryAdmin');
+    public function showOutfitPreview() {
+        $url = "http://localhost:8080/api/outfit/findAll";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        logger()->info('outz:', ['outz' => $responseData]);
+
+        return view('outfitCategoryPreview', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitPreview() {
-        return view('outfitCategoryPreview');
+    public function showOutfitByOutfitCategoryIdPageAdmin() {
+        $url = "http://localhost:8080/api/outfit/findAll";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        logger()->info('outz:', ['outz' => $responseData]);
+
+        return view('outfitCategoryAdmin', ['outfits'=>$responseData]);
     }
 
     public function showOutfitByCategoryId() {

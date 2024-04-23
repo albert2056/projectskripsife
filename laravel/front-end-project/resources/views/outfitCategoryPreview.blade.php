@@ -44,61 +44,18 @@
 
 <div class="container" style="margin-bottom: 50px">
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
+        @foreach ($outfits as $datas)
+            <div class="col">
+                <div class="card">
+                    <div class="card-overlay">
+                        <img src="{{ asset('Assets/outfit/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <div class="overlay-content">
+                            <p> {{ $datas['name'] }} </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        @endforeach
     </div>
     
 </div>

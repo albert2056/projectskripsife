@@ -82,24 +82,26 @@
         </a>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
+        @foreach ($outfits as $datas)
+                <div class="col">
+                    <div class="card">
+                        <div class="card-overlay">
+                            <img src="{{ asset('Assets/outfit/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <div class="overlay-content">
+                                <p> {{ $datas['name'] }} </p>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
+                            <a href="/outfitcreateform">
+                                <button class="btn btn-secondary btn-card-custom">Edit</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
-                    <a href="/outfitcreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+            @endforeach
 
-        <div class="col">
+        {{-- <div class="col">
             <div class="card">
                 <div class="card-overlay">
                     <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
@@ -114,58 +116,7 @@
                     </a>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
-                    <a href="/outfitcreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
-                    <a href="/outfitcreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
-                    <a href="/outfitcreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+        </div> --}}
 
     </div>
     

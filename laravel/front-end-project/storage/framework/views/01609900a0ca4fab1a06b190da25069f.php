@@ -25,12 +25,7 @@
                 <div class="form-group">
                     <label for="inputDate" style="margin-bottom: 10px; font-size: 18px" >Tanggal Pernikahan</label>
                     <input type="date" class="form-control" id="eventDate" name="eventDate" style="margin-bottom: 30px;">
-                </div>
-                
-                <div class="form-group">
-                    <label for="inputPhoneNumber" style="margin-bottom: 10px; font-size: 18px">Nomor Telepon</label>
-                    <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="" style="margin-bottom: 30px;">
-                </div>                
+                </div>         
                 
                 <div class="form-group">
                     <label for="inputVenue" style="margin-bottom: 10px; font-size: 18px">Lokasi Venue Pernikahan</label>
