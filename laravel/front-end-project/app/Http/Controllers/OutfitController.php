@@ -24,9 +24,17 @@ class OutfitController extends Controller
 
     public function outfitChoose(Request $request) {
         $outfitId = (int) $request['outfitId'];
-        logger()->info('outfitId:', ['outfitId' => $outfitId]);
+
+        $url = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        $outfitName = $responseData['name'];
+        logger()->info('outfitName:', ['outfitName' => $outfitName]);
         $transactionRequest = session()->get('transactionRequest');
         $transactionRequest->outfitId = (int) $request['outfitId'];
+        session()->put('outfitName', $outfitName);
         logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
         return redirect('/invoice');
     }

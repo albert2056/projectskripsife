@@ -24,13 +24,14 @@ class TransactionController extends Controller
 
     public function showInvoicePage() {
         $transactionRequest = session()->get('transactionRequest');
+        $outfitName = session()->get('outfitName');
         $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
         $responseData = $response->json();
+        logger()->info('responseData:', ['responseData' => $responseData]);
         $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
         $responseData['eventDate'] = $eventDate;
         $user = session()->get('user');
-        logger()->info('responseData:', ['responseData' => $responseData]);
-        return view('invoice', ['transaction'=>$responseData, 'user'=>$user]);
+        return view('invoice', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName]);
         // return view('invoice');
     }
 
@@ -50,7 +51,7 @@ class TransactionController extends Controller
         $transactionRequest = new TransactionRequest();
         $transactionRequest->fill($responseData);
         $transactionRequest->userId = $user['id'];
-        $transactionRequest->updatedBy = $user['email'];
+        $transactionRequest->updatedBy = $user['id'];
         session()->put('transactionRequest', $transactionRequest);
         return redirect('/packagechoose');
     }
