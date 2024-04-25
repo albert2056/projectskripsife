@@ -287,23 +287,26 @@
 }
 
 .home-main-page-button1 {
-  top: 955px;
-  left: 1318px;
-  width: 96px;
-  height: 50px;
+  width: 8%; 
+  height: 6%; /* Adjust the height relative to the viewport height */
+  min-width: 80px; /* Set a minimum width */
+  min-height: 40px; /* Set a minimum height */
   display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 0;
+  position: fixed;
+  bottom: 5%;
+  right: 5%; 
+  align-items: center;
+  justify-content: flex-start;
   border-radius: 10px;
   border: none;
   background-color: rgba(255, 105, 105, 1);
 }
+
 .home-main-page-whatsapp {
   top: 15px;
   left: 19.520000457763672px;
-  width: 21px;
-  height: 24px;
+  width: 30%; 
+  height: auto;
   display: flex;
   position: absolute;
   align-items: flex-start;
@@ -331,7 +334,7 @@
   width: 44px;
   height: auto;
   position: absolute;
-  font-size: 14px;
+  font-size: 1.2vw;
   font-style: Medium;
   text-align: left;
   font-family: Poppins;
