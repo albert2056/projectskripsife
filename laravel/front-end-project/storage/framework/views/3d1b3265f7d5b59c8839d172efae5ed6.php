@@ -6,58 +6,48 @@
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Products</h5>
+                <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">Products</h5>
                 <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">The Providers</a>
+                    <a href="#" class="text-dark" style="text-decoration: none;">Sewa Jasa Usher</a>
                 </p>
                 <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Creativity</a>
-                </p>
-                <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Source</a>
+                    <a href="#" class="text-dark" style="text-decoration: none;">Sewa Gaun</a>
                 </p>
             </div>
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">About</h5>
+                <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">About</h5>
                 <p>
                     <a href="#" class="text-dark" style="text-decoration: none;">About Us</a>
                 </p>
-                <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Aff</a>
-                </p>
-                <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Rtt</a>
-                </p>
-                <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Helppp</a>
-                </p>
+                
+                
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Social Media</h5>
+                <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">Social Media</h5>
                 <p>
                     <i class="fas fa-home mx-3" style="color: #FF6969"></i>
                     <span class="text-black">
-                        Jakarta, 10150
+                        DKI Jakarta, Indonesia
                     </span>
                 </p>
                 <p>
                     <i class="fas fa-envelope mx-3" style="color: #FF6969"></i>
                     <span class="text-black">
-                        Jakarta, 10150
+                        hayden@gmail.com
                     </span>
                 <p>
                     <i class="fas fa-phone mx-3" style="color: #FF6969"></i>
                     <span class="text-black">
-                        Jakarta, 10150
+                        081234561234
                     </span>
                 </p>
                 <p>
                     <a href="https://www.instagram.com/haydenusher.id" target="_blank" style="color: #FF6969; text-decoration: none">
                         <i class="fab fa-instagram mx-3"></i>
                             <span class="text-black">
-                                Jakarta, 10150
+                                haydenusher.id
                             </span>
                     </a>
                 </p>
@@ -68,10 +58,10 @@
 
         <div class="row align-items-center">
             <div class="col-md-7 col-lg-8 mx-auto text-center">
-                <p>
+                <p style="color: #FF6969">
                     Copyright
                     <a href="#" style="text-decoration: none"></a>
-                    <strong class="text-warning">Hayden Ushers</strong>
+                    <strong class="">Hayden Ushers</strong>
                 </p>
             </div>
         </div>
