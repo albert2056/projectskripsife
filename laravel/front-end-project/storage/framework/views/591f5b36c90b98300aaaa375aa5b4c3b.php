@@ -42,8 +42,9 @@
               </ul>
           </div>
             <div class="ml-auto d-flex align-items-center">
-                
-                
+                <a href="/transactionadmin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
+                    <span style="margin: auto; font-size: 18px; font-weight: 500">Transaksi</span>
+                </a>   
                 <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
                   <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
               </a>   

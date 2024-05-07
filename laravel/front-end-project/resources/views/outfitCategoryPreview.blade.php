@@ -42,7 +42,7 @@
     <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
 </div>
 
-<div class="container" style="margin-bottom: 50px">
+<div class="container" style="margin-bottom: 150px">
     <div class="row row-cols-1 row-cols-md-3 g-5">
         @foreach ($outfits as $datas)
             <div class="col">
