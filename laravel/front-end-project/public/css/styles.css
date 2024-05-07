@@ -40,6 +40,7 @@ body {
     background-color: #FF6969;
     border: none;
     outline: none;
+    border-radius: 12px;
 }
 
 .btn-custom:hover {

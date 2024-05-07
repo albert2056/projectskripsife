@@ -8,30 +8,23 @@
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 ">
                 <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">Products</h5>
                 <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Sewa Jasa Usher</a>
-                </p>
-                <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Sewa Gaun</a>
+                    <a href="#" class="text-dark" style="text-decoration: none;">Booking Usher</a>
                 </p>
             </div>
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">About</h5>
+                
                 <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">About Us</a>
+                    <i class="fas fa-home mx-3" style="color: #FF6969"></i>
+                    <span class="text-black">
+                        Pluit, DKI Jakarta, Indonesia
+                    </span>
                 </p>
-                
-                
             </div>
 
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">Social Media</h5>
-                <p>
-                    <i class="fas fa-home mx-3" style="color: #FF6969"></i>
-                    <span class="text-black">
-                        DKI Jakarta, Indonesia
-                    </span>
-                </p>
                 <p>
                     <i class="fas fa-envelope mx-3" style="color: #FF6969"></i>
                     <span class="text-black">
@@ -40,7 +33,7 @@
                 <p>
                     <i class="fas fa-phone mx-3" style="color: #FF6969"></i>
                     <span class="text-black">
-                        081234561234
+                        082114327822
                     </span>
                 </p>
                 <p>
@@ -51,10 +44,18 @@
                             </span>
                     </a>
                 </p>
+                <p>
+                    <a href="https://www.linkedin.com/company/hayden-usher/" target="_blank" style="color: #FF6969; text-decoration: none">
+                        <i class="fab fa-linkedin-in mx-3"></i>
+                            <span class="text-black">
+                                Hayden Usher
+                            </span>
+                    </a>
+                </p>
             </div>
         </div>
 
-        <hr class="mb-4">
+        <hr class="mb-4" style="color: #e71c1ce0">
 
         <div class="row align-items-center">
             <div class="col-md-7 col-lg-8 mx-auto text-center">

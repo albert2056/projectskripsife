@@ -108,12 +108,13 @@
           </div>
         </div>
       </div>
-      <button class="home-main-page-button1">
+      <a href="https://api.whatsapp.com/send?phone=6282114327822" target="_blank" class="home-main-page-button1">
         <div class="home-main-page-whatsapp">
-          <img src="external/wawhite.png" class="home-main-page-text11"></img>
+            <img src="external/wawhite.png" class="home-main-page-text11"></img>
         </div>
         <span class="home-main-page-text12"><span>&nbsp;Chat</span></span>
-      </button>
+    </a>
+    
 </div>
 
 <div class="container2">
