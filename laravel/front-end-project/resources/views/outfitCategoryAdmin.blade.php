@@ -5,7 +5,7 @@
 <style>
     .card {
         width: 400px;
-        height: 600px;
+        height: 620px;
         background-color: rgba(255, 218, 217, 0.7);
         position: relative;
         border: none;
@@ -19,7 +19,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 340px;
-        height: 440px;
+        height: 480px;
         background-color: #F2F2F2;
         display: flex;
         flex-direction: column;
@@ -49,6 +49,7 @@
         font-size: 18px;
         font-weight: 500;
         border-radius: 12px;
+        margin-top: 25px;
     }   
 
     .btn-card-custom:hover {
@@ -62,18 +63,21 @@
     .btn-plus {
         justify-content: right;
         display: flex; 
-        /* align-items: flex-end;  */
         font-size: 32px;
         color: #FF6969;
         margin-bottom: 20px;
     }
 
+    .btn-group {
+        display: flex;
+        justify-content: center;
+    }
+
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
-    <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
+    <h1 class="text-custom1" style="letter-spacing: 2px">Pasangan Berbahagia Yang Mempercayai <br> Hari Bahagianya Bersama Kami</h1>
 </div>
-
 
 <div class="container" style="margin-bottom: 150px">
     <div class="btn-plus" style="text-decoration: none;">
@@ -83,47 +87,33 @@
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-5">
         @foreach ($outfits as $datas)
-                <div class="col">
-                    <div class="card">
-                        <div class="card-overlay">
-                            <img src="{{ asset('Assets/outfit/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                            <div class="overlay-content">
-                                <p> {{ $datas['name'] }} </p>
-                            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-overlay">
+                        <img src="{{ asset('Assets/outfit/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <div class="overlay-content">
+                            <p> {{ $datas['name'] }} </p>
                         </div>
-                        <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="btn-group">
+                            <form method="POST" action="{{ route('deleteOutfit') }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id" value="{{ $datas['id'] }}">
+                                <button type="submit" class="btn btn-primary btn-card-custom" onclick="outfitDeletePopup()" style="margin-right: 20px">Delete</button>
+                            </form>
                             <a href="/outfitcreateform">
                                 <button class="btn btn-secondary btn-card-custom">Edit</button>
                             </a>
                         </div>
                     </div>
                 </div>
-            @endforeach
-
-        {{-- <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/busanaImg.png') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Red Gown </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="outfitDeletePopup()">Delete</button>
-                    <a href="/outfitcreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
             </div>
-        </div> --}}
-
+        @endforeach
     </div>
-    
 </div>
 
 <script src="{{ asset('js/alert.js') }}"></script>
-
-
 
 @endsection

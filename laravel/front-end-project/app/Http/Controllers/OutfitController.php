@@ -98,5 +98,20 @@ class OutfitController extends Controller
         } 
         return redirect('/outfitcategoryadmin');
     }
+
+    public function deleteOutfit(Request $request) {
+        $outfitId = $request->input('id');
+        
+        $response = Http::delete("http://localhost:8080/api/outfit/delete?id={$outfitId}");
+        $responseData = $response->json();
+
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Outfit deleted successfully.');
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the outfit.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
+    }
+
 }
 
