@@ -1,8 +1,8 @@
 function validatePortfolioForm() {
-    var coupleName = document.getElementById("coupleName").value;
+    var coupleName = document.getElementById("name").value;
     var eventDate = document.getElementById("eventDate").value;
     var image = document.getElementById("image").value;
-    var outfitNamePort = document.getElementById("outfitNamePort").value;
+    var outfitNamePort = document.getElementById("gownName").value;
     var venue = document.getElementById("venue").value;
     
     if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitNamePort.trim() == '' || venue.trim() == '') {

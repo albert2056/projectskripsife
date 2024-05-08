@@ -24,18 +24,18 @@ class TransactionRequest extends Model
         'updatedBy',
     ];
 
-    protected $nullable = [
-        'outfitId',
-        'eventId',
-        'userId',
-        'packageId',
-        'name',
-        'totalUsher',
-        'eventDate',
-        'venue',
-        'wo',
-        'totalPrice',
-        'paymentStatus',
-        'updatedBy',
-    ];
+    // protected $nullable = [
+    //     'outfitId',
+    //     'eventId',
+    //     'userId',
+    //     'packageId',
+    //     'name',
+    //     'totalUsher',
+    //     'eventDate',
+    //     'venue',
+    //     'wo',
+    //     'totalPrice',
+    //     'paymentStatus',
+    //     'updatedBy',
+    // ];
 }
