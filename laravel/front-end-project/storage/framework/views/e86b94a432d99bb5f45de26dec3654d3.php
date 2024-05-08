@@ -10,11 +10,11 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="<?php echo e(route('book')); ?>" method="POST" onsubmit="return validatePortfolioForm()">  
+            <form action="<?php echo e(route('createPortfolio')); ?>" method="POST" onsubmit="return validatePortfolioForm()" enctype="multipart/form-data">  
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="inputCoupleName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>
-                    <input type="text" class="form-control" id="coupleName" name="coupleName" placeholder="Ex: John & Jane" style="margin-bottom: 30px;" value="">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Ex: John & Jane" style="margin-bottom: 30px;" value="">
                 </div>
 
                 <div class="form-group">
@@ -24,13 +24,13 @@
 
                 <div class="form-group">
                     <label for="inputImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar (Multiple)</label>
-                    <input type="file" class="form-control" id="image" name="image[]" multiple style="margin-bottom: 30px;">
+                    <input type="file" class="form-control" id="image" name="image" multiple style="margin-bottom: 30px;">
                 </div>
                  
 
                 <div class="form-group">
                     <label for="inputOutfitNamePort" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
-                    <input type="text" class="form-control" id="outfitNamePort" name="outfitNamePort" style="margin-bottom: 30px;" value="">
+                    <input type="text" class="form-control" id="gownName" name="gownName" style="margin-bottom: 30px;" value="">
                 </div>
 
                 <div class="form-group">
@@ -42,7 +42,6 @@
                     <label for="inputWO" style="margin-bottom: 10px; font-size: 18px">Nama Wedding Organizer</label>
                     <input type="text" class="form-control" id="wo" name="wo" style="margin-bottom: 30px;" placeholder="Opsional">
                 </div>
-                
                 <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
             </form>
         </div>

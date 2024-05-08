@@ -80,112 +80,25 @@
         </a>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
+        <?php $__currentLoopData = $portfolios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col">
+                <div class="card">
+                    <div class="card-overlay">
+                        <img src="<?php echo e(asset('Assets/portfolio/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <div class="overlay-content">
+                            <p> <?php echo e($datas['name']); ?> <br> <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?><br> <?php echo e($datas['venue']); ?> </p>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
+                        <a href="/portfoliocreateform">
+                            <button class="btn btn-secondary btn-card-custom">Edit</button>
+                        </a>
                     </div>
                 </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="<?php echo e(asset('Assets/imgPortfolio.jpg')); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        
-
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-    
 </div>
 
 <script src="<?php echo e(asset('js/alert.js')); ?>"></script>

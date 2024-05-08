@@ -88,12 +88,14 @@ class OutfitController extends Controller
         $outfitRequest->name = $request['name'];
         $outfitRequest->qty = $request['qty'];
         $outfitRequest->image = $imageName;
+        $user = session()->get('user'); 
+        $outfitRequest->updatedBy = $user['id'];
         $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
         $responseData = $response->json();
         logger()->info('outfit', ['outfit' => $responseData]);
         if ($responseData['statusCode']!=null) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
-        }
+        } 
         return redirect('/outfitcategoryadmin');
     }
 }
