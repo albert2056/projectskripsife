@@ -40,6 +40,7 @@ Route::post('/outfitcategory', [OutfitController::class, 'outfitChoose'])->name(
 Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin']);
 Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
 Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage']);
+Route::post('/outfitcreateform', [OutfitController::class, 'createOutfit'])->name('createOutfit');
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage']);
