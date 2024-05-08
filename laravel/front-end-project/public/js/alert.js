@@ -3,6 +3,7 @@ function outfitDeletePopup() {
         alert("Outfit successfully deleted!");
     } else {
         alert("Deletion canceled.");
+        event.preventDefault();
     }
 }
 
@@ -11,6 +12,7 @@ function portfolioDeletePopup() {
         alert("Portfolio successfully deleted!");
     } else {
         alert("Deletion canceled.");
+        event.preventDefault();
     }
 }
 
@@ -19,6 +21,7 @@ function packageDeletePopup() {
         alert("Package successfully deleted!");
     } else {
         alert("Deletion canceled.");
+        event.preventDefault();
     }
 }
 
