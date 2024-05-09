@@ -81,11 +81,11 @@
         <tr>
             <?php if($transaction['packageId'] == 1): ?>
                <td class="border-b py-3 pl-2">Premium Package</td> 
-               <td class="border-b py-3 pl-2 text-left">Test outfit</td>
+               <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
                <td class="border-b py-3 pl-2 text-left">Rp550,000</td>
             <?php else: ?>
                 <td class="border-b py-3 pl-2">Standard Package</td> 
-                <td class="border-b py-3 pl-2 text-left">Test outfit</td>
+                <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
                 <td class="border-b py-3 pl-2 text-left">Rp400,000</td>
             <?php endif; ?>
             

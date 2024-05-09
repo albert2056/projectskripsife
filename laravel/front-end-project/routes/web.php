@@ -53,6 +53,7 @@ Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetail
 Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage']);
 Route::get('/portfoliocreateform', [PortfolioController::class, 'createPortfolioPage']);
 Route::post('/portfoliocreateform', [PortfolioController::class, 'createPortfolio'])->name('createPortfolio');
+Route::delete('/portfolio/delete', [PortfolioController::class, 'deletePortfolio'])->name('deletePortfolio');
 
 Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');

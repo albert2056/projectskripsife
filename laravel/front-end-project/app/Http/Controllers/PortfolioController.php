@@ -52,6 +52,20 @@ class PortfolioController extends Controller
         return redirect('/portfolioadmin');
     }
 
+    public function deletePortfolio(Request $request) {
+        $portfolioId = $request->input('id');
+        
+        $response = Http::delete("http://localhost:8080/api/portfolio/delete?id={$portfolioId}");
+        $responseData = $response->json();
+
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Portfolio deleted successfully.');
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the portfolio.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
+    }
+
     public function createPortfolioPage() {
         return view('portfolioCreateForm');
     }
