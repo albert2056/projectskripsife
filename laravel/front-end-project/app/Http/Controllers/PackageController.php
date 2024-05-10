@@ -18,6 +18,11 @@ class PackageController extends Controller
     }
 
     public function choosePackage(Request $request) {
+        $transactionRequest = session()->get('transactionRequest');
+
+        if ($transactionRequest == null) {
+            return redirect('bookpage');
+        }
         $packageId = (int) $request['packageId'];
 
         $url = "http://localhost:8080/api/package/findById?id=$packageId";

@@ -33,6 +33,9 @@ class TransactionController extends Controller
         $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
         $responseData['eventDate'] = $eventDate;
         $user = session()->get('user');
+        session()->forget('transactionRequest');
+        session()->forget('outfitName');
+        session()->forget('package');
         return view('invoice', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
         // return view('invoice');
     }
