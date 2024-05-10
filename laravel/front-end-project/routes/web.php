@@ -47,6 +47,7 @@ Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']
 Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage']);
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
 Route::get('/packagecreateform', [PackageController::class, 'createPackagePage']);
+Route::post('/packagecreateform', [PackageController::class, 'createPackage'])->name('createPackage');
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
 Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetailPage']);
