@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
 <style>
     .btn-plus {
@@ -46,19 +46,19 @@
                 <i class="fa-solid fa-plus" style="margin-bottom: 10px;"></i>
             </a>
         </div>
-        @foreach ($packages as $datas)
+        <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-6 mb-3">
             <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">   
                 <div class="d-flex justify-content-center">
-                    <img src="{{ asset('Assets/paketCoupleImg.png') }}" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
+                    <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                 </div>
                 <div class="card-body text-center">
-                    <h5 class="card-title text-center btn-text-card">{{ $datas['name'] }}</h5>
+                    <h5 class="card-title text-center btn-text-card"><?php echo e($datas['name']); ?></h5>
                     <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
                         <ul>
-                            @foreach ($datas['description'] as $desc)
-                                <li>{{ $desc }}</li>
-                            @endforeach
+                            <?php $__currentLoopData = $datas['description']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($desc); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
                     <div class="card-body text-center">
@@ -70,10 +70,12 @@
                 </div>
             </div>
         </div>        
-        @endforeach
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 </div>
 
-<script src="{{ asset('js/alert.js') }}"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/packageAdmin.blade.php ENDPATH**/ ?>
