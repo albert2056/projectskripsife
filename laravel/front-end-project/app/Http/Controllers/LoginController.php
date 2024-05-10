@@ -26,13 +26,7 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } else {
             $user = $this->getUserResponse($responseData);
-            if ($user->role == "user") {
-                $request->session()->put('user',$user);
-                return redirect('/userhome');
-            } else {
-                $request->session()->put('user',$user);
-                return redirect('/adminhome');
-            }
+            $request->session()->put('user',$user);
         }
     }
 
