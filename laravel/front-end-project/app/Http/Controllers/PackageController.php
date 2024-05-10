@@ -8,13 +8,30 @@ use Illuminate\Support\Facades\Http;
 class PackageController extends Controller
 {
     public function showPackageChoosePage() {
-        return view('packageChoose');
+        $url = "http://localhost:8080/api/package/findAll";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        logger()->info('pack:', ['packages' => $responseData]);
+
+        return view('packageChoose', ['packages' => $responseData]);
     }
 
     public function choosePackage(Request $request) {
+        $packageId = (int) $request['packageId'];
+
+        $url = "http://localhost:8080/api/package/findById?id=$packageId";
+
+        $response = Http::get($url);
+        $package = $response->json();
+
         $transactionRequest = session()->get('transactionRequest');
-        $transactionRequest->packageId = (int) $request['packageId'];
+        $transactionRequest->packageId = $packageId;
+        
         session()->put('transactionRequest', $transactionRequest);
+        session()->put('package', $package);
+
+        logger()->info('package:', ['package' => $package]);
         logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
         return redirect('/outfitchoose');
     }
