@@ -82,112 +82,32 @@
         </a>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
+        @foreach ($portfolios as $datas)
+            <div class="col">
+                <div class="card">
+                    <div class="card-overlay">
+                        <img src="{{ asset('Assets/portfolio/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <div class="overlay-content">
+                            <p> {{ $datas['name'] }} <br> {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}<br> {{ $datas['venue'] }} </p>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="btn-group">
+                            <form method="POST" action="{{ route('deletePortfolio') }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id" value="{{ $datas['id'] }}">
+                                <button type="submit" class="btn btn-primary btn-card-custom" onclick="portfolioDeletePopup()" style="margin-right: 20px">Delete</button>
+                            </form>
+                            <a href="/outfitcreateform">
+                                <button class="btn btn-secondary btn-card-custom">Edit</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <div class="card-overlay">
-                    <img src="{{ asset('Assets/imgPortfolio.jpg') }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
-                    <div class="overlay-content">
-                        <p> Udin <br> 17.03.2024 <br> Pullman </p>
-                    </div>
-                </div>
-                <div class="card-body text-center">
-                    <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="portfolioDeletePopup()">Delete</button>
-                    <a href="/portfoliocreateform">
-                        <button class="btn btn-secondary btn-card-custom">Edit</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        
-
+        @endforeach
     </div>
-    
 </div>
 
 <script src="{{ asset('js/alert.js') }}"></script>

@@ -39,10 +39,10 @@ main.table {
     overflow: hidden; 
 }
 
-.table__header {
+.table__header { 
     width: 100%;
     height: 10%;
-    background-color: #fff4;
+    /* background-color: #fff4; */
     padding: .8rem 1rem;
 
     display: flex;

@@ -1,8 +1,8 @@
 function validatePortfolioForm() {
-    var coupleName = document.getElementById("coupleName").value;
+    var coupleName = document.getElementById("name").value;
     var eventDate = document.getElementById("eventDate").value;
     var image = document.getElementById("image").value;
-    var outfitNamePort = document.getElementById("outfitNamePort").value;
+    var outfitNamePort = document.getElementById("gownName").value;
     var venue = document.getElementById("venue").value;
     
     if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitNamePort.trim() == '' || venue.trim() == '') {
@@ -14,10 +14,10 @@ function validatePortfolioForm() {
 }
 
 function validateOutfitForm() {
-    var outfitName = document.getElementById("outfitName").value;
-    var outfitCategory = document.getElementById("outfitCategory").value;
-    var outfitQuantity = document.getElementById("outfitQuantity").value;
-    var outfitImage = document.getElementById("outfitImage").value;
+    var outfitName = document.getElementById("name").value;
+    var outfitCategory = document.getElementById("outfitCategoryId").value;
+    var outfitQuantity = document.getElementById("qty").value;
+    var outfitImage = document.getElementById("image").value;
     
     if (outfitName.trim() == '' || outfitCategory.trim() == '' || outfitQuantity.trim() == '' || outfitImage.trim() == '') {
         alert("Please fill in all fields.");

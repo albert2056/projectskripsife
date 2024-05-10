@@ -1,6 +1,4 @@
-@extends('template')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="container">
@@ -12,8 +10,8 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{route('createOutfit')}}" method="POST" onsubmit="return validateOutfitForm()" enctype="multipart/form-data">  {{-- coba dicek routenya --}}
-                @csrf
+            <form action="<?php echo e(route('createOutfit')); ?>" method="POST" onsubmit="return validateOutfitForm()" enctype="multipart/form-data">  
+                <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
                     <input type="text" class="form-control" id="name" name="name" style="margin-bottom: 30px;" value="">
@@ -43,11 +41,13 @@
         </div>
         
         <div class="col-md-6">
-            <img src="{{ asset('Assets/formImg.png') }}" alt="Image" class="img-fluid" style="width: 500px; height: 450px; margin-left: 160px;">
+            <img src="<?php echo e(asset('Assets/formImg.png')); ?>" alt="Image" class="img-fluid" style="width: 500px; height: 450px; margin-left: 160px;">
         </div>
     </div>
 </div>
 
-<script src="{{ asset('js/validate.js') }}"></script>
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/outfitCreateFormAdmin.blade.php ENDPATH**/ ?>

@@ -40,6 +40,8 @@ Route::post('/outfitcategory', [OutfitController::class, 'outfitChoose'])->name(
 Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin']);
 Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
 Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage']);
+Route::post('/outfitcreateform', [OutfitController::class, 'createOutfit'])->name('createOutfit');
+Route::delete('/outfit/delete', [OutfitController::class, 'deleteOutfit'])->name('deleteOutfit');
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']);
 Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage']);
@@ -51,6 +53,8 @@ Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
 Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetailPage']);
 Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage']);
 Route::get('/portfoliocreateform', [PortfolioController::class, 'createPortfolioPage']);
+Route::post('/portfoliocreateform', [PortfolioController::class, 'createPortfolio'])->name('createPortfolio');
+Route::delete('/portfolio/delete', [PortfolioController::class, 'deletePortfolio'])->name('deletePortfolio');
 
 Route::get('/bookpage', [TransactionController::class, 'showBookPage']);
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');

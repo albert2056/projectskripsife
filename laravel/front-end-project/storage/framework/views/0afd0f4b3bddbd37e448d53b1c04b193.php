@@ -1,5 +1,12 @@
 <?php $__env->startSection('content'); ?>
 
+<style>
+    body {
+        background-image: url('Assets/portfolioBg.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+</style>
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/transaction.css')); ?>">
 
 <main class="table" id="customers_table" style="margin-top: 150px; margin-left: 150px; margin-bottom: 50px">
