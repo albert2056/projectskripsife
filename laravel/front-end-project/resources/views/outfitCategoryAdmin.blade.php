@@ -108,7 +108,7 @@
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
                                 <button type="submit" class="btn btn-primary btn-card-custom" onclick="outfitDeletePopup()" style="margin-right: 20px">Delete</button>
                             </form>
-                            <form method="GET" action="{{ route('outfitupdateform', ['id' => $datas['id']]) }}">
+                            <form method="GET" action="{{ route('outfitUpdateForm', ['id' => $datas['id']]) }}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
                                 <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>

@@ -107,7 +107,7 @@
                                 <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
                                 <button type="submit" class="btn btn-primary btn-card-custom" onclick="outfitDeletePopup()" style="margin-right: 20px">Delete</button>
                             </form>
-                            <form method="GET" action="<?php echo e(route('outfitupdateform', ['id' => $datas['id']])); ?>">
+                            <form method="GET" action="<?php echo e(route('outfitUpdateForm', ['id' => $datas['id']])); ?>">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
                                 <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
