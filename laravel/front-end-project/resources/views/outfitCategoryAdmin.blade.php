@@ -85,6 +85,11 @@
             <i class="fa-solid fa-plus" style="margin-bottom: 10px;"></i>
         </a>
     </div>
+    @if(session('error'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('error') }}
+    </div>
+@endif
     <div class="row row-cols-1 row-cols-md-3 g-5">
         @foreach ($outfits as $datas)
             <div class="col">
@@ -103,16 +108,21 @@
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
                                 <button type="submit" class="btn btn-primary btn-card-custom" onclick="outfitDeletePopup()" style="margin-right: 20px">Delete</button>
                             </form>
-                            <a href="/outfitcreateform">
-                                <button class="btn btn-secondary btn-card-custom">Edit</button>
-                            </a>
+                            <form method="GET" action="{{ route('outfitupdateform', ['id' => $datas['id']]) }}">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ $datas['id'] }}">
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                            </form>
+                             
                         </div>
                     </div>
                 </div>
             </div>
         @endforeach
+        
     </div>
 </div>
+
 
 <script src="{{ asset('js/alert.js') }}"></script>
 

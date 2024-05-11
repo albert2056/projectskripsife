@@ -83,6 +83,12 @@
             <i class="fa-solid fa-plus" style="margin-bottom: 10px;"></i>
         </a>
     </div>
+    <?php if(session('error')): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo e(session('error')); ?>
+
+    </div>
+<?php endif; ?>
     <div class="row row-cols-1 row-cols-md-3 g-5">
         <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col">
@@ -101,16 +107,21 @@
                                 <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
                                 <button type="submit" class="btn btn-primary btn-card-custom" onclick="outfitDeletePopup()" style="margin-right: 20px">Delete</button>
                             </form>
-                            <a href="/outfitcreateform">
-                                <button class="btn btn-secondary btn-card-custom">Edit</button>
-                            </a>
+                            <form method="GET" action="<?php echo e(route('outfitupdateform', ['id' => $datas['id']])); ?>">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                            </form>
+                             
                         </div>
                     </div>
                 </div>
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
     </div>
 </div>
+
 
 <script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
