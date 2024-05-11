@@ -114,7 +114,7 @@ class OutfitController extends Controller
     }
 
     public function showUpdateOutfitPage(Request $request) {
-        $outfitId = (int) $request['outfitId'];
+        $outfitId = $request->input('id');
         $url = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
         $response = Http::get($url);
         $responseData = $response->json();
@@ -148,13 +148,12 @@ class OutfitController extends Controller
         $user = session()->get('user'); 
         $outfitRequest->updatedBy = $user['id'];
 
-        $response = Http::put("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
+        $response = Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
         $responseData = $response->json();
         logger()->info('outfitss', ['outfitss' => $responseData]);
-        if ($responseData['statusCode'] != null) {
-            return redirect()->back()->withInput()->with('error', $responseData['description']);
-        } 
-
+        // if ($responseData['statusCode'] != null) {
+        //     return redirect()->back()->withInput()->with('error', $responseData['description']);
+        // } 
         return redirect('/outfitcategoryadmin');
     }
 

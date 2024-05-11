@@ -12,9 +12,9 @@
 
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form method="POST" action="{{ route('updateOutfit', ['id' => $outfit['id']]) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('updateOutfit', ['outfitId' => $outfit['id']]) }}" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
+                @method('POST')
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
                     <input type="text" class="form-control" id="name" name="name" style="margin-bottom: 30px;" value="">

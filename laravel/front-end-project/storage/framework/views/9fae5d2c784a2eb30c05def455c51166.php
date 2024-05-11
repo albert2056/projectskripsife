@@ -10,9 +10,9 @@
 
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form method="POST" action="<?php echo e(route('updateOutfit', ['id' => $outfit['id']])); ?>" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo e(route('updateOutfit', ['outfitId' => $outfit['id']])); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
-                <?php echo method_field('PUT'); ?>
+                <?php echo method_field('POST'); ?>
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
                     <input type="text" class="form-control" id="name" name="name" style="margin-bottom: 30px;" value="">
