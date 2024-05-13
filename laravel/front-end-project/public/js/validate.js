@@ -9,6 +9,14 @@ function validatePortfolioForm() {
         alert("Please fill in all fields.");
         return false;
     }
+
+    var selectedDate = new Date(eventDate);
+    var today = new Date();
+    
+    if (selectedDate > today) {
+        alert("Tanggal pernikahan tidak boleh lebih dari hari ini!");
+        return false;
+    }
     
     return true;
 }
@@ -35,9 +43,9 @@ function formatPrice(input) {
 }
 
 function validatePackageForm() {
-    var packageName = document.getElementById("packageName").value;
-    var packagePrice = document.getElementById("packagePrice").value;
-    var packageDescription = document.getElementById("packageDescription").value;
+    var packageName = document.getElementById("name").value;
+    var packagePrice = document.getElementById("price").value;
+    var packageDescription = document.getElementById("description").value;
     
     if (packageName.trim() == '' || packagePrice.trim() == '' || packageDescription.trim() == '') {
         alert("Please fill in all fields.");
@@ -46,6 +54,7 @@ function validatePackageForm() {
     
     return true;
 }
+
 
 //book
 function validateBookForm() {
@@ -56,6 +65,14 @@ function validateBookForm() {
     
     if (name.trim() == '' || totalUsher.trim() == '' || eventDate.trim() == '' || venue.trim() == '') {
         alert("Please fill in all fields.");
+        return false;
+    }
+
+    var selectedDate = new Date(eventDate);
+    var today = new Date();
+    
+    if (selectedDate > today) {
+        alert("Tanggal pernikahan harus lebih dari hari ini!");
         return false;
     }
     

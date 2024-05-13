@@ -10,7 +10,7 @@
 
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form method="POST" action="<?php echo e(route('updateOutfit', ['outfitId' => $outfit['id']])); ?>" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo e(route('updateOutfit', ['outfitId' => $outfit['id']])); ?>" onsubmit="return validateOutfitForm()" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <?php echo method_field('POST'); ?>
                 <div class="form-group">
