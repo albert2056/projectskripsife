@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\Http;
 class OutfitController extends Controller
 {
     public function showOutfitChoosePage() {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
         return view('outfitChoose');
     }
 
     public function showOutfitByOutfitCategoryIdPage() {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
+        
         $outfitCategoryId = session()->get('outfitCategoryId');
         $url = "http://localhost:8080/api/outfit/findByOutfitCategoryId?outfitCategoryId=$outfitCategoryId";
 
@@ -24,6 +33,11 @@ class OutfitController extends Controller
     }
 
     public function outfitChoose(Request $request) {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) {
+            return redirect('/bookpage');
+        }
+
         $outfitId = (int) $request['outfitId'];
 
         $url = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
@@ -33,7 +47,7 @@ class OutfitController extends Controller
 
         $outfitName = $responseData['name'];
         logger()->info('outfitName:', ['outfitName' => $outfitName]);
-        $transactionRequest = session()->get('transactionRequest');
+        
         $transactionRequest->outfitId = (int) $request['outfitId'];
         session()->put('outfitName', $outfitName);
         logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);

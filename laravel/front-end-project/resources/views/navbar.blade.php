@@ -29,17 +29,31 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link px-4 {{ Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '') }}" href="/portfolio">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagechoose">Package</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '') }}" href="/outfitcategorypreview">Busana</a>
-                  </li>
-              </ul>
+                @if(session()->get('user')->role == 'admin')
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '') }}" href="/portfolioadmin">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagechoose">Package</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '') }}" href="/outfitcategoryadmin">Busana</a>
+                        </li>
+                    </ul>
+                @else
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '') }}" href="/portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagechoose">Package</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '') }}" href="/outfitcategorypreview">Busana</a>
+                        </li>
+                    </ul>
+                @endif
           </div>
             <div class="ml-auto d-flex align-items-center">
                 <a href="/transactionadmin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">

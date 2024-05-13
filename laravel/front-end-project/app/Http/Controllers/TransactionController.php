@@ -26,6 +26,9 @@ class TransactionController extends Controller
         $transactionRequest = session()->get('transactionRequest');
         $outfitName = session()->get('outfitName');
         $package = session()->get('package');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
         logger()->info('packageI:', ['package' => $package]);
         $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
         $responseData = $response->json();
