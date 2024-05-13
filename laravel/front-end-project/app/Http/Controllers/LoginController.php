@@ -27,7 +27,10 @@ class LoginController extends Controller
         } else {
             $user = $this->getUserResponse($responseData);
             $request->session()->put('user',$user);
-            return redirect('/');
+            if ($user->role == 'user') {
+                return redirect('/');
+            }
+            return redirect('/transactionadmin');
         }
     }
 

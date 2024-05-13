@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\Http;
 class OutfitController extends Controller
 {
     public function showOutfitChoosePage() {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
         return view('outfitChoose');
     }
 
     public function showOutfitByOutfitCategoryIdPage() {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
+        
         $outfitCategoryId = session()->get('outfitCategoryId');
         $url = "http://localhost:8080/api/outfit/findByOutfitCategoryId?outfitCategoryId=$outfitCategoryId";
 

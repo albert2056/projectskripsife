@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Http;
 class PackageController extends Controller
 {
     public function showPackageChoosePage() {
+        $transactionRequest = session()->get('transactionRequest');
+        if ($transactionRequest == null) { 
+            return redirect('/bookpage');
+        }
+        
         $url = "http://localhost:8080/api/package/findAll";
 
         $response = Http::get($url);
