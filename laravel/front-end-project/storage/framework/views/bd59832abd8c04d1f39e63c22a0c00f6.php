@@ -44,83 +44,31 @@
                 <i class="fa-solid fa-plus" style="margin-bottom: 10px;"></i>
             </a>
         </div>
-        
-            <div class="col-md-6 mb-3">
-                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">   
-                    <div class="d-flex justify-content-center">
-                        <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-center btn-text-card">Premium Package</h5>
-                        <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
-                            <ul>
-                                <li>Usher</li>
-                                <li>Hairdo</li>
-                                <li>Hairpiece</li>
-                                <li>Busana</li>
-                                <li>Transport Jakarta - Tangerang</li>
-                            </ul>
-                        </div>
-                        <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="packageDeletePopup()">Delete</button>
-                            <a href="/packagecreateform">
-                                <button class="btn btn-secondary btn-card-custom">Edit</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 mb-3" >
-                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">
-                    <div class="d-flex justify-content-center">
-                        <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title text-center btn-text-card">Standard Package</h5>
-                        <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
-                            <ul>
-                                <li>Usher</li>
-                                <li>Transport Jakarta - Tangerang</li>
-                            </ul>
-                        </div>
-                        <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="packageDeletePopup()">Delete</button>
-                            <a href="/packagecreateform">
-                                <button class="btn btn-secondary btn-card-custom">Edit</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-
-    <div class="row mb-5" style="margin-left: 60px">
+        <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col-md-6 mb-3">
             <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">   
                 <div class="d-flex justify-content-center">
                     <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                 </div>
                 <div class="card-body text-center">
-                    <h5 class="card-title text-center btn-text-card">Premium Package</h5>
-                        <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
-                            <ul>
-                                <li>Usher</li>
-                                <li>Hairdo</li>
-                                <li>Hairpiece</li>
-                                <li>Busana</li>
-                                <li>Transport Jakarta - Tangerang</li>
-                            </ul>
-                        </div>
-                        <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="packageDeletePopup()">Delete</button>
-                            <a href="/packagecreateform">
-                                <button class="btn btn-secondary btn-card-custom">Edit</button>
-                            </a>
-                        </div>
+                    <h5 class="card-title text-center btn-text-card"><?php echo e($datas['name']); ?></h5>
+                    <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
+                        <ul>
+                            <?php $__currentLoopData = $datas['description']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($desc); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+                    </div>
+                    <div class="card-body text-center">
+                        <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="packageDeletePopup()">Delete</button>
+                        <a href="/packagecreateform">
+                            <button class="btn btn-secondary btn-card-custom">Edit</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>        
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 </div>
 

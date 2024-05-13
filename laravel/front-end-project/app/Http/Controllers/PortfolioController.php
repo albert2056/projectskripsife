@@ -66,6 +66,55 @@ class PortfolioController extends Controller
         }
     }
 
+    public function showUpdatePortfolioPage(Request $request) {
+        $portfolioId = $request->input('id');
+        $url = "http://localhost:8080/api/portfolio/findById?id=$portfolioId";
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        logger()->info('portfss', ['portfs' => $responseData]);
+        // $outfit = $response->json();
+        // return view('outfitUpdateForm', ['outfit' => $outfit]);
+        if ($response->successful()) {
+            $portfolio = $response->json();
+            return view('portfolioUpdateForm', ['portfolio' => $portfolio]);
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
+    }
+
+    public function updatePortfolio(Request $request, $portfolioId) {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
+        $image->move(public_path('Assets/portfolio'), $imageName);
+
+        $portfolioRequest = new PortfolioRequest();
+        $portfolioRequest->name = $request['name'];
+        $portfolioRequest->eventDate = $request['eventDate'];
+        $portfolioRequest->image = $imageName;
+        $portfolioRequest->gownName = $request['gownName'];
+        $portfolioRequest->venue = $request['venue'];
+        $portfolioRequest->wo = $request['wo'];
+        $portfolioRequest->column = 1;
+        $portfolioRequest->eventName = 'Wedding';
+        $response = Http::post("http://localhost:8080/api/portfolio/update?id={$portfolioId}", $portfolioRequest->toArray());
+        $responseData = $response->json();
+        logger()->info('portfolio', ['portfolio' => $responseData]);
+        if ($response->successful()) {
+            $portfolio = $response->json();
+            return redirect('/portfolioadmin');
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
+        
+
+    }
+
     public function createPortfolioPage() {
         return view('portfolioCreateForm');
     }
