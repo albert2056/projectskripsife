@@ -24,11 +24,11 @@ Route::get('/', [UserController::class, 'showAdminHomePage'])->name('home');
 Route::get('/userhome', [UserController::class, 'showUserHomePage'])->middleware('isUser');
 Route::get('/adminhome', [UserController::class, 'adminhome'])->middleware('isAdmin');
 
-Route::get('/signup', [RegisterController::class, 'showRegisterPage']);
-Route::post('/signup', [RegisterController::class, 'register'])->name('register');
+Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->middleware('guest');
+Route::post('/signup', [RegisterController::class, 'register'])->name('register')->middleware('guest');
 
-Route::get('/signin', [LoginController::class, 'showLoginPage']);
-Route::post('/signin', [LoginController::class, 'login'])->name('login');
+Route::get('/signin', [LoginController::class, 'showLoginPage'])->middleware('guest');
+Route::post('/signin', [LoginController::class, 'login'])->name('login')->middleware('guest');
 
 Route::get('/signout', [UserController::class, 'signOut']);
 
