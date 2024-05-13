@@ -35,7 +35,7 @@
                             <a class="nav-link px-4 {{ Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '') }}" href="/portfolioadmin">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagechoose">Package</a>
+                            <a class="nav-link px-4 {{ Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packageadmin">Package</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '') }}" href="/outfitcategoryadmin">Busana</a>

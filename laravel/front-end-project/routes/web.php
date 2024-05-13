@@ -43,13 +43,17 @@ Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage'])->
 Route::post('/outfitcreateform', [OutfitController::class, 'createOutfit'])->name('createOutfit');
 Route::get('/outfitupdateform/{id}', [OutfitController::class, 'showUpdateOutfitPage'])->name('outfitUpdateForm');
 Route::delete('/outfit/delete', [OutfitController::class, 'deleteOutfit'])->name('deleteOutfit')->middleware('isAdmin');
-Route::post('/outfit/update/{outfitId}', [OutfitController::class, 'updateOutfit'])->name('updateOutfit');
+Route::post('/outfit/update/{outfitId}', [OutfitController::class, 'updateOutfit'])->name('updateOutfit')->middleware('isAdmin');
 
 Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage'])->middleware('isUser');
+Route::get('/packagepreview', [PackageController::class, 'showPackagePreviewPage']);
 Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage'])->middleware('isAdmin');
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
 Route::get('/packagecreateform', [PackageController::class, 'createPackagePage'])->middleware('isAdmin');
 Route::post('/packagecreateform', [PackageController::class, 'createPackage'])->name('createPackage');
+Route::get('/packageupdateform/{id}', [PackageController::class, 'showUpdatePackagePage'])->name('packageUpdateForm');
+Route::post('/package/update/{id}', [PackageController::class, 'updatePackage'])->name('updatePackage')->middleware('isAdmin');
+Route::delete('/package/delete', [PackageController::class, 'deletePackage'])->name('deletePackage')->middleware('isAdmin');
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
 Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetailPage']);
