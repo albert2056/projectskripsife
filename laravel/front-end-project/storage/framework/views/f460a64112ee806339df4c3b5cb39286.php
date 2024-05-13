@@ -4,14 +4,15 @@
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6 text-left mb-5" style="margin-top: 190px">
-            <h1 class="text-custom2" style="margin-bottom: 30px">Tambahkan Paket Baru</h1>
+            <h1 class="text-custom2" style="margin-bottom: 30px">Edit Package</h1>
         </div>
     </div>
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="<?php echo e(route('createPackage')); ?>" method="POST" onsubmit="return validatePackageForm()">  
+            <form action="<?php echo e(route('updatePackage', ['id' => $package['id']])); ?>" method="POST" onsubmit="return validatePackageForm()" enctype="multipart/form-data">  
                 <?php echo csrf_field(); ?>
+                <?php echo method_field('POST'); ?>
                 <div class="form-group">
                     <label for="inputPackageName" style="margin-bottom: 10px; font-size: 18px">Nama Paket</label>
                     <input type="text" class="form-control" id="name" name="name" style="margin-bottom: 30px;" value="">
@@ -41,4 +42,4 @@
     
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/packageCreateForm.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/packageUpdateForm.blade.php ENDPATH**/ ?>

@@ -10,8 +10,8 @@
     <div class="row mb-5" style="margin-left: 60px">
         <form action="<?php echo e(route('choosePackage')); ?>" method="POST" class="d-flex">
             <?php echo csrf_field(); ?>
-            <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="col-md-6 mb-3">
+            <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="col-md-6 mb-3" style="margin-bottom: 10px">
                 <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">   
                     <div class="d-flex justify-content-center">
                         <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
@@ -29,8 +29,10 @@
                     </div>
                 </div>
             </div>
+            <?php if(($index + 1) % 2 == 0): ?>
+                </form></div><div class="row mb-5" style="margin-left: 60px"><form action="<?php echo e(route('choosePackage')); ?>" method="POST" class="d-flex"><?php echo csrf_field(); ?>
+            <?php endif; ?>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            
         </form>
     </div>
 </div>
