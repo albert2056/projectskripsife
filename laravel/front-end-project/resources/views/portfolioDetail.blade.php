@@ -104,7 +104,7 @@
   
 <div class="bg-image">
 <div class="overlay">
-  <div class="overlay-text">The Wedding of John & Jane</div>
+  <div class="overlay-text">{{ $portfolio['name'] }}</div>
 </div>
 </div>
 
@@ -114,21 +114,15 @@
   <div class="row justify-content-center">
     <div class="col-md-7 mb-4">
       <div class="text-detail" style="margin-bottom: 50px">
-        <p>25 April 2024</p>
-        <p>Ritz Carlton</p>
-        <p>Kebaya</p>
+        <p>{{ \Carbon\Carbon::parse($portfolio['eventDate'])->format('d/m/Y') }}</p>
+        <p>{{ $portfolio['venue'] }}</p>
+        <p>{{ $portfolio['gownName'] }}</p>
       </div>
       <div class="card">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{{ asset('Assets/formImg.png') }}" class="d-block w-100" alt="Image 1" style="">
-            </div>
-            <div class="carousel-item">
-              <img src="{{ asset('Assets/formImg.png') }}" class="d-block w-100" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-              <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 3">
+              <img src="{{ asset('Assets/portfolio/' . $portfolio['image']) }}" class="d-block w-100" alt="Image 1" style="">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev"></a>

@@ -52,7 +52,7 @@ Route::get('/packagecreateform', [PackageController::class, 'createPackagePage']
 Route::post('/packagecreateform', [PackageController::class, 'createPackage'])->name('createPackage');
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
-Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetailPage']);
+Route::get('/portfoliodetail/{id}', [PortfolioController::class, 'showPortfolioDetailPage']);
 Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage'])->middleware('isAdmin');
 Route::get('/portfoliocreateform', [PortfolioController::class, 'createPortfolioPage'])->middleware('isAdmin');
 Route::post('/portfoliocreateform', [PortfolioController::class, 'createPortfolio'])->name('createPortfolio');

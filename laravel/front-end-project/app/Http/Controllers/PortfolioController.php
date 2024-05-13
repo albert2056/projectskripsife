@@ -119,8 +119,13 @@ class PortfolioController extends Controller
         return view('portfolioCreateForm');
     }
 
-    public function showPortfolioDetailPage() {
-        return view('portfolioDetail');
+    public function showPortfolioDetailPage($id) {
+        $url = "http://localhost:8080/api/portfolio/findById?id=$id";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        return view('portfolioDetail', ['portfolio'=>$responseData]);
     }
 
 }
