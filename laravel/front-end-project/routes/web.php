@@ -56,7 +56,7 @@ Route::post('/package/update/{id}', [PackageController::class, 'updatePackage'])
 Route::delete('/package/delete', [PackageController::class, 'deletePackage'])->name('deletePackage')->middleware('isAdmin');
 
 Route::get('/portfolio', [PortfolioController::class, 'showPortfolioPage']);
-Route::get('/portfoliodetail', [PortfolioController::class, 'showPortfolioDetailPage']);
+Route::get('/portfoliodetail/{id}', [PortfolioController::class, 'showPortfolioDetailPage']);
 Route::get('/portfolioadmin', [PortfolioController::class, 'showPortfolioAdminPage'])->middleware('isAdmin');
 Route::get('/portfoliocreateform', [PortfolioController::class, 'createPortfolioPage'])->middleware('isAdmin');
 Route::post('/portfoliocreateform', [PortfolioController::class, 'createPortfolio'])->name('createPortfolio');
