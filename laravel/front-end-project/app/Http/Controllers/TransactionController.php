@@ -11,7 +11,11 @@ use Carbon\Carbon;
 class TransactionController extends Controller
 {
     public function showAdminTransactionPage() {
-        return view('transactionAdmin');
+        $url = "http://localhost:8080/api/transaction/findAll";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        return view('transactionAdmin', ['transactions'=>$responseData]);
     }
 
     public function showBookPage() {
@@ -74,7 +78,31 @@ class TransactionController extends Controller
         return redirect('/packagechoose');
     }
 
-    public function getInvoice() {
+    public function deleteTransaction(Request $request) {
+        $transactionId = $request->input('id');
+        
+        $response = Http::delete("http://localhost:8080/api/transaction/delete?id={$transactionId}");
+        $responseData = $response->json();
 
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Transaction deleted successfully.');
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the transaction.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
+    }
+
+    public function changeStatus(Request $request) {
+        $transactionId = $request->input('id');
+        
+        $response = Http::post("http://localhost:8080/api/transaction/changeStatus?id={$transactionId}");
+        $responseData = $response->json();
+
+        if ($response->successful()) {
+            return redirect()->back()->with('success', 'Payment status changed successfully.');
+        } else {
+            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while changing the payment status.';
+            return redirect()->back()->with('error', $errorMessage);
+        }
     }
 }

@@ -31,138 +31,51 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> 1 </td>
-                    <td>Zinzu Chan Lee</td>
-                    <td>Seoul </td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td>Jeet Saru</td>
-                    <td>Kathmandu</td>
-                    <td>27 Aug, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-
-                <tr>
-                    <td> 3</td>
-                    <td>Sonal Gharti</td>
-                    <td>Tokyo</td>
-                    <td>14 Mar, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td>
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 4</td>
-                    <td>Alson GC</td>
-                    <td>New Delhi</td>
-                    <td>25 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 5</td>
-                    <td>Sarita Limbu </td>
-                    <td>Paris</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status notPaid">Not Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 6</td>
-                    <td>Alex Gonley </td>
-                    <td>London</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 7</td>
-                    <td>Jeet Saru</td>
-                    <td>New York</td>
-                    <td>20 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
+                @foreach ($transactions as $datas)
+                    <tr>
+                        <td> {{ $datas['id'] }} </td>
+                        <td>{{ $datas['name'] }}</td>
+                        <td>{{ $datas['venue'] }} </td>
+                        <td>
+                            {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}
+                        </td>
+                        @if ($datas['paymentStatus'] == "NOT PAID")
+                            <td>
+                                <p class="status notPaid">Not Paid</p>
+                            </td>
+                        @else
+                            <td>
+                                <p class="status paid">Paid</p>
+                            </td>
+                        @endif
+                        <td> 
+                            <div style="display: inline-block;">
+                                <form method="POST" action="{{ route('changeStatus') }}">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $datas['id'] }}">
+                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()">
+                                        <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
+                                    </button>
+                                </form>
+                            </div>
+                            <div style="display: inline-block;">
+                                <form method="POST" action="{{ route('deleteTransaction') }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="hidden" name="id" value="{{ $datas['id'] }}">
+                                    <button class="icon-button" type="submit" onclick="transactionDeletePopup()">
+                                        <img src="{{ asset('Assets/trash.png') }}" alt="" srcset="">
+                                    </button>    
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </section>
 </main>
 <script src="{{ asset('js/transScript.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection

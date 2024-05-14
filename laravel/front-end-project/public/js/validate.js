@@ -71,7 +71,7 @@ function validateBookForm() {
     var selectedDate = new Date(eventDate);
     var today = new Date();
     
-    if (selectedDate > today) {
+    if (selectedDate < today) {
         alert("Tanggal pernikahan harus lebih dari hari ini!");
         return false;
     }
