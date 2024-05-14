@@ -21,14 +21,12 @@ use App\Http\Controllers\TransactionController;
 */
 
 Route::get('/', [UserController::class, 'showAdminHomePage'])->name('home');
-Route::get('/userhome', [UserController::class, 'showUserHomePage'])->middleware('isUser');
-Route::get('/adminhome', [UserController::class, 'adminhome'])->middleware('isAdmin');
 
-Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->middleware('guest');
-Route::post('/signup', [RegisterController::class, 'register'])->name('register')->middleware('guest');
+Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->middleware('isGuest');
+Route::post('/signup', [RegisterController::class, 'register'])->name('register');
 
-Route::get('/signin', [LoginController::class, 'showLoginPage'])->middleware('guest');
-Route::post('/signin', [LoginController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/signin', [LoginController::class, 'showLoginPage'])->middleware('isGuest');
+Route::post('/signin', [LoginController::class, 'login'])->name('login');
 
 Route::get('/signout', [UserController::class, 'signOut']);
 
@@ -68,6 +66,8 @@ Route::get('/bookpage', [TransactionController::class, 'showBookPage'])->middlew
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage'])->middleware('isAdmin');
+Route::delete('/transaction/delete', [TransactionController::class, 'deleteTransaction'])->name('deleteTransaction')->middleware('isAdmin');
+Route::post('/transaction/changestatus', [TransactionController::class, 'changeStatus'])->name('changeStatus')->middleware('isAdmin');
 Route::get('/transaction', [TransactionController::class, 'showUserTransactionPage'])->middleware('isUser');
 
 Route::get('/invoice', [TransactionController::class, 'showInvoicePage'])->middleware('isUser');
