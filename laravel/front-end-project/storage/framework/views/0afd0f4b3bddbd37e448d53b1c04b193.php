@@ -29,139 +29,53 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> 1 </td>
-                    <td>Zinzu Chan Lee</td>
-                    <td>Seoul </td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td>Jeet Saru</td>
-                    <td>Kathmandu</td>
-                    <td>27 Aug, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
+                <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr>
+                        <td> <?php echo e($datas['id']); ?> </td>
+                        <td><?php echo e($datas['name']); ?></td>
+                        <td><?php echo e($datas['venue']); ?> </td>
+                        <td>
+                            <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?>
 
-                <tr>
-                    <td> 3</td>
-                    <td>Sonal Gharti</td>
-                    <td>Tokyo</td>
-                    <td>14 Mar, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td>
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 4</td>
-                    <td>Alson GC</td>
-                    <td>New Delhi</td>
-                    <td>25 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 5</td>
-                    <td>Sarita Limbu </td>
-                    <td>Paris</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status notPaid">Not Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 6</td>
-                    <td>Alex Gonley </td>
-                    <td>London</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
-                <tr>
-                    <td> 7</td>
-                    <td>Jeet Saru</td>
-                    <td>New York</td>
-                    <td>20 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                    <td> <strong> 
-                        <button class="icon-button" style="margin-right: 25px">
-                            <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
-                          </button>
-                          
-                          <button class="icon-button">
-                            <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
-                          </button>    
-                    </strong></td>
-                </tr>
+                        </td>
+                        <?php if($datas['paymentStatus'] == "NOT PAID"): ?>
+                            <td>
+                                <p class="status notPaid">Not Paid</p>
+                            </td>
+                        <?php else: ?>
+                            <td>
+                                <p class="status paid">Paid</p>
+                            </td>
+                        <?php endif; ?>
+                        <td> 
+                            <div style="display: inline-block;">
+                                <form method="POST" action="<?php echo e(route('changeStatus')); ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
+                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()">
+                                        <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
+                                    </button>
+                                </form>
+                            </div>
+                            <div style="display: inline-block;">
+                                <form method="POST" action="<?php echo e(route('deleteTransaction')); ?>">
+                                    <?php echo csrf_field(); ?>
+                                    <?php echo method_field('DELETE'); ?>
+                                    <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
+                                    <button class="icon-button" type="submit" onclick="transactionDeletePopup()">
+                                        <img src="<?php echo e(asset('Assets/trash.png')); ?>" alt="" srcset="">
+                                    </button>    
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
         </table>
     </section>
 </main>
 <script src="<?php echo e(asset('js/transScript.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/transactionAdmin.blade.php ENDPATH**/ ?>

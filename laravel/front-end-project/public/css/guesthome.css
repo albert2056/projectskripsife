@@ -1,6 +1,6 @@
 .container1 {
     height: 1024px; 
-    background-image: url('../external/guesthomebg.png');
+    background-image: url('../external/homebg.png');
     background-size: cover;
     background-position: center;
 }
@@ -347,7 +347,7 @@
 /* part 2 */
 .container2 {
   height: 1024px; 
-  background-image: url('../external/playfulpopsofcoloratthissummerweddinginsonoma18940-64pd-1100h.png');
+  background-image: url('../external/870045.png');
   background-size: cover;
   background-position: center;
 }
@@ -436,7 +436,7 @@
 /* part 3 */
 .container3 {
   height: 781px; 
-  /* background-image: url('../external/playfulpopsofcoloratthissummerweddinginsonoma18940-64pd-1100h.png'); */
+  background-image: url('../external/homebg640.png');
   background-color: white;
   background-size: cover;
   background-position: center;
@@ -486,7 +486,7 @@
 /* part 4 */
 .container4 {
   height: 709px; 
-  background-image: url('../external/rectangle291585-bxw-800h.png');
+  background-image: url('../external/bghome445.png');
   background-size: cover;
   background-position: center;
 }
