@@ -1,15 +1,15 @@
 <?php
      $navbarColor = ''; 
      $navbarColor2 = '';
-    if (Request::is('home')) {
-        $navbarColor = 'dark';
+    if (Request::is('/')) {
+        $navbarColor = 'light';
     }else if(Request::is('portfoliodetail')) {
         $navbarColor = 'dark';
     }else {
         $navbarColor = 'light';
     }
 
-    if (Route::currentRouteName() == 'home') {
+    if (Route::currentRouteName() == '/') {
         $navbarColor2 = 'light';
     }else if(Request::is('portfoliodetail')) {
         $navbarColor2 = 'light';
@@ -72,7 +72,7 @@
                 </div>
             <?php else: ?>
                 <div class="ml-auto d-flex align-items-center">
-                    <a href="/transactionadmin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
+                    <a href="/transaction" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
                         <span style="margin: auto; font-size: 18px; font-weight: 500">Transaksi</span>
                     </a>   
                     <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
@@ -132,9 +132,9 @@
     const navEL = document.querySelector('.navbar'); //nampung kelas navbar ke variabel navEL
 
     window.addEventListener('scroll', () => {
-        if(window.scrollY >= 56) {
+        if(window.scrollY >= 70) {
             navEL.classList.add('navbar-scrolled')
-        }else if(window.scrollY < 56) {
+        }else if(window.scrollY < 70) {
             navEL.classList.remove('navbar-scrolled')
         }
     })
