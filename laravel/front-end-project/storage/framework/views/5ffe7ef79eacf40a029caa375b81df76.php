@@ -35,7 +35,7 @@
                             <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '')); ?>" href="/portfolioadmin">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagechoose">Package</a>
+                            <a class="nav-link px-4 <?php echo e(Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packageadmin">Package</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '')); ?>" href="/outfitcategoryadmin">Busana</a>
@@ -47,7 +47,7 @@
                             <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '')); ?>" href="/portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagechoose">Package</a>
+                            <a class="nav-link px-4 <?php echo e(Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagepreview">Package</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '')); ?>" href="/outfitcategorypreview">Busana</a>
@@ -55,14 +55,39 @@
                     </ul>
                 <?php endif; ?>
           </div>
-            <div class="ml-auto d-flex align-items-center">
-                <a href="/transactionadmin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
-                    <span style="margin: auto; font-size: 18px; font-weight: 500">Transaksi</span>
-                </a>   
-                <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
-                  <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
-              </a>   
-            </div>
+            <?php if(session()->get('user')->role == 'admin'): ?>
+                <div class="ml-auto d-flex align-items-center">
+                    <a href="/transactionadmin" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
+                        <span style="margin: auto; font-size: 18px; font-weight: 500">Transaksi</span>
+                    </a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="/signout">Keluar</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            <?php else: ?>
+                <div class="ml-auto d-flex align-items-center">
+                    <a href="/transaction" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4); margin-right: 36px;">
+                        <span style="margin: auto; font-size: 18px; font-weight: 500">Transaksi</span>
+                    </a>   
+                    <a href="/bookpage" class="btn btn-custom d-flex justify-content-center align-items-center" style="width: 214px; height: 62px; color: white; box-shadow: 0 4px 10px rgba(255,105,105, 0.4)">
+                    <span style="margin: auto; font-size: 18px; font-weight: 500">Pesan Sekarang</span>
+                    </a>   
+                </div>
+                <div class="nav-item dropdown" style="margin-left: 25px">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/signout">Keluar</a></li>
+                    </ul>
+                </div>
+            <?php endif; ?>
         </div>
     </nav>
   </header>
@@ -82,7 +107,7 @@
                       <a class="nav-link px-4 <?php echo e(Request::is('portfolio') ? 'active' : (Request::is('portfolioadmin') ? 'active' : '')); ?>" href="/portfolio">Portfolio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link px-4 <?php echo e(Request::is('packagechoose') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagechoose">Package</a>
+                    <a class="nav-link px-4 <?php echo e(Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '')); ?>" href="/packagepreview">Package</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link px-4 <?php echo e(Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '')); ?>" href="/outfitcategorypreview">Busana</a>
