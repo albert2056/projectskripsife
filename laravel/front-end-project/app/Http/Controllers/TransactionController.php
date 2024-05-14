@@ -19,7 +19,17 @@ class TransactionController extends Controller
     }
 
     public function showUserTransactionPage() {
-        return view('transaction');
+        $user = session()->get('user'); 
+        $userId = $user['id'];
+        $url = "http://localhost:8080/api/transaction/findByUserId?id=$userId";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        logger()->info('id:', ['id' => $userId]);
+        logger()->info('tr:', ['tr' => $responseData]);
+
+        return view('transaction', ['transactions'=>$responseData]);
     }
 
     public function showInvoicePage() {

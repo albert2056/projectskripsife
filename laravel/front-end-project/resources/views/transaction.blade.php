@@ -30,16 +30,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> 1 </td>
-                    <td>Seoul </td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
+                @foreach ($transactions as $datas)
+                    <tr>
+                        <td> {{ $datas['id'] }} </td>
+                        <td>{{ $datas['venue'] }}</td>
+                        <td>
+                            {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}
+                        </td>
+                        @if ($datas['paymentStatus'] == "NOT PAID")
+                            <td>
+                                <p class="status notPaid">Not Paid</p>
+                            </td>
+                        @else
+                            <td>
+                                <p class="status paid">Paid</p>
+                            </td>
+                        @endif
 
-                </tr>
-                <tr>
+                    </tr>
+                @endforeach
+                {{-- <tr>
                     <td> 2 </td>
                     <td>Kathmandu</td>
                     <td>27 Aug, 2023</td>
@@ -88,7 +98,7 @@
                     <td>
                         <p class="status paid">Paid</p>
                     </td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
     </section>
