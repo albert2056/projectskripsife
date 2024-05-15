@@ -68,6 +68,8 @@ Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage'])->middleware('isAdmin');
 Route::delete('/transaction/delete', [TransactionController::class, 'deleteTransaction'])->name('deleteTransaction')->middleware('isAdmin');
 Route::post('/transaction/changestatus', [TransactionController::class, 'changeStatus'])->name('changeStatus')->middleware('isAdmin');
+Route::get('/transaction/detail/user/{id}', [TransactionController::class, 'showUserTransactionDetailPage'])->middleware('isUser');
+Route::get('/transaction/detail/admin/{id}', [TransactionController::class, 'showAdminTransactionDetailPage'])->middleware('isAdmin');
 Route::get('/transaction', [TransactionController::class, 'showUserTransactionPage'])->middleware('isUser');
 
 Route::get('/invoice', [TransactionController::class, 'showInvoicePage'])->middleware('isUser');

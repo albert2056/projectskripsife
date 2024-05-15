@@ -8,6 +8,12 @@
         background-size: cover;
         background-position: center;
     }
+    tr {
+        cursor: pointer;
+    }
+    tr:hover {
+        background-color: #f1f1f1; /* Change to your preferred hover color */
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/transaction.css')); ?>">
 
@@ -32,7 +38,7 @@
             </thead>
             <tbody>
                 <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr>
+                    <tr onclick="window.location.href='/transaction/detail/admin/<?php echo e($datas['id']); ?>'">
                         <td> <?php echo e($datas['id']); ?> </td>
                         <td><?php echo e($datas['name']); ?></td>
                         <td><?php echo e($datas['venue']); ?> </td>

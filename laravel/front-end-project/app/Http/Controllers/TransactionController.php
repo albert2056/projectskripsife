@@ -105,4 +105,72 @@ class TransactionController extends Controller
             return redirect()->back()->with('error', $errorMessage);
         }
     }
+
+    public function showUserTransactionDetailPage($id) {
+        $user = session()->get('user');
+        $url = "http://localhost:8080/api/transaction/findById?id=$id";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        if($responseData['userId']!=$user['id']) {
+            return redirect('/transaction');
+        }
+
+        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $responseData['eventDate'] = $eventDate;
+        
+        $packageId = $responseData['packageId'];
+        $outfitId = $responseData['outfitId'];
+
+        $url2 = "http://localhost:8080/api/package/findById?id=$packageId";
+
+        $package = Http::get($url2);
+        $packageData = $package->json();
+
+        $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+
+        $outfit = Http::get($url3);
+        $outfitData = $outfit->json();
+        $outfitName = $outfitData['name'];
+
+        logger()->info('responseData:', ['responseData' => $responseData]);
+        logger()->info('packageData:', ['packageData' => $packageData]);
+        logger()->info('outfitName:', ['responseData' => $outfitName]);
+        logger()->info('user:', ['user' => $user]);
+        
+        return view('transactionDetail', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
+    }
+
+    public function showAdminTransactionDetailPage($id) {
+        $url = "http://localhost:8080/api/transaction/findById?id=$id";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $responseData['eventDate'] = $eventDate;
+        
+        $user = session()->get('user');
+        $packageId = $responseData['packageId'];
+        $outfitId = $responseData['outfitId'];
+
+        $url2 = "http://localhost:8080/api/package/findById?id=$packageId";
+
+        $package = Http::get($url2);
+        $packageData = $package->json();
+
+        $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+
+        $outfit = Http::get($url3);
+        $outfitData = $outfit->json();
+        $outfitName = $outfitData['name'];
+
+        logger()->info('responseData:', ['responseData' => $responseData]);
+        logger()->info('packageData:', ['packageData' => $packageData]);
+        logger()->info('outfitName:', ['responseData' => $outfitName]);
+        logger()->info('user:', ['user' => $user]);
+        
+        return view('transactionDetail', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
+    }
 }

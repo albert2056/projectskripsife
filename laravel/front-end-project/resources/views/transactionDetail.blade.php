@@ -1,8 +1,8 @@
+@extends('template')
 
+@section('content')
 
-<?php $__env->startSection('content'); ?>
-
-<link rel="stylesheet" href="<?php echo e(asset('css/invoice.css')); ?>"/>
+<link rel="stylesheet" href="{{asset('css/invoice.css')}}"/>
 
 <div class="py-4" style="margin-top: 120px">
     <div class="px-14 py-6">
@@ -12,8 +12,8 @@
             <td class="w-full align-top">
             <div>
                 <p class="h-12">Invoice</p>
-                <p class="h-9"><?php echo e($transaction['name']); ?></p>
-                <p class="h-9" style="margin-bottom: 40px"><?php echo e($transaction['venue']); ?> </p>
+                <p class="h-9">{{ $transaction['name'] }}</p>
+                <p class="h-9" style="margin-bottom: 40px">{{ $transaction['venue'] }} </p>
             </div>
             </td>
 
@@ -25,13 +25,13 @@
                     <td class="border-r pr-4">
                         <div>
                         <p class="whitespace-nowrap text-slate-400 text-right h-9">Date</p>
-                        <p class="whitespace-nowrap font-bold text-main text-right h-9"><?php echo e($transaction['eventDate']); ?></p>
+                        <p class="whitespace-nowrap font-bold text-main text-right h-9">{{ $transaction['eventDate'] }}</p>
                         </div>
                     </td>
                     <td class="pl-4">
                         <div>
                         <p class="whitespace-nowrap text-slate-400 text-right h-9">Invoice #</p>
-                        <p class="whitespace-nowrap font-bold text-main text-right h-9"><?php echo e($transaction['id']); ?></p>
+                        <p class="whitespace-nowrap font-bold text-main text-right h-9">{{ $transaction['id'] }}</p>
                         </div>
                     </td>
                     </tr>
@@ -51,8 +51,8 @@
             <td class="w-1/2 align-top">
             <div class="text-med text-neutral-600">
                 <p class="font-bold text-med">Billed To</p>
-                <p><?php echo e($transaction['name']); ?></p>
-                <p><?php echo e($user['phoneNumber']); ?></p>
+                <p>{{ $transaction['name'] }}</p>
+                <p>{{ $user['phoneNumber'] }}</p>
             </div>
             </td>
             <td class="w-1/2 align-top text-right">
@@ -80,10 +80,10 @@
         </thead>
         <tbody>
         <tr>
-            <td class="border-b py-3 pl-2"><?php echo e($package['name']); ?> Package</td> 
-            <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
-            <td class="border-b py-3 pl-2 text-left">Rp<?php echo e($package['price']); ?></td>
-            <td class="border-b py-3 pl-2 text-center"><?php echo e($transaction['totalUsher']); ?></td>
+            <td class="border-b py-3 pl-2">{{ $package['name'] }}</td> 
+            <td class="border-b py-3 pl-2 text-left">{{ $outfitName }}</td>
+            <td class="border-b py-3 pl-2 text-left">Rp{{ $package['price'] }}</td>
+            <td class="border-b py-3 pl-2 text-center">{{ $transaction['totalUsher'] }}</td>
         </tr>
         
         <tr>
@@ -100,7 +100,7 @@
                             <div class="whitespace-nowrap text-slate-400">Net total:</div>
                             </td>
                             <td class="border-b p-3 text-right">
-                            <div class="whitespace-nowrap font-bold text-main">Rp<?php echo e($transaction['totalPrice']); ?></div>
+                            <div class="whitespace-nowrap font-bold text-main">Rp{{ $transaction['totalPrice'] }}</div>
                             </td>
                         </tr>
                         <tr>
@@ -108,12 +108,12 @@
                             <div class="whitespace-nowrap font-bold text-white">Total:</div>
                             </td>
                             <td class="bg-main p-3 text-right">
-                            <div class="whitespace-nowrap font-bold text-white">Rp<?php echo e($transaction['totalPrice']); ?></div>
+                            <div class="whitespace-nowrap font-bold text-white">Rp{{ $transaction['totalPrice'] }}</div>
                             </td>
                         </tr>
                         <tr>
                             <td class="p-3">
-                            <div class="whitespace-nowrap h-11"> Status : <?php echo e($transaction['paymentStatus']); ?></div>
+                            <div class="whitespace-nowrap h-11"> Status : {{ $transaction['paymentStatus'] }}</div>
                             </td>
                         </tr>
                         </tbody>
@@ -138,5 +138,4 @@
 </div>
 
 
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/invoice.blade.php ENDPATH**/ ?>
+@endsection
