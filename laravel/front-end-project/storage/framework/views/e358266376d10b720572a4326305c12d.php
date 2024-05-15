@@ -80,7 +80,7 @@
         </thead>
         <tbody>
         <tr>
-            <td class="border-b py-3 pl-2"><?php echo e($package['name']); ?> Package</td> 
+            <td class="border-b py-3 pl-2"><?php echo e($package['name']); ?></td> 
             <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
             <td class="border-b py-3 pl-2 text-left">Rp<?php echo e($package['price']); ?></td>
             <td class="border-b py-3 pl-2 text-center"><?php echo e($transaction['totalUsher']); ?></td>
@@ -139,4 +139,4 @@
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/invoice.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/transactionDetail.blade.php ENDPATH**/ ?>

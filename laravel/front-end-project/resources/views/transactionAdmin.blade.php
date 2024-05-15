@@ -8,6 +8,12 @@
         background-size: cover;
         background-position: center;
     }
+    tr {
+        cursor: pointer;
+    }
+    tr:hover {
+        background-color: #f1f1f1; /* Change to your preferred hover color */
+    }
 </style>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/transaction.css') }}">
 
@@ -32,7 +38,7 @@
             </thead>
             <tbody>
                 @foreach ($transactions as $datas)
-                    <tr>
+                    <tr onclick="window.location.href='/transaction/detail/admin/{{ $datas['id'] }}'">
                         <td> {{ $datas['id'] }} </td>
                         <td>{{ $datas['name'] }}</td>
                         <td>{{ $datas['venue'] }} </td>

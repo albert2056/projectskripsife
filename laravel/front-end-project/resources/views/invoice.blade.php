@@ -76,7 +76,6 @@
             <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-left font-bold text-main">Price</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-center font-bold text-main">Total Usher</td>
-            {{-- <td class="border-b-2 border-main pb-3 pl-2 text-right font-bold text-main">Subtotal</td> --}}
         </tr>
         </thead>
         <tbody>
@@ -129,14 +128,6 @@
     </table>
     
     </div>
-
-    {{-- <div class="px-14 text-sm text-neutral-700">
-    <p class="text-main font-bold">PAYMENT DETAILS</p>
-    <p>Banks of Banks</p>
-    <p>Bank/Sort Code: 1234567</p>
-    <p>Account Number: 123456678</p>
-    <p>Payment Reference: BRA-00335</p>
-    </div> --}}
 
     <div class="px-14 py-10 text-lg text-neutral-700">
     <p class="text-main font-bold">Notes</p>
