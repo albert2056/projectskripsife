@@ -19,7 +19,7 @@
                         <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title text-center btn-text-card"><?php echo e($datas['name']); ?> Package</h5>
+                        <h5 class="card-title text-center btn-text-card"><?php echo e($datas['name']); ?></h5>
                         <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
                             <ul>
                                 <?php $__currentLoopData = $datas['description']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -27,6 +27,7 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </div>
+                        <h5 class="card-title text-center btn-text-card">RP. <?php echo e($datas['price']); ?></h5>
                         <button type="submit" name="packageId" type="number" value=<?php echo e($datas['id']); ?> class="btn btn-primary btn-block btn-card" style="margin-top: 30px">Pilih Paket</button>
                     </div>
                 </div>

@@ -128,16 +128,16 @@ class TransactionController extends Controller
         $package = Http::get($url2);
         $packageData = $package->json();
 
-        $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+        if(strpos($package['name'], 'Standard') !== false) {
+            $outfitName = null;
+        } 
+        else {
+            $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
 
-        $outfit = Http::get($url3);
-        $outfitData = $outfit->json();
-        $outfitName = $outfitData['name'];
-
-        logger()->info('responseData:', ['responseData' => $responseData]);
-        logger()->info('packageData:', ['packageData' => $packageData]);
-        logger()->info('outfitName:', ['responseData' => $outfitName]);
-        logger()->info('user:', ['user' => $user]);
+            $outfit = Http::get($url3);
+            $outfitData = $outfit->json();
+            $outfitName = $outfitData['name'];
+        }
         
         return view('transactionDetail', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
     }
@@ -160,11 +160,16 @@ class TransactionController extends Controller
         $package = Http::get($url2);
         $packageData = $package->json();
 
-        $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+        if(strpos($package['name'], 'Standard') !== false) {
+            $outfitName = null;
+        } 
+        else {
+            $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
 
-        $outfit = Http::get($url3);
-        $outfitData = $outfit->json();
-        $outfitName = $outfitData['name'];
+            $outfit = Http::get($url3);
+            $outfitData = $outfit->json();
+            $outfitName = $outfitData['name'];
+        }
 
         logger()->info('responseData:', ['responseData' => $responseData]);
         logger()->info('packageData:', ['packageData' => $packageData]);

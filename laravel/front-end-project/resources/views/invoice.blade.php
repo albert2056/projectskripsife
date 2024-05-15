@@ -73,7 +73,9 @@
         <thead>
         <tr>
             <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Service</td>
-            <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
+            @if ($outfitName !== null)
+                <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
+            @endif       
             <td class="border-b-2 border-main pb-3 pl-2 text-left font-bold text-main">Price</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-center font-bold text-main">Total Usher</td>
         </tr>
@@ -81,7 +83,9 @@
         <tbody>
         <tr>
             <td class="border-b py-3 pl-2">{{ $package['name'] }} Package</td> 
-            <td class="border-b py-3 pl-2 text-left">{{ $outfitName }}</td>
+            @if ($outfitName !== null)
+                <td class="border-b py-3 pl-2 text-left">{{ $outfitName }}</td>
+            @endif
             <td class="border-b py-3 pl-2 text-left">Rp{{ $package['price'] }}</td>
             <td class="border-b py-3 pl-2 text-center">{{ $transaction['totalUsher'] }}</td>
         </tr>

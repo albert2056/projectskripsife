@@ -51,6 +51,9 @@ class PackageController extends Controller
 
         logger()->info('package:', ['package' => $package]);
         logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
+        if(strpos($package['name'], 'Standard') !== false) {
+            return redirect('/invoice');
+        }
         return redirect('/outfitchoose');
     }
 
