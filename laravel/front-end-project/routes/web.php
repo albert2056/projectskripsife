@@ -20,7 +20,7 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-Route::get('/', [UserController::class, 'showAdminHomePage'])->name('home');
+Route::get('/', [UserController::class, 'showHomePage'])->name('home');
 
 Route::get('/signup', [RegisterController::class, 'showRegisterPage'])->middleware('isGuest');
 Route::post('/signup', [RegisterController::class, 'register'])->name('register');
@@ -31,13 +31,13 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage'])->middleware('isUser');
-Route::post('/outfitchoose', [OutfitController::class, 'outfitCategoryChoose'])->name('outfitCategoryChoose');
+Route::post('/outfitchoose', [OutfitController::class, 'showOutfitCategoryChoose'])->name('outfitCategoryChoose');
 
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage'])->middleware('isUser');
 Route::post('/outfitcategory', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
-Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdPageAdmin'])->middleware('isAdmin');
+Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdAdminPage'])->middleware('isAdmin');
 Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreview']); // ga ada button apa2 kalo preview
-Route::get('/outfitcreateform', [OutfitController::class, 'createOutfitPage'])->middleware('isAdmin');
+Route::get('/outfitcreateform', [OutfitController::class, 'showCreateOutfitPage'])->middleware('isAdmin');
 Route::post('/outfitcreateform', [OutfitController::class, 'createOutfit'])->name('createOutfit');
 Route::get('/outfitupdateform/{id}', [OutfitController::class, 'showUpdateOutfitPage'])->name('outfitUpdateForm');
 Route::delete('/outfit/delete', [OutfitController::class, 'deleteOutfit'])->name('deleteOutfit')->middleware('isAdmin');
@@ -47,7 +47,7 @@ Route::get('/packagechoose', [PackageController::class, 'showPackageChoosePage']
 Route::get('/packagepreview', [PackageController::class, 'showPackagePreviewPage']);
 Route::get('/packageadmin', [PackageController::class, 'showPackageAdminPage'])->middleware('isAdmin');
 Route::post('/packagechoose', [PackageController::class, 'choosePackage'])->name('choosePackage');
-Route::get('/packagecreateform', [PackageController::class, 'createPackagePage'])->middleware('isAdmin');
+Route::get('/packagecreateform', [PackageController::class, 'showCreatePackagePage'])->middleware('isAdmin');
 Route::post('/packagecreateform', [PackageController::class, 'createPackage'])->name('createPackage');
 Route::get('/packageupdateform/{id}', [PackageController::class, 'showUpdatePackagePage'])->name('packageUpdateForm');
 Route::post('/package/update/{id}', [PackageController::class, 'updatePackage'])->name('updatePackage')->middleware('isAdmin');

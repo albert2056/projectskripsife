@@ -64,7 +64,7 @@ class OutfitController extends Controller
         return view('outfitCategoryPreview', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitByOutfitCategoryIdPageAdmin() {
+    public function showOutfitByOutfitCategoryIdAdminPage() {
         $url = "http://localhost:8080/api/outfit/findAll";
 
         $response = Http::get($url);
@@ -78,14 +78,14 @@ class OutfitController extends Controller
         return view();
     }
 
-    public function outfitCategoryChoose(Request $request) {
+    public function showOutfitCategoryChoose(Request $request) {
         $outfitCategoryId = (int) $request['outfitCategoryId'];
         session()->put('outfitCategoryId', $outfitCategoryId);
         logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
         return redirect('/outfitcategory');
     }
     
-    public function createOutfitPage() {
+    public function showCreateOutfitPage() {
         return view('outfitCreateFormAdmin');
     }
 

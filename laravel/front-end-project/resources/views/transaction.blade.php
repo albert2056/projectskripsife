@@ -12,7 +12,7 @@
         cursor: pointer;
     }
     tr:hover {
-        background-color: #f1f1f1; /* Change to your preferred hover color */
+        background-color: #f1f1f1;
     }
 </style>
 
@@ -55,56 +55,6 @@
 
                     </tr>
                 @endforeach
-                {{-- <tr>
-                    <td> 2 </td>
-                    <td>Kathmandu</td>
-                    <td>27 Aug, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 3</td>
-                    <td>Tokyo</td>
-                    <td>14 Mar, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 4</td>
-                    <td>New Delhi</td>
-                    <td>25 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 5</td>
-                    <td>Paris</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status notPaid">Not Paid</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 6</td>
-                    <td>London</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 7</td>
-                    <td>New York</td>
-                    <td>20 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr> --}}
             </tbody>
         </table>
     </section>

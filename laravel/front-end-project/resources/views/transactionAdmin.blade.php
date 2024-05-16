@@ -12,7 +12,7 @@
         cursor: pointer;
     }
     tr:hover {
-        background-color: #f1f1f1; /* Change to your preferred hover color */
+        background-color: #f1f1f1;
     }
 </style>
 <link rel="stylesheet" type="text/css" href="{{ asset('css/transaction.css') }}">

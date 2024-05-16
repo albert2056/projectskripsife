@@ -73,8 +73,6 @@ class PortfolioController extends Controller
         $responseData = $response->json();
 
         logger()->info('portfss', ['portfs' => $responseData]);
-        // $outfit = $response->json();
-        // return view('outfitUpdateForm', ['outfit' => $outfit]);
         if ($response->successful()) {
             $portfolio = $response->json();
             return view('portfolioUpdateForm', ['portfolio' => $portfolio]);

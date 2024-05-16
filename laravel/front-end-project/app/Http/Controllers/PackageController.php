@@ -67,7 +67,7 @@ class PackageController extends Controller
         return view ('packageAdmin', ['packages' => $responseData]);
     }
 
-    public function createPackagePage() {
+    public function showCreatePackagePage() {
         return view('packageCreateForm');
     }
 

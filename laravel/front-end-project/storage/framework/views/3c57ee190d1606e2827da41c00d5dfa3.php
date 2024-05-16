@@ -6,6 +6,12 @@
         background-size: cover;
         background-position: center;
     }
+    tr {
+        cursor: pointer;
+    }
+    tr:hover {
+        background-color: #f1f1f1; /* Change to your preferred hover color */
+    }
 </style>
 
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/transaction.css')); ?>">
@@ -28,65 +34,27 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> 1 </td>
-                    <td>Seoul </td>
-                    <td>17 Dec, 2022</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
+                <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr onclick="window.location.href='/transaction/detail/user/<?php echo e($datas['id']); ?>'">
+                        <td> <?php echo e($datas['id']); ?> </td>
+                        <td><?php echo e($datas['venue']); ?></td>
+                        <td>
+                            <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?>
 
-                </tr>
-                <tr>
-                    <td> 2 </td>
-                    <td>Kathmandu</td>
-                    <td>27 Aug, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                </tr>
+                        </td>
+                        <?php if($datas['paymentStatus'] == "NOT PAID"): ?>
+                            <td>
+                                <p class="status notPaid">Not Paid</p>
+                            </td>
+                        <?php else: ?>
+                            <td>
+                                <p class="status paid">Paid</p>
+                            </td>
+                        <?php endif; ?>
 
-                <tr>
-                    <td> 3</td>
-                    <td>Tokyo</td>
-                    <td>14 Mar, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td> 4</td>
-                    <td>New Delhi</td>
-                    <td>25 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 5</td>
-                    <td>Paris</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status notPaid">Not Paid</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 6</td>
-                    <td>London</td>
-                    <td>23 Apr, 2023</td>
-                    <td>
-                        <p class="status cancelled">Cancelled</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td> 7</td>
-                    <td>New York</td>
-                    <td>20 May, 2023</td>
-                    <td>
-                        <p class="status paid">Paid</p>
-                    </td>
-                </tr>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
             </tbody>
         </table>
     </section>

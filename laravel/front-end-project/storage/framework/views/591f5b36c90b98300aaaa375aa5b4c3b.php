@@ -62,7 +62,8 @@
                     </a>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profile
+                            <?php echo e(session()->get('user')->name); ?>
+
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/signout">Keluar</a></li>
@@ -81,7 +82,8 @@
                 </div>
                 <div class="nav-item dropdown" style="margin-left: 25px">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profile
+                        <?php echo e(session()->get('user')->name); ?>
+
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarScrollingDropdown">
                         <li><a class="dropdown-item" href="/signout">Keluar</a></li>
