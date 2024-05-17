@@ -25,7 +25,7 @@ class TransactionController extends Controller
     public function showUserTransactionPage() {
         $user = session()->get('user'); 
         $userId = $user['id'];
-        $url = "http://localhost:8080/api/transaction/findByUserId?id=$userId";
+        $url = "http://localhost:8080/api/transaction/findByUserId?userId=$userId";
 
         $response = Http::get($url);
         $responseData = $response->json();
@@ -132,7 +132,7 @@ class TransactionController extends Controller
             $outfitName = null;
         } 
         else {
-            $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+            $url3 = "http://localhost:8080/api/outfit/findById?id=$outfitId";
 
             $outfit = Http::get($url3);
             $outfitData = $outfit->json();
@@ -164,7 +164,7 @@ class TransactionController extends Controller
             $outfitName = null;
         } 
         else {
-            $url3 = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+            $url3 = "http://localhost:8080/api/outfit/findById?id=$outfitId";
 
             $outfit = Http::get($url3);
             $outfitData = $outfit->json();

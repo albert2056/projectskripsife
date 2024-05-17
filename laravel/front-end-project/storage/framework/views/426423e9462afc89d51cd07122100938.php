@@ -6,7 +6,6 @@
     .btn-plus {
         justify-content: right;
         display: flex; 
-        /* align-items: flex-end;  */
         font-size: 32px;
         color: #FF6969;
         margin-bottom: 20px;
@@ -16,7 +15,7 @@
         background-color: #FF6969;
         border: none;
         outline: none;
-        width: 150px;
+        width: 180px;
         height: 62px;
         font-size: 18px;
         font-weight: 500;
@@ -47,7 +46,7 @@
             </a>
         </div>
         <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb-5">
             <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">   
                 <div class="d-flex justify-content-center">
                     <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
@@ -61,12 +60,24 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
-                    <div class="card-body text-center">
-                        <button class="btn btn-primary btn-card-custom" style="margin-right: 15px" onclick="packageDeletePopup()">Delete</button>
-                        <a href="/packagecreateform">
-                            <button class="btn btn-secondary btn-card-custom">Edit</button>
-                        </a>
+                    <div class="row">
+                        <div class="col">
+                            <form method="GET" action="<?php echo e(route('packageUpdateForm', ['id' => $datas['id']])); ?>">
+                                <?php echo csrf_field(); ?>
+                                <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form method="POST" action="<?php echo e(route('deleteOutfit')); ?>">
+                                <?php echo csrf_field(); ?>
+                                <?php echo method_field('DELETE'); ?>
+                                <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
+                                <button type="submit" class="btn btn-primary btn-card-custom" onclick="packageDeletePopup()">Delete</button>
+                            </form>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>        

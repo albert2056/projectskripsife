@@ -12,7 +12,7 @@
         cursor: pointer;
     }
     tr:hover {
-        background-color: #f1f1f1; /* Change to your preferred hover color */
+        background-color: #f1f1f1;
     }
 </style>
 
@@ -56,7 +56,6 @@
 
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                
             </tbody>
         </table>
     </section>

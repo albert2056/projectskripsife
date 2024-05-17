@@ -40,7 +40,7 @@ class OutfitController extends Controller
 
         $outfitId = (int) $request['outfitId'];
 
-        $url = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+        $url = "http://localhost:8080/api/outfit/findById?id=$outfitId";
 
         $response = Http::get($url);
         $responseData = $response->json();
@@ -129,7 +129,7 @@ class OutfitController extends Controller
 
     public function showUpdateOutfitPage(Request $request) {
         $outfitId = $request->input('id');
-        $url = "http://localhost:8080/api/outfit/findById?outfitId=$outfitId";
+        $url = "http://localhost:8080/api/outfit/findById?id=$outfitId";
         $response = Http::get($url);
         $responseData = $response->json();
 
