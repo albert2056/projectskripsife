@@ -54,7 +54,7 @@ class OutfitController extends Controller
         return redirect('/invoice');
     }
 
-    public function showOutfitPreview() {
+    public function showOutfitPreviewPage() {
         $url = "http://localhost:8080/api/outfit/findAll";
 
         $response = Http::get($url);
@@ -78,7 +78,7 @@ class OutfitController extends Controller
         return view();
     }
 
-    public function showOutfitCategoryChoose(Request $request) {
+    public function showOutfitCategoryChoosePage(Request $request) {
         $outfitCategoryId = (int) $request['outfitCategoryId'];
         session()->put('outfitCategoryId', $outfitCategoryId);
         logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
