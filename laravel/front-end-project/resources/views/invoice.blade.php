@@ -82,7 +82,7 @@
         </thead>
         <tbody>
         <tr>
-            <td class="border-b py-3 pl-2">{{ $package['name'] }} Package</td> 
+            <td class="border-b py-3 pl-2">{{ $package['name'] }}</td> 
             @if ($outfitName !== null)
                 <td class="border-b py-3 pl-2 text-left">{{ $outfitName }}</td>
             @endif

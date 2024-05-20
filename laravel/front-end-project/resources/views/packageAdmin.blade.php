@@ -69,7 +69,7 @@
                             </form>
                         </div>
                         <div class="col">
-                            <form method="POST" action="{{ route('deleteOutfit') }}">
+                            <form method="POST" action="{{ route('deletePackage') }}">
                                 @csrf
                                 @method('DELETE')
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">

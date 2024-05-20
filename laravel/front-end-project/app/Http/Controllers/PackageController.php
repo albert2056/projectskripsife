@@ -82,7 +82,7 @@ class PackageController extends Controller
         $response = Http::post($url);
         $responseData = $response->json();
         logger()->info('Package Create:', ['Package Create' => $responseData]);
-        return redirect('/');
+        return redirect('/packageadmin');
     }
 
     public function showUpdatePackagePage(Request $request) {

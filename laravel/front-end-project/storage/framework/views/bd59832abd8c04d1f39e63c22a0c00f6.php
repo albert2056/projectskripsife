@@ -67,7 +67,7 @@
                             </form>
                         </div>
                         <div class="col">
-                            <form method="POST" action="<?php echo e(route('deleteOutfit')); ?>">
+                            <form method="POST" action="<?php echo e(route('deletePackage')); ?>">
                                 <?php echo csrf_field(); ?>
                                 <?php echo method_field('DELETE'); ?>
                                 <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
