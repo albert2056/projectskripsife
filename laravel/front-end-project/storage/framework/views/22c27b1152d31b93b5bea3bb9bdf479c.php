@@ -19,7 +19,8 @@
 
                 <div class="form-group">
                     <label for="inputPackagePrice" style="margin-bottom: 10px; font-size: 18px">Harga Paket</label>
-                    <input type="text" class="form-control" id="price" name="price" style="margin-bottom: 30px;" onkeyup="formatPrice(this)" value="">
+                    <input type="text" class="form-control" id="price_formatted" name="price_formatted" style="margin-bottom: 30px;" onkeyup="formatPrice(this)" value="">
+                    <input type="hidden" name="price" id="price">
                 </div>
                 
                 <div class="form-group">

@@ -87,7 +87,7 @@
                         </ul>
                     </div>
                     <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 115px; left: 50%; transform: translateX(-50%);">RP. <?php echo e($datas['price']); ?></h5>
-                    <div class="row" style="margin-bottom: 10px">
+                    
                         <div class="col" style="position: absolute; bottom: 35px; left: 30%; transform: translateX(-50%);">
                             <form method="GET" action="<?php echo e(route('packageUpdateForm', ['id' => $datas['id']])); ?>">
                                 <?php echo csrf_field(); ?>
@@ -103,7 +103,7 @@
                                 <button type="submit" class="btn btn-primary btn-card-custom" onclick="packageDeletePopup()">Delete</button>
                             </form>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>        

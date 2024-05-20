@@ -71,16 +71,19 @@
         <thead>
         <tr>
             <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Service</td>
-            <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
+            <?php if($outfitName !== null): ?>
+                <td class="border-b-2 border-main pb-3 pl-2 font-bold text-main">Outfit</td>
+            <?php endif; ?>       
             <td class="border-b-2 border-main pb-3 pl-2 text-left font-bold text-main">Price</td>
             <td class="border-b-2 border-main pb-3 pl-2 text-center font-bold text-main">Total Usher</td>
-            
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td class="border-b py-3 pl-2"><?php echo e($package['name']); ?> Package</td> 
-            <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
+            <td class="border-b py-3 pl-2"><?php echo e($package['name']); ?></td> 
+            <?php if($outfitName !== null): ?>
+                <td class="border-b py-3 pl-2 text-left"><?php echo e($outfitName); ?></td>
+            <?php endif; ?>
             <td class="border-b py-3 pl-2 text-left">Rp<?php echo e($package['price']); ?></td>
             <td class="border-b py-3 pl-2 text-center"><?php echo e($transaction['totalUsher']); ?></td>
         </tr>
@@ -127,8 +130,6 @@
     </table>
     
     </div>
-
-    
 
     <div class="px-14 py-10 text-lg text-neutral-700">
     <p class="text-main font-bold">Notes</p>
