@@ -2,76 +2,78 @@
 
 <style>
     .card {
-        width: 400px;
-        height: 620px;
-        background-color: rgba(255, 218, 217, 0.7);
-        position: relative;
-        border: none;
-        border-radius: 0px;
-        margin-bottom: 5px;
-    }
+    width: 400px;
+    height: 620px;
+    background-color: rgba(255, 218, 217, 0.7);
+    position: relative;
+    border: none;
+    border-radius: 0px;
+    margin-bottom: 5px;
+}
 
-    .card-overlay {
-        position: absolute;
-        top: 44%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 340px;
-        height: 480px;
-        background-color: #F2F2F2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-    }
+.card-overlay {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    height: 480px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
 
-    .overlay-content {
-        color: black;
-        margin: 10px;
-        margin-right: 215px;
-        letter-spacing: 1px;
+.overlay-content {
+    color: black;
+    margin: 10px;
+    letter-spacing: 1px;
+    text-align: left;
+    white-space: nowrap;         /* Prevent text from breaking to a new line */
+    overflow: hidden;            /* Hide overflow text */
+    text-overflow: ellipsis;     /* Display ellipsis (...) for overflow text */
+    width: 100%;                 /* Ensure the element has a width */
+    padding-left: 10px;          /* Add space from the left */
+}
 
-    }
+.card-body {
+    padding-top: 507px;
+}
 
-    .card-body {
-        padding-top: 507px;
-    }
+.btn-card-custom {
+    background-color: #FF6969;
+    border: none;
+    outline: none;
+    width: 150px;
+    height: 62px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    margin-top: 25px;
+}
 
-    .btn-card-custom {
-        background-color: #FF6969;
-        border: none;
-        outline: none;
-        width: 150px;
-        height: 62px;
-        font-size: 18px;
-        font-weight: 500;
-        border-radius: 12px;
-        margin-top: 25px;
-    }   
+.btn-card-custom:hover {
+    background-color: #FF8787;
+}
 
-    .btn-card-custom:hover {
-        background-color: #FF8787;
-    }
+.btn-card-custom:active {
+    background-color: #FF8787;
+}
 
-    .btn-card-custom:active {
-        background-color: #FF8787;
-    }
-
-    .btn-plus {
-        justify-content: right;
-        display: flex; 
-        font-size: 32px;
-        color: #FF6969;
-        margin-bottom: 20px;
-    }
-
+.btn-plus {
+    justify-content: right;
+    display: flex; 
+    font-size: 32px;
+    color: #FF6969;
+    margin-bottom: 20px;
+}
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
     <h1 class="text-custom1" style="letter-spacing: 2px">Pasangan Berbahagia Yang Mempercayai <br> Hari Bahagianya Bersama Kami</h1>
 </div>
-
 
 <div class="container" style="margin-bottom: 150px">
     <div class="btn-plus" style="text-decoration: none;">

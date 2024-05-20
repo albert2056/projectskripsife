@@ -10,7 +10,7 @@
         position: relative;
         border: none;
         border-radius: 0px;
-        margin-bottom: 18px
+        margin-bottom: 18px;
     }
 
     .card-overlay {
@@ -25,16 +25,21 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 10px
+        border-radius: 10px;
     }
 
     .overlay-content {
         color: black;
         margin: 10px;
-        margin-right: 215px;
         letter-spacing: 1px;
-
+        text-align: left;
+        white-space: nowrap;         
+        overflow: hidden;            
+        text-overflow: ellipsis;     
+        width: 100%;                 
+        padding-left: 10px; 
     }
+
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
@@ -59,9 +64,7 @@
             </div>
         @endforeach
     </div>
-    
 </div>
-
 
 
 @endsection

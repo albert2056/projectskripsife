@@ -31,7 +31,7 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage'])->middleware('isUser');
-Route::post('/outfitchoose', [OutfitController::class, 'showOutfitCategoryChoose'])->name('outfitCategoryChoose');
+Route::post('/outfitchoose', [OutfitController::class, 'showOutfitCategoryChoosePage'])->name('outfitCategoryChoose');
 Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage'])->middleware('isUser');
 Route::post('/outfitcategory', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
 Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdAdminPage'])->middleware('isAdmin');
