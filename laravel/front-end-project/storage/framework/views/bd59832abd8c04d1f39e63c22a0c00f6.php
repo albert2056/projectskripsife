@@ -58,6 +58,7 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </div>
+                    <h5 class="card-title text-center btn-text-card">RP. <?php echo e($datas['price']); ?></h5>
                     <div class="row">
                         <div class="col">
                             <form method="GET" action="<?php echo e(route('packageUpdateForm', ['id' => $datas['id']])); ?>">

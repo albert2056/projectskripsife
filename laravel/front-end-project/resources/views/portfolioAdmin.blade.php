@@ -33,11 +33,11 @@
     margin: 10px;
     letter-spacing: 1px;
     text-align: left;
-    white-space: nowrap;     
+    white-space: nowrap; 
     overflow: hidden;        
     text-overflow: ellipsis;  
     width: 100%;                 
-    padding-left: 10px;         
+    padding-left: 20px;         
 }
 
 .card-body {

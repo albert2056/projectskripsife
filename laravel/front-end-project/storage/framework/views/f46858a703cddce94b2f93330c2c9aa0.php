@@ -31,11 +31,11 @@
     margin: 10px;
     letter-spacing: 1px;
     text-align: left;
-    white-space: nowrap;         /* Prevent text from breaking to a new line */
-    overflow: hidden;            /* Hide overflow text */
-    text-overflow: ellipsis;     /* Display ellipsis (...) for overflow text */
-    width: 100%;                 /* Ensure the element has a width */
-    padding-left: 10px;          /* Add space from the left */
+    white-space: nowrap; 
+    overflow: hidden;        
+    text-overflow: ellipsis;  
+    width: 100%;                 
+    padding-left: 20px;         
 }
 
 .card-body {

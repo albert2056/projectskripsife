@@ -25,6 +25,7 @@
                                 @endforeach
                             </ul>
                         </div>
+                        <h5 class="card-title text-center btn-text-card">RP. {{ $datas['price'] }}</h5>
                     </div>
                 </div>
             </div>

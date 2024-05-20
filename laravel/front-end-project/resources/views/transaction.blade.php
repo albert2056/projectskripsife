@@ -30,6 +30,7 @@
             <thead>
                 <tr>
                     <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Venue <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Event Date <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Status <span class="icon-arrow">&UpArrow;</span></th>
@@ -39,6 +40,7 @@
                 @foreach ($transactions as $datas)
                     <tr onclick="window.location.href='/transaction/detail/user/{{ $datas['id'] }}'">
                         <td> {{ $datas['id'] }} </td>
+                        <td>{{ $datas['name'] }}</td>
                         <td>{{ $datas['venue'] }}</td>
                         <td>
                             {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}

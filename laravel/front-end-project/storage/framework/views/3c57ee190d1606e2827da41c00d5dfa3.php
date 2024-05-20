@@ -10,7 +10,7 @@
         cursor: pointer;
     }
     tr:hover {
-        background-color: #f1f1f1; /* Change to your preferred hover color */
+        background-color: #f1f1f1;
     }
 </style>
 
@@ -28,6 +28,7 @@
             <thead>
                 <tr>
                     <th> ID <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Venue <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Event Date <span class="icon-arrow">&UpArrow;</span></th>
                     <th> Status <span class="icon-arrow">&UpArrow;</span></th>
@@ -37,6 +38,7 @@
                 <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr onclick="window.location.href='/transaction/detail/user/<?php echo e($datas['id']); ?>'">
                         <td> <?php echo e($datas['id']); ?> </td>
+                        <td><?php echo e($datas['name']); ?></td>
                         <td><?php echo e($datas['venue']); ?></td>
                         <td>
                             <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?>
@@ -54,7 +56,6 @@
 
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                
             </tbody>
         </table>
     </section>
