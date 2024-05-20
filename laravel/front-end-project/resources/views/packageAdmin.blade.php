@@ -30,7 +30,35 @@
     .btn-card-custom:active {
         background-color: #FF8787;
     }
+
+    .card-content {
+        height: 350px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .card-content .text-package {
+        overflow-y: auto;
+        margin-bottom: 5px;
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: left;
+        width: fit-content;
+        font-size: 20px;
+    }
+
+    .card-footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
 </style>
+
 
 <div class="container" style="margin-bottom: 180px">
     <div class="row">
@@ -51,25 +79,25 @@
                 <div class="d-flex justify-content-center">
                     <img src="{{ asset('Assets/paketCoupleImg.png') }}" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body text-center card-content">
                     <h5 class="card-title text-center btn-text-card">{{ $datas['name'] }}</h5>
-                    <div class="text-package mt-4 mb-5" style="text-align: left; margin: 0 auto; width: fit-content; font-size: 20px">
-                        <ul>
+                    <div class="text-package mt-4">
+                        <ul style="text-align: left; font-size: 20px;">
                             @foreach ($datas['description'] as $desc)
                                 <li>{{ $desc }}</li>
                             @endforeach
                         </ul>
                     </div>
-                    <h5 class="card-title text-center btn-text-card">RP. {{ $datas['price'] }}</h5>
-                    <div class="row">
-                        <div class="col">
+                    <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 115px; left: 50%; transform: translateX(-50%);">RP. {{ $datas['price'] }}</h5>
+                    <div class="row" style="margin-bottom: 10px">
+                        <div class="col" style="position: absolute; bottom: 35px; left: 30%; transform: translateX(-50%);">
                             <form method="GET" action="{{ route('packageUpdateForm', ['id' => $datas['id']]) }}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
                                 <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
                             </form>
                         </div>
-                        <div class="col">
+                        <div class="col" style="position: absolute; bottom: 35px; left: 70%; transform: translateX(-50%);">
                             <form method="POST" action="{{ route('deletePackage') }}">
                                 @csrf
                                 @method('DELETE')
@@ -78,7 +106,6 @@
                             </form>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>        

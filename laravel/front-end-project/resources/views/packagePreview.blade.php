@@ -12,7 +12,7 @@
     <div class="row" style="margin-left: 60px;">
         @foreach ($packages as $datas)
             <div class="col-md-6 mb-5">
-                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">
+                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px; position: relative;">
                     <div class="d-flex justify-content-center">
                         <img src="{{ asset('Assets/paketCoupleImg.png') }}" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                     </div>
@@ -25,7 +25,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <h5 class="card-title text-center btn-text-card">RP. {{ $datas['price'] }}</h5>
+                        <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);">RP. {{ $datas['price'] }}</h5>
                     </div>
                 </div>
             </div>

@@ -27,8 +27,8 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <h5 class="card-title text-center btn-text-card">RP. {{ $datas['price'] }}</h5>
-                        <button type="submit" name="packageId" type="number" value={{ $datas['id'] }} class="btn btn-primary btn-block btn-card" style="margin-top: 30px">Pilih Paket</button>
+                        <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 115px; left: 50%; transform: translateX(-50%)">RP. {{ $datas['price'] }}</h5>
+                        <button type="submit" name="packageId" type="number" value={{ $datas['id'] }} class="btn btn-primary btn-block btn-card" style="position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%);">Pilih Paket</button>
                     </div>
                 </div>
             </div>

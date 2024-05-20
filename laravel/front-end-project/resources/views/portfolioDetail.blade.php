@@ -23,7 +23,7 @@
     height: 70%;
     max-width: 800px;
     max-height: 600px;
-    background-color: rgba(255, 255, 255, 0.8); /* Change background color to darker */
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,8 +97,8 @@
     margin-bottom: 75px;
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a subtle shadow */
-    text-align: center; /* Centering the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
   }
   </style>
   

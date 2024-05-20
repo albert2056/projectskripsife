@@ -30,8 +30,13 @@
 
                 <div class="form-group">
                     <label for="inputOutfitNamePort" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
-                    <input type="text" class="form-control" id="gownName" name="gownName" style="margin-bottom: 30px;" value="">
-                </div>
+                    <select class="form-control" id="gownName-control" name="gownName" style="margin-bottom: 30px;">
+                        <option value="">Pilih Outfit</option>
+                        <?php $__currentLoopData = $outfits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($datas['name']); ?>"><?php echo e($datas['name']); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select>
+                </div> 
 
                 <div class="form-group">
                     <label for="inputVenue" style="margin-bottom: 10px; font-size: 18px">Lokasi Venue Pernikahan</label>

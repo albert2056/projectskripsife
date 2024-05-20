@@ -32,8 +32,13 @@
 
                 <div class="form-group">
                     <label for="inputOutfitNamePort" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
-                    <input type="text" class="form-control" id="gownName" name="gownName" style="margin-bottom: 30px;" value="">
-                </div>
+                    <select class="form-control" id="gownName-control" name="gownName" style="margin-bottom: 30px;">
+                        <option value="">Pilih Outfit</option>
+                        @foreach ($outfits as $datas)
+                            <option value="{{ $datas['name'] }}">{{ $datas['name'] }}</option>
+                        @endforeach
+                    </select>
+                </div> 
 
                 <div class="form-group">
                     <label for="inputVenue" style="margin-bottom: 10px; font-size: 18px">Lokasi Venue Pernikahan</label>

@@ -10,7 +10,7 @@
     <div class="row" style="margin-left: 60px;">
         <?php $__currentLoopData = $packages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-6 mb-5">
-                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px">
+                <div class="card shadow rounded-5" style="border-width: 0px; width: 535px; height: 650px; position: relative;">
                     <div class="d-flex justify-content-center">
                         <img src="<?php echo e(asset('Assets/paketCoupleImg.png')); ?>" style="width: 200px; height: 165px" class="card-img-top mt-5" alt="...">
                     </div>
@@ -23,7 +23,7 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         </div>
-                        <h5 class="card-title text-center btn-text-card">RP. <?php echo e($datas['price']); ?></h5>
+                        <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);">RP. <?php echo e($datas['price']); ?></h5>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,7 @@
     height: 70%;
     max-width: 800px;
     max-height: 600px;
-    background-color: rgba(255, 255, 255, 0.8); /* Change background color to darker */
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,14 +95,14 @@
     margin-bottom: 75px;
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a subtle shadow */
-    text-align: center; /* Centering the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
   }
   </style>
   
 <div class="bg-image">
 <div class="overlay">
-  <div class="overlay-text">The Wedding of John & Jane</div>
+  <div class="overlay-text"><?php echo e($portfolio['name']); ?></div>
 </div>
 </div>
 
@@ -112,21 +112,15 @@
   <div class="row justify-content-center">
     <div class="col-md-7 mb-4">
       <div class="text-detail" style="margin-bottom: 50px">
-        <p>25 April 2024</p>
-        <p>Ritz Carlton</p>
-        <p>Kebaya</p>
+        <p><?php echo e(\Carbon\Carbon::parse($portfolio['eventDate'])->format('d/m/Y')); ?></p>
+        <p><?php echo e($portfolio['venue']); ?></p>
+        <p><?php echo e($portfolio['gownName']); ?></p>
       </div>
       <div class="card">
         <div id="carouselExample" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="<?php echo e(asset('Assets/formImg.png')); ?>" class="d-block w-100" alt="Image 1" style="">
-            </div>
-            <div class="carousel-item">
-              <img src="<?php echo e(asset('Assets/formImg.png')); ?>" class="d-block w-100" alt="Image 2">
-            </div>
-            <div class="carousel-item">
-              <img src="https://via.placeholder.com/600x400" class="d-block w-100" alt="Image 3">
+              <img src="<?php echo e(asset('Assets/portfolio/' . $portfolio['image'])); ?>" class="d-block w-100" alt="Image 1" style="">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev"></a>

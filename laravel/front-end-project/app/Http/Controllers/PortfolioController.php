@@ -73,9 +73,15 @@ class PortfolioController extends Controller
         $responseData = $response->json();
 
         logger()->info('portfss', ['portfs' => $responseData]);
+        $outfitUrl = "http://localhost:8080/api/outfit/findAll";
+        $outfitResponse = Http::get($outfitUrl);
         if ($response->successful()) {
             $portfolio = $response->json();
-            return view('portfolioUpdateForm', ['portfolio' => $portfolio]);
+            $outfitResponseData = $outfitResponse->json();
+            return view('portfolioUpdateForm', [
+                'portfolio' => $portfolio,
+                'outfits' => $outfitResponseData
+            ]);
         } else {
             $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
             return redirect()->back()->with('error', $errorMessage);
@@ -114,7 +120,11 @@ class PortfolioController extends Controller
     }
 
     public function createPortfolioPage() {
-        return view('portfolioCreateForm');
+        $url = "http://localhost:8080/api/outfit/findAll";
+        $response = Http::get($url);
+        $responseData = $response->json();
+
+        return view('portfolioCreateForm', ['outfits'=>$responseData]);
     }
 
     public function showPortfolioDetailPage($id) {
