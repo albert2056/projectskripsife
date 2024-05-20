@@ -59,7 +59,7 @@
                                 <form method="POST" action="{{ route('changeStatus') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $datas['id'] }}">
-                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()">
+                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()" @if ($datas['paymentStatus'] == "PAID") disabled @endif>
                                         <img src="{{ asset('Assets/check.png') }}" alt="" srcset="">
                                     </button>
                                 </form>

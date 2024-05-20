@@ -58,7 +58,7 @@
                                 <form method="POST" action="<?php echo e(route('changeStatus')); ?>">
                                     <?php echo csrf_field(); ?>
                                     <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
-                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()">
+                                    <button class="icon-button" style="margin-right: 25px" type="submit" onclick="changeStatusPopup()" <?php if($datas['paymentStatus'] == "PAID"): ?> disabled <?php endif; ?>>
                                         <img src="<?php echo e(asset('Assets/check.png')); ?>" alt="" srcset="">
                                     </button>
                                 </form>
