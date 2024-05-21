@@ -89,19 +89,43 @@ class OutfitController extends Controller
         return view('outfitCreateFormAdmin');
     }
 
+    // public function createOutfit(Request $request) {
+    //     $request->validate([
+    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    //     ]);
+    //     $image = $request->file('image');
+    //     $imageName = $image->getClientOriginalName();
+    //     $image->move(public_path('Assets/outfit'), $imageName);
+
+    //     $outfitRequest = new OutfitRequest();
+    //     $outfitRequest->outfitCategoryId = $request['outfitCategoryId'];
+    //     $outfitRequest->name = $request['name'];
+    //     $outfitRequest->qty = $request['qty'];
+    //     $outfitRequest->image = $imageName;
+    //     $user = session()->get('user'); 
+    //     $outfitRequest->updatedBy = $user['id'];
+    //     $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
+    //     $responseData = $response->json();
+    //     logger()->info('outfit', ['outfit' => $responseData]);
+    //     if ($responseData['statusCode']!=null) {
+    //         return redirect()->back()->withInput()->with('error', $responseData['description']);
+    //     } 
+    //     return redirect('/outfitcategoryadmin');
+    // }
+
     public function createOutfit(Request $request) {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('Assets/outfit'), $imageName);
+        $imagePath = $image->getPathname();
+        $imageBase64 = base64_encode(file_get_contents($imagePath));
 
         $outfitRequest = new OutfitRequest();
         $outfitRequest->outfitCategoryId = $request['outfitCategoryId'];
         $outfitRequest->name = $request['name'];
         $outfitRequest->qty = $request['qty'];
-        $outfitRequest->image = $imageName;
+        $outfitRequest->image = $imageBase64;
         $user = session()->get('user'); 
         $outfitRequest->updatedBy = $user['id'];
         $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
@@ -110,7 +134,7 @@ class OutfitController extends Controller
         if ($responseData['statusCode']!=null) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } 
-        return redirect('/outfitcategoryadmin');
+        return redirect('/outfitcategoryadmin')->with('imageBase64', $imageBase64);
     }
 
     public function deleteOutfit(Request $request) {
@@ -151,14 +175,14 @@ class OutfitController extends Controller
         ]);
 
         $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('Assets/outfit'), $imageName);
+        $imagePath = $image->getPathname();
+        $imageBase64 = base64_encode(file_get_contents($imagePath));
 
         $outfitRequest = new OutfitRequest();
         $outfitRequest->outfitCategoryId = $request['outfitCategoryId'];
         $outfitRequest->name = $request['name'];
         $outfitRequest->qty = $request['qty'];
-        $outfitRequest->image = $imageName;
+        $outfitRequest->image = $imageBase64;
         $user = session()->get('user'); 
         $outfitRequest->updatedBy = $user['id'];
 
@@ -168,7 +192,7 @@ class OutfitController extends Controller
         // if ($responseData['statusCode'] != null) {
         //     return redirect()->back()->withInput()->with('error', $responseData['description']);
         // } 
-        return redirect('/outfitcategoryadmin');
+        return redirect('/outfitcategoryadmin')->with('imageBase64', $imageBase64);
     }
 
 }

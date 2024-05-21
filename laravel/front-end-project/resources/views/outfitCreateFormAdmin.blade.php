@@ -30,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="inputOutfitQuantity" style="margin-bottom: 10px; font-size: 18px">Kuantitas</label>
-                    <input type="number" class="form-control" id="qty" name="qty" style="margin-bottom: 30px;" min="0" max="8">
+                    <input type="number" class="form-control" id="qty" name="qty" style="margin-bottom: 30px;" min="0" max="50">
                 </div>
 
                 <div class="form-group">

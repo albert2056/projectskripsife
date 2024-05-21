@@ -26,30 +26,60 @@ class PortfolioController extends Controller
         return view('portfolioAdmin', ['portfolios'=>$responseData]);
     }
 
+    // public function createPortfolio(Request $request) {
+    //     $request->validate([
+    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    //     ]);
+    //     $image = $request->file('image');
+    //     $imageName = $image->getClientOriginalName();
+    //     $image->move(public_path('Assets/portfolio'), $imageName);
+
+    //     $portfolioRequest = new PortfolioRequest();
+    //     $portfolioRequest->name = $request['name'];
+    //     $portfolioRequest->eventDate = $request['eventDate'];
+    //     $portfolioRequest->image = $imageName;
+    //     $portfolioRequest->gownName = $request['gownName'];
+    //     $portfolioRequest->venue = $request['venue'];
+    //     $portfolioRequest->wo = $request['wo'];
+    //     $portfolioRequest->column = 1;
+    //     $portfolioRequest->eventName = 'Wedding';
+    //     $response = Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
+    //     $responseData = $response->json();
+    //     logger()->info('portfolio', ['portfolio' => $responseData]);
+    //     if ($responseData['statusCode']!=null) {
+    //         return redirect()->back()->withInput()->with('error', $responseData['description']);
+    //     } 
+    //     return redirect('/portfolioadmin');
+    // }
+
     public function createPortfolio(Request $request) {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+    
         $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('Assets/portfolio'), $imageName);
-
+        $imagePath = $image->getPathname();
+        $imageBase64 = base64_encode(file_get_contents($imagePath));
+    
         $portfolioRequest = new PortfolioRequest();
         $portfolioRequest->name = $request['name'];
         $portfolioRequest->eventDate = $request['eventDate'];
-        $portfolioRequest->image = $imageName;
+        $portfolioRequest->image = $imageBase64;
         $portfolioRequest->gownName = $request['gownName'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
         $portfolioRequest->column = 1;
         $portfolioRequest->eventName = 'Wedding';
+    
         $response = Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
         $responseData = $response->json();
         logger()->info('portfolio', ['portfolio' => $responseData]);
-        if ($responseData['statusCode']!=null) {
+    
+        if (isset($responseData['statusCode'])) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } 
-        return redirect('/portfolioadmin');
+    
+        return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
     }
 
     public function deletePortfolio(Request $request) {
@@ -93,13 +123,13 @@ class PortfolioController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('Assets/portfolio'), $imageName);
-
+        $imagePath = $image->getPathname();
+        $imageBase64 = base64_encode(file_get_contents($imagePath));
+    
         $portfolioRequest = new PortfolioRequest();
         $portfolioRequest->name = $request['name'];
         $portfolioRequest->eventDate = $request['eventDate'];
-        $portfolioRequest->image = $imageName;
+        $portfolioRequest->image = $imageBase64;
         $portfolioRequest->gownName = $request['gownName'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
@@ -110,7 +140,7 @@ class PortfolioController extends Controller
         logger()->info('portfolio', ['portfolio' => $responseData]);
         if ($response->successful()) {
             $portfolio = $response->json();
-            return redirect('/portfolioadmin');
+            return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
         } else {
             $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
             return redirect()->back()->with('error', $errorMessage);
