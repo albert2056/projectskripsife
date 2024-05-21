@@ -89,7 +89,7 @@
                 <div class="card">
                     <div class="card-overlay">
                         <a href="/portfoliodetail/{{ $datas['id'] }}">
-                            <img src="{{ asset('Assets/portfolio/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <img src="data:image/jpeg;base64,{{ $datas['image'] }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         </a>
                         <div class="overlay-content">
                             <p> {{ $datas['name'] }} <br> {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}<br> {{ $datas['venue'] }} </p>

@@ -87,7 +87,7 @@
                 <div class="card">
                     <div class="card-overlay">
                         <a href="/portfoliodetail/<?php echo e($datas['id']); ?>">
-                            <img src="<?php echo e(asset('Assets/portfolio/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <img src="data:image/jpeg;base64,<?php echo e($datas['image']); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         </a>
                         <div class="overlay-content">
                             <p> <?php echo e($datas['name']); ?> <br> <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?><br> <?php echo e($datas['venue']); ?> </p>
