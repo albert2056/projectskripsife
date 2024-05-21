@@ -123,13 +123,13 @@ class PortfolioController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $image->move(public_path('Assets/portfolio'), $imageName);
-
+        $imagePath = $image->getPathname();
+        $imageBase64 = base64_encode(file_get_contents($imagePath));
+    
         $portfolioRequest = new PortfolioRequest();
         $portfolioRequest->name = $request['name'];
         $portfolioRequest->eventDate = $request['eventDate'];
-        $portfolioRequest->image = $imageName;
+        $portfolioRequest->image = $imageBase64;
         $portfolioRequest->gownName = $request['gownName'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
@@ -140,7 +140,7 @@ class PortfolioController extends Controller
         logger()->info('portfolio', ['portfolio' => $responseData]);
         if ($response->successful()) {
             $portfolio = $response->json();
-            return redirect('/portfolioadmin');
+            return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
         } else {
             $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
             return redirect()->back()->with('error', $errorMessage);
