@@ -48,7 +48,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-overlay">
-                        <img src="{{ asset('Assets/outfit/' . $datas['image']) }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <img src="data:image/jpeg;base64,{{ $datas['image'] }}" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         <div class="overlay-content">
                             <p> {{ $datas['name'] }} </p>
                         </div>
