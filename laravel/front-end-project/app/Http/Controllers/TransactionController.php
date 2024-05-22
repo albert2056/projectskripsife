@@ -18,6 +18,24 @@ class TransactionController extends Controller
         return view('transactionAdmin', ['transactions'=>$responseData]);
     }
 
+    public function showWeeklyUpcomingEventPage() {
+        $threshold = 7;
+        $url = "http://localhost:8080/api/transaction/findUpcomingEvents?threshold=$threshold";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        return view('upcomingEvent', ['transactions'=>$responseData]);
+    }
+
+    public function showMonthlylyUpcomingEventPage() {
+        $threshold = 30;
+        $url = "http://localhost:8080/api/transaction/findUpcomingEvents?threshold=$threshold";
+
+        $response = Http::get($url);
+        $responseData = $response->json();
+        return view('upcomingEvent', ['transactions'=>$responseData]);
+    }
+
     public function showBookPage() {
         return view('bookForm');
     }
