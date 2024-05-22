@@ -18,6 +18,10 @@
     }
 @endphp
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
+
 {{-- has login --}}
 
 @if(session()->has('user'))
@@ -39,6 +43,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-4 {{ Request::is('outfitcategorypreview') ? 'active' : (Request::is('outfitcategoryadmin') ? 'active' : '') }}" href="/outfitcategoryadmin">Busana</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-4 {{ Request::is('upcomingevent/week') || Request::is('upcomingevent/month') ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Upcoming
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item {{ Request::is('upcomingevent/week') ? 'active' : '' }}" href="/upcomingevent/week">Week</a>
+                                <a class="dropdown-item {{ Request::is('upcomingevent/month') ? 'active' : '' }}" href="/upcomingevent/month">Month</a>
+                            </div>
                         </li>
                     </ul>
                 @else
@@ -139,3 +152,4 @@
         }
     })
   </script>
+  

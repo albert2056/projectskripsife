@@ -96,7 +96,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-overlay">
-                        <img src="<?php echo e(asset('Assets/outfit/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                        <img src="data:image/jpeg;base64,<?php echo e($datas['image']); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         <div class="overlay-content">
                             <p> <?php echo e($datas['name']); ?> </p>
                         </div>

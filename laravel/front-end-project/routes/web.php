@@ -65,6 +65,8 @@ Route::get('/bookpage', [TransactionController::class, 'showBookPage'])->middlew
 Route::post('/bookpage', [TransactionController::class, 'book'])->name('book');
 
 Route::get('/transactionadmin', [TransactionController::class, 'showAdminTransactionPage'])->middleware('isAdmin');
+Route::get('/upcomingevent/week', [TransactionController::class, 'showWeeklyUpcomingEventPage'])->middleware('isAdmin');
+Route::get('/upcomingevent/month', [TransactionController::class, 'showMonthlylyUpcomingEventPage'])->middleware('isAdmin');
 Route::delete('/transaction/delete', [TransactionController::class, 'deleteTransaction'])->name('deleteTransaction')->middleware('isAdmin');
 Route::post('/transaction/changestatus', [TransactionController::class, 'changeStatus'])->name('changeStatus')->middleware('isAdmin');
 Route::get('/transaction/detail/user/{id}', [TransactionController::class, 'showUserTransactionDetailPage'])->middleware('isUser');
