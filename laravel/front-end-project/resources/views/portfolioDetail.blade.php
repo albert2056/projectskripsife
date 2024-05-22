@@ -39,7 +39,7 @@
   }
 
   .page-bg {
-    background-image: url('../external/portfolioBg2.jpg');
+    background-image: url('../external/portfolioBg2.jpeg');
     background-size: cover;
     background-position: center;
     padding: 50px 0;
