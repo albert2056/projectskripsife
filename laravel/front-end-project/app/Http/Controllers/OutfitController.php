@@ -29,7 +29,7 @@ class OutfitController extends Controller
         $responseData = $response->json();
         logger()->info('outz:', ['outz' => $responseData]);
 
-        return view('outfitCategory', ['outfits'=>$responseData]);
+        return view('outfitChooseByCategory', ['outfits'=>$responseData]);
     }
 
     public function outfitChoose(Request $request) {
@@ -61,28 +61,24 @@ class OutfitController extends Controller
         $responseData = $response->json();
         logger()->info('outz:', ['outz' => $responseData]);
 
-        return view('outfitCategoryPreview', ['outfits'=>$responseData]);
+        return view('outfitpreview', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitByOutfitCategoryIdAdminPage() {
+    public function showOutfitAdminPage() {
         $url = "http://localhost:8080/api/outfit/findAll";
 
         $response = Http::get($url);
         $responseData = $response->json();
         logger()->info('outz:', ['outz' => $responseData]);
 
-        return view('outfitCategoryAdmin', ['outfits'=>$responseData]);
+        return view('outfitAdmin', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitByCategoryId() {
-        return view();
-    }
-
-    public function showOutfitCategoryChoosePage(Request $request) {
+    public function showOutfitChooseByCategoryPage(Request $request) {
         $outfitCategoryId = (int) $request['outfitCategoryId'];
         session()->put('outfitCategoryId', $outfitCategoryId);
         logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
-        return redirect('/outfitcategory');
+        return redirect('/outfitchoosebycategory');
     }
     
     public function showCreateOutfitPage() {
@@ -134,7 +130,7 @@ class OutfitController extends Controller
         if ($responseData['statusCode']!=null) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } 
-        return redirect('/outfitcategoryadmin')->with('imageBase64', $imageBase64);
+        return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
     }
 
     public function deleteOutfit(Request $request) {
@@ -192,7 +188,7 @@ class OutfitController extends Controller
         // if ($responseData['statusCode'] != null) {
         //     return redirect()->back()->withInput()->with('error', $responseData['description']);
         // } 
-        return redirect('/outfitcategoryadmin')->with('imageBase64', $imageBase64);
+        return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
     }
 
 }
