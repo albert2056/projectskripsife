@@ -31,11 +31,11 @@ Route::post('/signin', [LoginController::class, 'login'])->name('login');
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/outfitchoose', [OutfitController::class, 'showOutfitChoosePage'])->middleware('isUser');
-Route::post('/outfitchoose', [OutfitController::class, 'showOutfitCategoryChoosePage'])->name('outfitCategoryChoose');
-Route::get('/outfitcategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage'])->middleware('isUser');
-Route::post('/outfitcategory', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
-Route::get('/outfitcategoryadmin', [OutfitController::class, 'showOutfitByOutfitCategoryIdAdminPage'])->middleware('isAdmin');
-Route::get('/outfitcategorypreview', [OutfitController::class, 'showOutfitPreviewPage']); // ga ada button apa2 kalo preview
+Route::post('/outfitchoose', [OutfitController::class, 'showOutfitChooseByCategoryPage'])->name('outfitCategoryChoose');
+Route::get('/outfitchoosebycategory', [OutfitController::class, 'showOutfitByOutfitCategoryIdPage'])->middleware('isUser');
+Route::post('/outfitchoosebycategory', [OutfitController::class, 'outfitChoose'])->name('outfitChoose');
+Route::get('/outfitadmin', [OutfitController::class, 'showOutfitAdminPage'])->middleware('isAdmin');
+Route::get('/outfitpreview', [OutfitController::class, 'showOutfitPreviewPage']); // ga ada button apa2 kalo preview
 Route::get('/outfitcreateform', [OutfitController::class, 'showCreateOutfitPage'])->middleware('isAdmin');
 Route::post('/outfitcreateform', [OutfitController::class, 'createOutfit'])->name('createOutfit');
 Route::get('/outfitupdateform/{id}', [OutfitController::class, 'showUpdateOutfitPage'])->name('outfitUpdateForm');

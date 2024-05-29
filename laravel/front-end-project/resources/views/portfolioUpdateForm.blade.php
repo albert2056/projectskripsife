@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6 text-left mb-5" style="margin-top: 190px">
-            <h1 class="text-custom2" style="margin-bottom: 30px">Edit Portfolio</h1>
+            <h1 class="text-custom2" style="margin-bottom: 30px">Update Portfolio</h1>
         </div>
     </div>
     

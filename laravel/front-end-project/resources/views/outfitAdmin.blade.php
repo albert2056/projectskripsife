@@ -111,7 +111,7 @@
                             <form method="GET" action="{{ route('outfitUpdateForm', ['id' => $datas['id']]) }}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
-                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Update</button>
                             </form>
                         </div>
                     </div>

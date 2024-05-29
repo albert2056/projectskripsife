@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('content'); ?>
 
 <style>
@@ -73,7 +71,7 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-overlay">
-                            <img src="<?php echo e(asset('Assets/outfit/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <img src="data:image/jpeg;base64,<?php echo e($datas['image']); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                             <div class="overlay-content">
                                 <p> <?php echo e($datas['name']); ?> </p>
                             </div>
@@ -92,4 +90,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Documents\project skripsi\with git\front end\project skripsi\laravel\front-end-project\resources\views/outfitCategory.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/outfitChooseByCategory.blade.php ENDPATH**/ ?>

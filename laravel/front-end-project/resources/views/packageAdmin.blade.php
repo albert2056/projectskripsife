@@ -94,7 +94,7 @@
                             <form method="GET" action="{{ route('packageUpdateForm', ['id' => $datas['id']]) }}">
                                 @csrf
                                 <input type="hidden" name="id" value="{{ $datas['id'] }}">
-                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Update</button>
                             </form>
                         </div>
                         <div class="col" style="position: absolute; bottom: 35px; left: 70%; transform: translateX(-50%);">
