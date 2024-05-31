@@ -6,7 +6,7 @@ function validatePortfolioForm() {
     var venue = document.getElementById("venue").value;
     
     if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitNamePort.trim() == '' || venue.trim() == '') {
-        alert("Please fill in all fields.");
+        alert("Harap isi semua kolom dengan valid.");
         return false;
     }
 
@@ -28,7 +28,7 @@ function validateOutfitForm() {
     var outfitImage = document.getElementById("image").value;
     
     if (outfitName.trim() == '' || outfitCategory.trim() == '' || outfitQuantity.trim() == '' || outfitImage.trim() == '') {
-        alert("Please fill in all fields.");
+        alert("Harap isi semua kolom dengan valid.");
         return false;
     }
     
@@ -53,7 +53,7 @@ function validatePackageForm() {
     var packageDescription = document.getElementById("description").value;
     
     if (packageName.trim() == '' || packagePrice.trim() == '' || packageDescription.trim() == '') {
-        alert("Please fill in all fields.");
+        alert("Harap isi semua kolom dengan valid.");
         return false;
     }
     
@@ -69,7 +69,7 @@ function validateBookForm() {
     var venue = document.getElementById("venue").value;
     
     if (name.trim() == '' || totalUsher.trim() == '' || eventDate.trim() == '' || venue.trim() == '') {
-        alert("Please fill in all fields.");
+        alert("Harap isi semua kolom dengan valid.");
         return false;
     }
 
@@ -93,13 +93,13 @@ function validateRegisterForm() {
     var password = document.getElementById("password").value;
 
     if (typeof name !== 'string' || name === "" || email === "" || phone === "" || password === "") {
-        alert("Please fill in all fields with valid data types.");
+        alert("Harap isi semua kolom registrasi dengan valid.");
         return false;
     } else if (!isValidEmail(email)) {
-        alert("Please enter a valid email address.");
+        alert("Masukkan alamat email yang valid.");
         return false;
     } else if (isNaN(phone) || phone.length < 10) {
-        alert("Phone number must be at least 10 characters long and must be a number.");
+        alert("Panjang nomor telepon minimal 10 karakter dan harus berupa angka.");
         return false;
     } else {
       try {
@@ -123,16 +123,35 @@ function validateRegisterForm() {
 
   function validatePassword(password) {
     if (password.length < 8) {
-        throw new Error("Password must be at least 8 characters long.");
+        throw new Error("Password harus terdiri dari minimal 8 karakter.");
     }
     if (!/[A-Z]/.test(password)) {
-        throw new Error("Password must contain at least one uppercase letter.");
+        throw new Error("Password harus terdiri dari minimal 8 karakter.");
     }
     if (!/[a-z]/.test(password)) {
-        throw new Error("Password must contain at least one lowercase letter.");
+        throw new Error("Password harus terdiri dari setidaknya satu huruf kecil.");
     }
     if (!/\d/.test(password)) {
-        throw new Error("Password must contain at least one number.");
+        throw new Error("Password harus terdiri dari setidaknya satu angka.");
     }
     return true;
   }
+
+  function validateLoginForm() {
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    
+    if (!email || !emailPattern.test(email)) {
+      alert('Masukkan alamat email yang valid.');
+      return false;
+    }
+  
+    if (!password) {
+      alert('Masukkan kata sandi Anda.');
+      return false;
+    }
+  
+    return true;
+  }
+  

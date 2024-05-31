@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     <label for="inputUsher" style="margin-bottom: 10px; font-size: 18px">Jumlah Usher</label>
-                    <input type="number" class="form-control" id="totalUsher" name="totalUsher" style="margin-bottom: 30px;" min="0" max="8">
+                    <input type="number" class="form-control" id="totalUsher" name="totalUsher" style="margin-bottom: 30px;" min="0" max="15">
                 </div>
 
                 <div class="form-group">

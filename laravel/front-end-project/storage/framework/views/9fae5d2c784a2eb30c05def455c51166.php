@@ -37,7 +37,7 @@
                     <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
                 </div>                
 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormOutfitUpdate()">Submit</button>
             </form>
         </div>
 
@@ -49,6 +49,7 @@
 
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/outfitUpdateForm.blade.php ENDPATH**/ ?>

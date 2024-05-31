@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label for="inputOutfitQuantity" style="margin-bottom: 10px; font-size: 18px">Kuantitas</label>
-                    <input type="number" class="form-control" id="qty" name="qty" style="margin-bottom: 30px;" min="0" max="8">
+                    <input type="number" class="form-control" id="qty" name="qty" style="margin-bottom: 30px;" min="0" max="50">
                 </div>
 
                 <div class="form-group">
@@ -36,7 +36,7 @@
                     <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
                 </div>                
                 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormOutfitCreate()">Submit</button>
             </form>
         </div>
         
@@ -47,6 +47,7 @@
 </div>
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

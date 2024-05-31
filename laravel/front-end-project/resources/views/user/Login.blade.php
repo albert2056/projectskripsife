@@ -12,7 +12,7 @@
 
     body {
       font-weight: 400;
-      font-style:normal;
+      font-style: normal;
       text-decoration: none;
       text-transform: none;
       letter-spacing: normal;
@@ -29,87 +29,92 @@
   <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}"/>
   <div>
     <link href="{{asset('css/loginindex.css')}}" rel="stylesheet" />
-    <form action="{{route('login')}}" method="POST">
+    <form action="{{route('login')}}" method="POST" id="loginForm">
       @csrf
-    <div class="signupoverlay-container">
-      <div class="signupoverlay-signupoverlay">
-        <img
-          src="external/icons8160-jokl.svg"
-          alt="Icons8160"
-          class="signupoverlay-icons"
-        />
-        <div class="signupoverlay-frame288">
-          <div class="signupoverlay-frame209">
-            <img
-              src="external/logo8163-lppi-200h.png"
-              alt="Logo8163"
-              class="signupoverlay-logo"
-            />
-            <div class="signupoverlay-frame8">
-              <span class="signupoverlay-text"><span>Masuk</span></span>
-              <div class="signupoverlay-haveanaccountlogin">
-                <span class="signupoverlay-text02">
-                  <span class="signupoverlay-text03">Belum punya akun?</span>
-                  <span class="signupoverlay-text04"></span>
-                  <a href="/signup">Daftar</a>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="signupoverlay-frame287">
-            <div class="signupoverlay-textfield">
-              <div class="signupoverlay-frame243">
-                <span class="signupoverlay-text10"><span>Email</span></span>
-              </div>
-              <input type="text" name="email" class="signupoverlay-textfield1" id="email" value="">
-            </div>
-            <div class="signupoverlay-frame286">
-              <div class="signupoverlay-textfield2">
-                <div class="signupoverlay-frame2431">
-                  <span class="signupoverlay-text10">
-                    <span>Password</span>
+      <div class="signupoverlay-container">
+        <div class="signupoverlay-signupoverlay">
+          <div class="signupoverlay-frame288">
+            <div class="signupoverlay-frame209">
+              <img
+                src="external/logo8163-lppi-200h.png"
+                alt="Logo8163"
+                class="signupoverlay-logo"
+              />
+              <div class="signupoverlay-frame8">
+                <span class="signupoverlay-text"><span>Masuk</span></span>
+                <div class="signupoverlay-haveanaccountlogin">
+                  <span class="signupoverlay-text02">
+                    <span class="signupoverlay-text03">Belum punya akun?</span>
+                    <span class="signupoverlay-text04"></span>
+                    <a href="/signup"><u>Daftar</u></a>
                   </span>
-                  <div class="signupoverlay-passwordhidesee">
-                    {{-- <div class="signupoverlay-icon">
-                      <div class="signupoverlay-group1">
-                        <img
-                          src="external/vectori817-mh3x.svg"
-                          alt="VectorI817"
-                          class="signupoverlay-vector"
-                        />
-                        <img
-                          src="external/vectori817-7g9.svg"
-                          alt="VectorI817"
-                          class="signupoverlay-vector1"
-                        />
-                      </div>
-                    </div> --}}
-                    {{-- <span class="signupoverlay-text14">
-                      <span>Hide</span>
-                    </span> --}}
+                </div>
+              </div>
+            </div>
+            <div class="signupoverlay-frame287">
+              <div class="signupoverlay-textfield">
+                <div class="signupoverlay-frame243">
+                  <span class="signupoverlay-text10"><span>Email</span></span>
+                </div>
+                <input type="text" name="email" class="signupoverlay-textfield1" id="email" value="">
+              </div>
+              <div class="signupoverlay-frame286">
+                <div class="signupoverlay-textfield2">
+                  <div class="signupoverlay-frame2431">
+                    <span class="signupoverlay-text10">
+                      <span>Password</span>
+                    </span>
+                    <div class="signupoverlay-passwordhidesee">
+                    </div>
+                  </div>
+                  <input type="password" name="password" class="signupoverlay-textfield1" id="password" value="">
+                  <div class="password-toggle-container">
+                    <input type="checkbox" id="togglePassword">
+                    <label for="togglePassword">Show Password</label>
                   </div>
                 </div>
-                <input type="password" name="password" class="signupoverlay-textfield1" id="password" value="">
               </div>
-              {{-- <span class="signupoverlay-text16">
-                <span>Lupa Password?</span>
-              </span> --}}
-            </div>
-            <button class="signupoverlay-button" type="submit">
-              <div class="signupoverlay-frame276">
-                <span class="signupoverlay-text18"><span>Masuk</span></span>
-              </div>
-            </button>
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
+              <button class="signupoverlay-button" type="submit" onclick="if (validateLoginForm()) {successfullyLoginPopup();}">
+                <div class="signupoverlay-frame276">
+                  <span class="signupoverlay-text18"><span>Masuk</span></span>
                 </div>
-            @endif
+              </button>
+              @if (session('error'))
+                  <div class="alert alert-danger">
+                      {{ session('error') }}
+                  </div>
+              @endif
+            </div>
           </div>
         </div>
-        
       </div>
-    </div>
     </form>
   </div>
+
+  <script src="{{ asset('js/validate.js') }}"></script>
+  <script src="{{ asset('js/alert.js') }}"></script>
+  <script>
+    document.getElementById('togglePassword').addEventListener('change', function() {
+      var passwordField = document.getElementById('password');
+      if (this.checked) {
+        passwordField.type = 'text';
+      } else {
+        passwordField.type = 'password';
+      }
+    });
+  </script>
+  <style>
+    .password-toggle-container {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      color: #595959;
+      
+    }
+    .password-toggle-container input {
+      margin-right: 12px;
+      transform: scale(1.6);
+      margin-left: 6px; 
+    }
+  </style>
 @endsection

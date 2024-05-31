@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6 text-left mb-5" style="margin-top: 190px">
-            <h1 class="text-custom2" style="margin-bottom: 30px">Edit Package</h1>
+            <h1 class="text-custom2" style="margin-bottom: 30px">Update Package</h1>
         </div>
     </div>
     
@@ -29,7 +29,7 @@
                     <textarea class="form-control" id="description" name="description" style="margin-bottom: 30px;"></textarea>
                 </div>                         
                 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormPackageUpdate()">Submit</button>
             </form>
         </div>
         
@@ -40,6 +40,7 @@
 </div>
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
     
 <?php $__env->stopSection(); ?>
 

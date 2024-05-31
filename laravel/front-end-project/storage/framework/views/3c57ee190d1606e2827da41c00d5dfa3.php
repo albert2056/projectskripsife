@@ -2,7 +2,7 @@
 
 <style>
     body {
-        background-image: url('Assets/portfolioBg.jpg');
+        background-image: url('../external/portfolioBg.jpeg');
         background-size: cover;
         background-position: center;
     }

@@ -38,7 +38,7 @@
                     <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
                 </div>                
                 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormOutfitCreate()">Submit</button>
             </form>
         </div>
         
@@ -49,5 +49,6 @@
 </div>
 
 <script src="{{ asset('js/validate.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection

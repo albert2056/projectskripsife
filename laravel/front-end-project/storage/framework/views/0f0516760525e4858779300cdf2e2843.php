@@ -36,6 +36,18 @@
       margin-bottom: 10vh;
       margin-top: 10vh;
     }
+
+    .password-toggle-container {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      color: #595959;
+    }
+    .password-toggle-container input {
+      margin-right: 12px;
+      transform: scale(1.6);
+      margin-left: 8px; 
+    }
   </style>
   <link rel="stylesheet" href=<?php echo e(asset('css/registerstyle.css')); ?>/>
   <div>
@@ -56,7 +68,7 @@
                   <span class="createanaccount-text03">
                     Sudah punya akun?
                   </span>
-                  <a href="/signin">Masuk</a>
+                  <a href="/signin"><u>Masuk</u></a>
                 </span>
               </div>
               <div class="createanaccount-textfield">
@@ -86,6 +98,10 @@
                   </div>
                   <input type="password" name="password" class="createanaccount-textfield1" id="password" value="">
                 </div>
+                <div class="password-toggle-container">
+                  <input type="checkbox" id="togglePassword">
+                  <label for="togglePassword">Show Password</label>
+                </div>
                 <div class="createanaccount-frame357">
                   <div class="createanaccount-frame355">
                     <div class="createanaccount-bulletpoint">
@@ -95,7 +111,7 @@
                         class="createanaccount-ellipse1"
                       />
                       <span class="createanaccount-text17">
-                        <span>Use 8 or more characters</span>
+                        <span>Gunakan 8 karakter atau lebih</span>
                       </span>
                     </div>
                     <div class="createanaccount-bulletpoint">
@@ -105,7 +121,7 @@
                         class="createanaccount-ellipse1"
                       />
                       <span class="createanaccount-text17">
-                        <span>Use a number (e.g. 1234)</span>
+                        <span>Gunakan Angka</span>
                       </span>
                     </div>
                   </div>
@@ -117,14 +133,14 @@
                         class="createanaccount-ellipse1"
                       />
                       <span class="createanaccount-text17">
-                        <span>Use upper and lower case letters (e.g. Aa)</span>
+                        <span>Gunakan huruf besar dan kecil </span>
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="createanaccount-frame360">
-                <button class="createanaccount-button" type="button" onclick="validateRegisterForm()">
+                <button class="createanaccount-button" type="button" onclick="if (validateRegisterForm()) {successfullyRegisterPopup();}">
                   <div class="createanaccount-frame276">
                     <span class="createanaccount-text23">
                       <span>Daftar</span>
@@ -146,6 +162,7 @@
   </div>
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

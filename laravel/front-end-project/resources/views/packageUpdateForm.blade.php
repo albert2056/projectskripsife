@@ -31,7 +31,7 @@
                     <textarea class="form-control" id="description" name="description" style="margin-bottom: 30px;"></textarea>
                 </div>                         
                 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormPackageUpdate()">Submit</button>
             </form>
         </div>
         
@@ -42,5 +42,6 @@
 </div>
 
 <script src="{{ asset('js/validate.js') }}"></script>
+<script src="{{ asset('js/alert.js') }}"></script>
     
 @endsection

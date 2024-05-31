@@ -28,7 +28,7 @@
                     <textarea class="form-control" id="description" name="description" style="margin-bottom: 30px;"></textarea>
                 </div>                         
                 
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormPackageCreate()">Submit</button>
             </form>
         </div>
         
@@ -39,6 +39,7 @@
 </div>
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
     
 <?php $__env->stopSection(); ?>
 

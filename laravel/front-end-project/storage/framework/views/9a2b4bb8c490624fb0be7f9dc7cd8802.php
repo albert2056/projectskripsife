@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value=<?php echo e($datas['id']); ?>>Pilih</button>
+                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value=<?php echo e($datas['id']); ?> onclick="successfullyBook()">Pilih</button>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
     </form>
 </div>
 
-
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

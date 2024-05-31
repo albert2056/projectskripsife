@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <div class="card-body text-center">
-                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value={{ $datas['id'] }}>Pilih</button>
+                            <button class="btn btn-primary btn-card-custom" type="submit" name="outfitId" type="number" value={{ $datas['id'] }} onclick="successfullyBook()">Pilih</button>
                         </div>
                     </div>
                 </div>
@@ -88,6 +88,6 @@
     </form>
 </div>
 
-
+<script src="{{ asset('js/alert.js') }}"></script>
 
 @endsection

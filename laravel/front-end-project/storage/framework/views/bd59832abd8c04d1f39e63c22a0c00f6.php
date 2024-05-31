@@ -92,7 +92,7 @@
                             <form method="GET" action="<?php echo e(route('packageUpdateForm', ['id' => $datas['id']])); ?>">
                                 <?php echo csrf_field(); ?>
                                 <input type="hidden" name="id" value="<?php echo e($datas['id']); ?>">
-                                <button type="submit" class="btn btn-secondary btn-card-custom">Edit</button>
+                                <button type="submit" class="btn btn-secondary btn-card-custom">Update</button>
                             </form>
                         </div>
                         <div class="col" style="position: absolute; bottom: 35px; left: 70%; transform: translateX(-50%);">
