@@ -46,7 +46,7 @@
                     <label for="inputWO" style="margin-bottom: 10px; font-size: 18px">Nama Wedding Organizer</label>
                     <input type="text" class="form-control" id="wo" name="wo" style="margin-bottom: 30px;" placeholder="Opsional">
                 </div>
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit">Submit</button>
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormPortfolioCreate()">Submit</button>
             </form>
         </div>
         
@@ -57,6 +57,7 @@
 </div>
 
 <script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

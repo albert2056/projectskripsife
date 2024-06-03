@@ -42,7 +42,7 @@
                             <a class="nav-link px-4 {{ Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packageadmin">Package</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitadmin">Busana</a>
+                            <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitadmin">Outfit</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle px-4 {{ Request::is('upcomingevent/week') || Request::is('upcomingevent/month') ? 'active' : '' }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -63,7 +63,7 @@
                             <a class="nav-link px-4 {{ Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagepreview">Package</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitpreview">Busana</a>
+                            <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitpreview">Outfit</a>
                         </li>
                     </ul>
                 @endif
@@ -123,7 +123,7 @@
                     <a class="nav-link px-4 {{ Request::is('packagepreview') ? 'active' : (Request::is('packageadmin') ? 'active' : '') }}" href="/packagepreview">Package</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitpreview">Busana</a>
+                      <a class="nav-link px-4 {{ Request::is('outfitpreview') ? 'active' : (Request::is('outfitadmin') ? 'active' : '') }}" href="/outfitpreview">Outfit</a>
                   </li>
               </ul>
           </div>

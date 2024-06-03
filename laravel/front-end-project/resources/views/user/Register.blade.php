@@ -87,7 +87,7 @@
               </div>
               <div class="createanaccount-textfield">
                 <div class="createanaccount-frame243">
-                  <span class="createanaccount-text05"><span>Phone</span></span>
+                  <span class="createanaccount-text05"><span>Nomor Telepon</span></span>
                 </div>
                 <input type="text" name="phone" class="createanaccount-textfield1" id="phone" value="">
               </div>
@@ -161,7 +161,16 @@
       </div>
     </form>
   </div>
-
+  <script>
+    document.getElementById('togglePassword').addEventListener('change', function() {
+      var passwordField = document.getElementById('password');
+      if (this.checked) {
+        passwordField.type = 'text';
+      } else {
+        passwordField.type = 'password';
+      }
+    });
+  </script>
 <script src="{{ asset('js/validate.js') }}"></script>
 <script src="{{ asset('js/alert.js') }}"></script>
 

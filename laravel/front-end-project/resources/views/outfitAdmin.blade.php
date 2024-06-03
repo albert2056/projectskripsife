@@ -76,7 +76,7 @@
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
-    <h1 class="text-custom1" style="letter-spacing: 2px">Pasangan Berbahagia Yang Mempercayai <br> Hari Bahagianya Bersama Kami</h1>
+    <h1 class="text-custom1" style="letter-spacing: 2px">Busana</h1>
 </div>
 
 <div class="container" style="margin-bottom: 150px">

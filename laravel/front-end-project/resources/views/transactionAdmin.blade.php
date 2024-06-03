@@ -19,7 +19,7 @@
 
 <main class="table" id="customers_table" style="margin-top: 150px; margin-left: 150px; margin-bottom: 50px">
     <section class="table__header">
-        <h1 style="margin-top: 20px; margin-left: 20px">Transaction History</h1>
+        <h1 style="margin-top: 20px; margin-left: 20px">Transaction</h1>
         <div class="input-group">
             <input type="search" placeholder="Search Data...">
         </div>
