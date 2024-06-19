@@ -17,7 +17,6 @@ class PackageController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('pack:', ['packages' => $responseData]);
 
         return view('packageChoose', ['packages' => $responseData]);
     }
@@ -26,7 +25,6 @@ class PackageController extends Controller
         $url = "http://localhost:8080/api/package/findAll";
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('packages:', ['packages' => $responseData]);
         return view('packagePreview', ['packages'=>$responseData]);
     }
 
@@ -49,8 +47,6 @@ class PackageController extends Controller
         session()->put('transactionRequest', $transactionRequest);
         session()->put('package', $package);
 
-        logger()->info('package:', ['package' => $package]);
-        logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
         if(strpos($package['name'], 'Standard') !== false) {
             return redirect('/invoice');
         }
@@ -62,7 +58,6 @@ class PackageController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('pack:', ['packages' => $responseData]);
 
         return view ('packageAdmin', ['packages' => $responseData]);
     }
@@ -75,13 +70,9 @@ class PackageController extends Controller
         $name = $request['name'];
         $price = (int) $request['price'];
         $description = $request['description'];
-        logger()->info('name:', ['name' => $name]);
-        logger()->info('price:', ['price' => $price]);
-        logger()->info('description:', ['description' => $description]);
         $url = "http://localhost:8080/api/package/create?name=$name&price=$price&description=$description";
         $response = Http::post($url);
         $responseData = $response->json();
-        logger()->info('Package Create:', ['Package Create' => $responseData]);
         return redirect('/packageadmin');
     }
 
@@ -91,7 +82,6 @@ class PackageController extends Controller
         $response = Http::get($url);
         $responseData = $response->json();
 
-        logger()->info('packagee', ['packagee' => $responseData]);
         $package = $response->json();
         if ($response->successful()) {
             return view('packageUpdateForm', ['package' => $package]);    
@@ -105,14 +95,10 @@ class PackageController extends Controller
         $name = $request['name'];
         $price = (int) $request['price'];
         $description = $request['description'];
-        logger()->info('name:', ['name' => $name]);
-        logger()->info('price:', ['price' => $price]);
-        logger()->info('description:', ['description' => $description]);
         $url = "http://localhost:8080/api/package/update?id=$packageId&name=$name&price=$price&description=$description";
         $response = Http::post($url);
         $responseData = $response->json();
 
-        logger()->info('Package Update:', ['Package Update' => $responseData]);
         $package = $response->json();
         if ($response->successful()) {
             return redirect('/packageadmin');    

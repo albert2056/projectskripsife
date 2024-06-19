@@ -13,7 +13,6 @@ class PortfolioController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('portfolio:', ['portfolio' => $responseData]);
         return view('portfolio', ['portfolios'=>$responseData]);
     }
     
@@ -22,35 +21,8 @@ class PortfolioController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('portfolio:', ['portfolio' => $responseData]);
         return view('portfolioAdmin', ['portfolios'=>$responseData]);
     }
-
-    // public function createPortfolio(Request $request) {
-    //     $request->validate([
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    //     ]);
-    //     $image = $request->file('image');
-    //     $imageName = $image->getClientOriginalName();
-    //     $image->move(public_path('Assets/portfolio'), $imageName);
-
-    //     $portfolioRequest = new PortfolioRequest();
-    //     $portfolioRequest->name = $request['name'];
-    //     $portfolioRequest->eventDate = $request['eventDate'];
-    //     $portfolioRequest->image = $imageName;
-    //     $portfolioRequest->gownName = $request['gownName'];
-    //     $portfolioRequest->venue = $request['venue'];
-    //     $portfolioRequest->wo = $request['wo'];
-    //     $portfolioRequest->column = 1;
-    //     $portfolioRequest->eventName = 'Wedding';
-    //     $response = Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
-    //     $responseData = $response->json();
-    //     logger()->info('portfolio', ['portfolio' => $responseData]);
-    //     if ($responseData['statusCode']!=null) {
-    //         return redirect()->back()->withInput()->with('error', $responseData['description']);
-    //     } 
-    //     return redirect('/portfolioadmin');
-    // }
 
     public function createPortfolio(Request $request) {
         $request->validate([
@@ -68,12 +40,9 @@ class PortfolioController extends Controller
         $portfolioRequest->gownName = $request['gownName'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
-        $portfolioRequest->column = 1;
-        $portfolioRequest->eventName = 'Wedding';
     
         $response = Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
         $responseData = $response->json();
-        logger()->info('portfolio', ['portfolio' => $responseData]);
     
         if (isset($responseData['statusCode'])) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
@@ -102,7 +71,6 @@ class PortfolioController extends Controller
         $response = Http::get($url);
         $responseData = $response->json();
 
-        logger()->info('portfss', ['portfs' => $responseData]);
         $outfitUrl = "http://localhost:8080/api/outfit/findAll";
         $outfitResponse = Http::get($outfitUrl);
         if ($response->successful()) {
@@ -133,11 +101,9 @@ class PortfolioController extends Controller
         $portfolioRequest->gownName = $request['gownName'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
-        $portfolioRequest->column = 1;
-        $portfolioRequest->eventName = 'Wedding';
+        
         $response = Http::post("http://localhost:8080/api/portfolio/update?id={$portfolioId}", $portfolioRequest->toArray());
         $responseData = $response->json();
-        logger()->info('portfolio', ['portfolio' => $responseData]);
         if ($response->successful()) {
             $portfolio = $response->json();
             return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
