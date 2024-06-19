@@ -71,10 +71,6 @@ function successfullyRegisterPopup() {
     alert("Berhasil melakukan registrasi akun!")
 }
 
-function successfullyLoginPopup() {
-    alert("Berhasil melakukan Login!")
-}
-
 function successfullyBook() {
     alert("Berhasil melakukan pemesanan!")
 }

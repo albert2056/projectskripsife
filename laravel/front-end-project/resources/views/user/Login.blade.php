@@ -74,16 +74,19 @@
                   </div>
                 </div>
               </div>
-              <button class="signupoverlay-button" type="submit" onclick="if (validateLoginForm()) {successfullyLoginPopup();}">
+              <button class="signupoverlay-button" type="submit">
                 <div class="signupoverlay-frame276">
                   <span class="signupoverlay-text18"><span>Masuk</span></span>
                 </div>
               </button>
-              @if (session('error'))
-                  <div class="alert alert-danger">
-                      {{ session('error') }}
-                  </div>
-              @endif
+              <script>
+                @if (session('error'))
+                    alert("Gagal melakukan Login!");
+                @elseif (session('user'))
+                    alert("Berhasil melakukan Login!");
+                @endif
+            </script>
+            
             </div>
           </div>
         </div>
