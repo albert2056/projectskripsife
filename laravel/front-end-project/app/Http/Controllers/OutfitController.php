@@ -27,7 +27,6 @@ class OutfitController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('outz:', ['outz' => $responseData]);
 
         return view('outfitChooseByCategory', ['outfits'=>$responseData]);
     }
@@ -46,11 +45,9 @@ class OutfitController extends Controller
         $responseData = $response->json();
 
         $outfitName = $responseData['name'];
-        logger()->info('outfitName:', ['outfitName' => $outfitName]);
         
         $transactionRequest->outfitId = (int) $request['outfitId'];
         session()->put('outfitName', $outfitName);
-        logger()->info('transactionRequest:', ['transactionRequest' => $transactionRequest]);
         return redirect('/invoice');
     }
 
@@ -59,7 +56,6 @@ class OutfitController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('outz:', ['outz' => $responseData]);
 
         return view('outfitpreview', ['outfits'=>$responseData]);
     }
@@ -69,7 +65,6 @@ class OutfitController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
-        logger()->info('outz:', ['outz' => $responseData]);
 
         return view('outfitAdmin', ['outfits'=>$responseData]);
     }
@@ -77,37 +72,12 @@ class OutfitController extends Controller
     public function showOutfitChooseByCategoryPage(Request $request) {
         $outfitCategoryId = (int) $request['outfitCategoryId'];
         session()->put('outfitCategoryId', $outfitCategoryId);
-        logger()->info('outfitCategoryId:', ['outfitCategoryId' => $outfitCategoryId]);
         return redirect('/outfitchoosebycategory');
     }
     
     public function showCreateOutfitPage() {
         return view('outfitCreateFormAdmin');
     }
-
-    // public function createOutfit(Request $request) {
-    //     $request->validate([
-    //         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    //     ]);
-    //     $image = $request->file('image');
-    //     $imageName = $image->getClientOriginalName();
-    //     $image->move(public_path('Assets/outfit'), $imageName);
-
-    //     $outfitRequest = new OutfitRequest();
-    //     $outfitRequest->outfitCategoryId = $request['outfitCategoryId'];
-    //     $outfitRequest->name = $request['name'];
-    //     $outfitRequest->qty = $request['qty'];
-    //     $outfitRequest->image = $imageName;
-    //     $user = session()->get('user'); 
-    //     $outfitRequest->updatedBy = $user['id'];
-    //     $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
-    //     $responseData = $response->json();
-    //     logger()->info('outfit', ['outfit' => $responseData]);
-    //     if ($responseData['statusCode']!=null) {
-    //         return redirect()->back()->withInput()->with('error', $responseData['description']);
-    //     } 
-    //     return redirect('/outfitcategoryadmin');
-    // }
 
     public function createOutfit(Request $request) {
         $request->validate([
@@ -126,7 +96,6 @@ class OutfitController extends Controller
         $outfitRequest->updatedBy = $user['id'];
         $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
         $responseData = $response->json();
-        logger()->info('outfit', ['outfit' => $responseData]);
         if ($responseData['statusCode']!=null) {
             return redirect()->back()->withInput()->with('error', $responseData['description']);
         } 
@@ -153,16 +122,8 @@ class OutfitController extends Controller
         $response = Http::get($url);
         $responseData = $response->json();
 
-        logger()->info('outfitss', ['outfitss' => $responseData]);
         $outfit = $response->json();
         return view('outfitUpdateForm', ['outfit' => $outfit]);
-        // if ($response->successful()) {
-        //     $outfit = $response->json();
-        //     return view('outfitUpdateForm', ['outfit' => $outfit]);
-        // } else {
-        //     $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the outfit.';
-        //     return redirect()->back()->with('error', $errorMessage);
-        // }
     }
 
     public function updateOutfit(Request $request, $outfitId) {
@@ -184,10 +145,6 @@ class OutfitController extends Controller
 
         $response = Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
         $responseData = $response->json();
-        logger()->info('outfitss', ['outfitss' => $responseData]);
-        // if ($responseData['statusCode'] != null) {
-        //     return redirect()->back()->withInput()->with('error', $responseData['description']);
-        // } 
         return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
     }
 

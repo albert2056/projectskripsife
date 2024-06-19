@@ -24,7 +24,7 @@
         <span>
           <span>Membantu memberikan kesan elegan dan professional</span>
           <br />
-          <span>pada pernikahan</span>
+          <span>pada pernikahan anda</span>
         </span>
       </span>
       <img
@@ -102,12 +102,13 @@
           </div>
         </div>
       </div>
-      <button class="home-main-page-button1">
+      <a href="https://api.whatsapp.com/send?phone=6282114327822" target="_blank" class="home-main-page-button1">
         <div class="home-main-page-whatsapp">
-          <img src="external/wawhite.png" class="home-main-page-text11"></img>
+            <img src="external/wawhite.png" class="home-main-page-text11"></img>
         </div>
         <span class="home-main-page-text12"><span>&nbsp;Chat</span></span>
-      </button>
+    </a>
+    
 </div>
 
 <div class="container2">
@@ -147,20 +148,17 @@
 <div class="container3">
   <span class="text17"><span>T&amp;C Hayden Usher</span></span>
   <span class="text18">
-    <span>
-      <span>- Usher Datang 2 Jam sebelum acara dimulai</span>
-      <br />
-      <span>- Usher Stand By 1 Jam sebelum acara</span>
-      <br />
-      <span>- Max jam kerja adalah 4 jam dihitung selama</span>
-      <br />
-      <span> &nbsp acara berlangsung</span>
-      <br />
-      <span></span>
-    </span>
+      <span>
+          <ul style="padding-left: 20px;">
+              <li style="margin-bottom: 10px;">Usher Datang 2 Jam sebelum acara dimulai</li>
+              <li style="margin-bottom: 10px;">Usher Stand By 1 Jam sebelum acara</li>
+              <li style="margin-bottom: 10px;">Max jam kerja adalah 4 jam dihitung selama <span>acara berlangsung</span></li>
+          </ul>
+      </span>
   </span>
+
   <img
-    src="external/gambar41585-l4th-500h.png"
+    src="external/gambar4.png"
     alt="gambar41585"
     class="frame-image"
   />

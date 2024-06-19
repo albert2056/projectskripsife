@@ -48,9 +48,6 @@ class TransactionController extends Controller
         $response = Http::get($url);
         $responseData = $response->json();
 
-        logger()->info('id:', ['id' => $userId]);
-        logger()->info('tr:', ['tr' => $responseData]);
-
         return view('transaction', ['transactions'=>$responseData]);
     }
 
@@ -61,10 +58,8 @@ class TransactionController extends Controller
         if ($transactionRequest == null) { 
             return redirect('/bookpage');
         }
-        logger()->info('packageI:', ['package' => $package]);
         $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
         $responseData = $response->json();
-        logger()->info('responseData:', ['responseData' => $responseData]);
         $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
         $responseData['eventDate'] = $eventDate;
         $user = session()->get('user');
@@ -72,7 +67,6 @@ class TransactionController extends Controller
         session()->forget('outfitName');
         session()->forget('package');
         return view('invoice', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
-        // return view('invoice');
     }
 
     public function book(Request $request) {
@@ -188,11 +182,6 @@ class TransactionController extends Controller
             $outfitData = $outfit->json();
             $outfitName = $outfitData['name'];
         }
-
-        logger()->info('responseData:', ['responseData' => $responseData]);
-        logger()->info('packageData:', ['packageData' => $packageData]);
-        logger()->info('outfitName:', ['responseData' => $outfitName]);
-        logger()->info('user:', ['user' => $user]);
         
         return view('transactionDetail', ['transaction'=>$responseData, 'user'=>$user, 'outfitName'=>$outfitName, 'package'=>$package]);
     }
