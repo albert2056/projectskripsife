@@ -10,7 +10,7 @@
         position: relative;
         border: none;
         border-radius: 0px;
-        margin-bottom: 18px
+        margin-bottom: 18px;
     }
 
     .card-overlay {
@@ -25,16 +25,21 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 10px
+        border-radius: 10px;
     }
 
     .overlay-content {
         color: black;
         margin: 10px;
-        margin-right: 215px;
         letter-spacing: 1px;
-
+        text-align: left;
+        white-space: nowrap;         
+        overflow: hidden;            
+        text-overflow: ellipsis;     
+        width: 100%;                 
+        padding-left: 10px; 
     }
+
 </style>
 
 <div class="col text-center mb-5" style="margin-top: 150px; margin-left: 20px">
@@ -48,7 +53,7 @@
                 <div class="card">
                     <div class="card-overlay">
                         <a href="/portfoliodetail/<?php echo e($datas['id']); ?>">
-                            <img src="<?php echo e(asset('Assets/portfolio/' . $datas['image'])); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
+                            <img src="data:image/jpeg;base64,<?php echo e($datas['image']); ?>" style="width: 300px; height: 360px; border-radius: 10px; margin-top: 20px" alt="Overlay Image">
                         </a>
 
                         <div class="overlay-content">
@@ -59,9 +64,7 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
-    
 </div>
-
 
 
 <?php $__env->stopSection(); ?>
