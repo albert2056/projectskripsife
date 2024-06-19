@@ -19,17 +19,4 @@ class PortfolioRequest extends Model
         'name',
         'eventName',
     ];
-
-    // protected $nullable = [
-    //     'image',
-    //     'gownName',
-    //     'eventDate',
-    //     'venue',
-    //     'wo',
-    //     'column',
-    //     'name',
-    //     'eventName',
-    // ];
-
-    
 }
