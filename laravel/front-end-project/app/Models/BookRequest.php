@@ -14,7 +14,4 @@ class BookRequest extends Model
         'wo',
     ];
 
-    protected $dates = [
-        'eventDate',
-    ];
 }
