@@ -1,6 +1,4 @@
-@extends('template')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
   <style data-tag="reset-style-sheet">
     html { line-height: 1.15; }
     body { margin: 0; }
@@ -51,11 +49,11 @@
       margin-left: 8px; 
     }
   </style>
-  <link rel="stylesheet" href={{asset('css/registerstyle.css')}}/>
+  <link rel="stylesheet" href=<?php echo e(asset('css/registerstyle.css')); ?>/>
   <div>
-    <link href={{asset('css/registerindex.css')}} rel="stylesheet" />
-    <form id="registrationForm" action="{{route('register')}}" method="post">
-      @csrf
+    <link href=<?php echo e(asset('css/registerindex.css')); ?> rel="stylesheet" />
+    <form id="registrationForm" action="<?php echo e(route('register')); ?>" method="post">
+      <?php echo csrf_field(); ?>
       <div class="createanaccount-container">
         <div class="createanaccount-createanaccount">
           <div class="createanaccount-frame352">
@@ -150,9 +148,9 @@
                   </div>
                 </button>
                 <script>
-                  @if (session('error'))
+                  <?php if(session('error')): ?>
                       alert("Email telah terdaftar!");
-                  @endif
+                  <?php endif; ?>
               </script>
               </div>
             </div>
@@ -171,7 +169,9 @@
       }
     });
   </script>
-<script src="{{ asset('js/validate.js') }}"></script>
-<script src="{{ asset('js/alert.js') }}"></script>
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/user/Register.blade.php ENDPATH**/ ?>

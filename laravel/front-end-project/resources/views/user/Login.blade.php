@@ -82,8 +82,6 @@
               <script>
                 @if (session('error'))
                     alert("Gagal melakukan Login!");
-                @elseif (session('user'))
-                    alert("Berhasil melakukan Login!");
                 @endif
             </script>
             

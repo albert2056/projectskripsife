@@ -80,8 +80,6 @@
               <script>
                 <?php if(session('error')): ?>
                     alert("Gagal melakukan Login!");
-                <?php elseif(session('user')): ?>
-                    alert("Berhasil melakukan Login!");
                 <?php endif; ?>
             </script>
             
