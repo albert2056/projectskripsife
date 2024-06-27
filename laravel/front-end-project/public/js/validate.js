@@ -37,13 +37,9 @@ function validateOutfitForm() {
 
 //package
 function formatPrice(input) {
-    // Remove non-digit characters
     let unformattedValue = input.value.replace(/\D/g, '');
-    // Format the value
     let formattedValue = unformattedValue.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    // Set formatted value to visible input field
     input.value = formattedValue;
-    // Set unformatted value to hidden input field
     document.getElementById('price').value = unformattedValue;
 }
 
