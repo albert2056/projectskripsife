@@ -1,19 +1,18 @@
-@extends('template')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 <div class="container">
     <div class="row justify-content-left">
         <div class="col-md-6 text-left mb-5" style="margin-top: 190px">
-            <h1 class="text-custom2" style="margin-bottom: 30px">Tambahkan Busana Baru</h1>
+            <h1 class="text-custom2" style="margin-bottom: 30px">Update Outfit</h1>
         </div>
     </div>
-    
+
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{route('createOutfit')}}" method="POST" enctype="multipart/form-data"> 
-                @csrf
+            <form method="POST" action="<?php echo e(route('updateOutfit', ['outfitId' => $outfit['id']])); ?>" enctype="multipart/form-data">
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('POST'); ?>
                 <div class="form-group">
                     <label for="inputOutfitName" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
                     <input type="text" class="form-control" id="name" name="name" style="margin-bottom: 30px;" value="">
@@ -37,18 +36,20 @@
                     <label for="inputOutfitImage" style="margin-bottom: 10px; font-size: 18px">Tambahkan Gambar</label>
                     <input type="file" class="form-control" id="image" name="image" style="margin-bottom: 30px;">
                 </div>                
-                
-                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormOutfitCreate()">Submit</button>
+
+                <button class="btn btn-primary btn-block btn-card mt-4" style="margin-bottom: 150px" type="submit" onclick="return validateAndSubmitFormOutfitUpdate()">Submit</button>
             </form>
         </div>
-        
+
         <div class="col-md-6">
-            <img src="{{ asset('Assets/formImg.png') }}" alt="Image" class="img-fluid" style="width: 500px; height: 450px; margin-left: 160px;">
+            <img src="<?php echo e(asset('Assets/formImg.png')); ?>" alt="Image" class="img-fluid" style="width: 500px; height: 450px; margin-left: 160px;">
         </div>
     </div>
 </div>
 
-<script src="{{ asset('js/validate.js') }}"></script>
-<script src="{{ asset('js/alert.js') }}"></script>
 
-@endsection
+<script src="<?php echo e(asset('js/validate.js')); ?>"></script>
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/aam/Desktop/Project Skripsi/FE/projectskripsife/laravel/front-end-project/resources/views/outfitUpdateForm.blade.php ENDPATH**/ ?>

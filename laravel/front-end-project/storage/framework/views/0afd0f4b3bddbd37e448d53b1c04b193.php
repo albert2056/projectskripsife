@@ -37,7 +37,7 @@
             <tbody>
                 <?php $__currentLoopData = $transactions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datas): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr onclick="window.location.href='/transaction/detail/admin/<?php echo e($datas['id']); ?>'">
-                        <td> <?php echo e($datas['id']); ?></td>
+                        <td><?php echo e($datas['id']); ?></td>
                         <td><?php echo e($datas['name']); ?></td>
                         <td><?php echo e($datas['venue']); ?></td>
                         <td><?php echo e($datas['eventDate']); ?></td>

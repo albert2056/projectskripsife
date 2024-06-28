@@ -12,7 +12,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{route('createPackage')}}" method="POST" onsubmit="return validatePackageForm()"> 
+            <form action="{{route('createPackage')}}" method="POST"> 
                 @csrf
                 <div class="form-group">
                     <label for="inputPackageName" style="margin-bottom: 10px; font-size: 18px">Nama Paket</label>

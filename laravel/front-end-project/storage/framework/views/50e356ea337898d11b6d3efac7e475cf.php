@@ -10,7 +10,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="<?php echo e(route('updatePortfolio', ['id' => $portfolio['id']])); ?>" method="POST" onsubmit="return validatePortfolioForm()" enctype="multipart/form-data">  
+            <form action="<?php echo e(route('updatePortfolio', ['id' => $portfolio['id']])); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
                     <label for="inputCoupleName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>

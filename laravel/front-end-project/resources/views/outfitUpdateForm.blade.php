@@ -12,7 +12,7 @@
 
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form method="POST" action="{{ route('updateOutfit', ['outfitId' => $outfit['id']]) }}" onsubmit="return validateOutfitForm()" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('updateOutfit', ['outfitId' => $outfit['id']]) }}" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <div class="form-group">

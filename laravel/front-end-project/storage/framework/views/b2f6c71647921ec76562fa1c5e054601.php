@@ -133,7 +133,7 @@
 
     <div class="px-14 py-10 text-lg text-neutral-700">
     <p class="text-main font-bold">Notes</p>
-    <p style="margin-bottom: 50px">Harap sertakan bukti transfer dengan mengirimkannya kepada admin melalui WhatsApp</p>
+    <p style="margin-bottom: 50px">Harap sertakan bukti transfer dengan mengirimkannya kepada admin melalui WhatsApp paling lambat H-7</p>
     </div>
 
     </div>

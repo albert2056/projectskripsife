@@ -12,7 +12,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{ route('updatePortfolio', ['id' => $portfolio['id']]) }}" method="POST" onsubmit="return validatePortfolioForm()" enctype="multipart/form-data">  {{-- coba dicek routenya --}}
+            <form action="{{ route('updatePortfolio', ['id' => $portfolio['id']]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="inputCoupleName" style="margin-bottom: 10px; font-size: 18px">Nama Pasangan</label>

@@ -12,7 +12,7 @@
     
     <div class="row" style="margin-bottom: 50px">
         <div class="col-md-6">
-            <form action="{{ route('updatePackage', ['id' => $package['id']]) }}" method="POST" onsubmit="return validatePackageForm()" enctype="multipart/form-data">  {{-- coba dicek routenya --}}
+            <form action="{{ route('updatePackage', ['id' => $package['id']]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <div class="form-group">
