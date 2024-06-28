@@ -71,8 +71,8 @@ class PackageController extends Controller
         $price = (int) $request['price'];
         $description = $request['description'];
         $url = "http://localhost:8080/api/package/create?name=$name&price=$price&description=$description";
-        $response = Http::post($url);
-        $responseData = $response->json();
+        Http::post($url);
+        
         return redirect('/packageadmin');
     }
 
@@ -80,46 +80,26 @@ class PackageController extends Controller
         $packageId = $request->input('id');
         $url = "http://localhost:8080/api/package/findById?id=$packageId";
         $response = Http::get($url);
-        $responseData = $response->json();
 
         $package = $response->json();
-        if ($response->successful()) {
-            return view('packageUpdateForm', ['package' => $package]);    
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the package.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        return view('packageUpdateForm', ['package' => $package]);  
     }
 
     public function updatePackage(Request $request, $packageId) {
         $name = $request['name'];
-        $price = (int) $request['price'];
+        $price = $request['price'];
         $description = $request['description'];
         $url = "http://localhost:8080/api/package/update?id=$packageId&name=$name&price=$price&description=$description";
-        $response = Http::post($url);
-        $responseData = $response->json();
-
-        $package = $response->json();
-        if ($response->successful()) {
-            return redirect('/packageadmin');    
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the package.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        Http::post($url);
+        return redirect('/packageadmin');
+ 
     }
 
     public function deletePackage(Request $request) {
         $packageId = $request->input('id');
+        Http::delete("http://localhost:8080/api/package/delete?id={$packageId}");
+        return redirect()->back()->with('success', 'Package deleted successfully.');
         
-        $response = Http::delete("http://localhost:8080/api/package/delete?id={$packageId}");
-        $responseData = $response->json();
-
-        if ($response->successful()) {
-            return redirect()->back()->with('success', 'Package deleted successfully.');
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the package.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
     }
 
 }

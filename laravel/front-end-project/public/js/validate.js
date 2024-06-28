@@ -71,9 +71,11 @@ function validateBookForm() {
 
     var selectedDate = new Date(eventDate);
     var today = new Date();
+    var date = new Date();
+    date.setDate(today.getDate() + 7);
     
-    if (selectedDate < today) {
-        alert("Tanggal pernikahan harus lebih dari hari ini!");
+    if (selectedDate < date) {
+        alert("Tanggal pernikahan harus lebih dari 7 hari dari hari ini!");
         return false;
     }
     
@@ -122,7 +124,7 @@ function validateRegisterForm() {
         throw new Error("Password harus terdiri dari minimal 8 karakter.");
     }
     if (!/[A-Z]/.test(password)) {
-        throw new Error("Password harus terdiri dari minimal 8 karakter.");
+        throw new Error("Password harus terdiri dari setidaknya satu huruf besar.");
     }
     if (!/[a-z]/.test(password)) {
         throw new Error("Password harus terdiri dari setidaknya satu huruf kecil.");

@@ -41,49 +41,35 @@ class PortfolioController extends Controller
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
     
-        $response = Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
-        $responseData = $response->json();
-    
-        if (isset($responseData['statusCode'])) {
-            return redirect()->back()->withInput()->with('error', $responseData['description']);
-        } 
-    
+        Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
+
         return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
     }
 
     public function deletePortfolio(Request $request) {
         $portfolioId = $request->input('id');
         
-        $response = Http::delete("http://localhost:8080/api/portfolio/delete?id={$portfolioId}");
-        $responseData = $response->json();
-
-        if ($response->successful()) {
-            return redirect()->back()->with('success', 'Portfolio deleted successfully.');
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the portfolio.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        Http::delete("http://localhost:8080/api/portfolio/delete?id={$portfolioId}");
+        
+        return redirect()->back();
+        
     }
 
     public function showUpdatePortfolioPage(Request $request) {
         $portfolioId = $request->input('id');
         $url = "http://localhost:8080/api/portfolio/findById?id=$portfolioId";
         $response = Http::get($url);
-        $responseData = $response->json();
 
         $outfitUrl = "http://localhost:8080/api/outfit/findAll";
         $outfitResponse = Http::get($outfitUrl);
-        if ($response->successful()) {
-            $portfolio = $response->json();
-            $outfitResponseData = $outfitResponse->json();
-            return view('portfolioUpdateForm', [
-                'portfolio' => $portfolio,
-                'outfits' => $outfitResponseData
-            ]);
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+
+        $portfolio = $response->json();
+        $outfitResponseData = $outfitResponse->json();
+        return view('portfolioUpdateForm', [
+            'portfolio' => $portfolio,
+            'outfits' => $outfitResponseData
+        ]);
+        
     }
 
     public function updatePortfolio(Request $request, $portfolioId) {
@@ -102,16 +88,9 @@ class PortfolioController extends Controller
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
         
-        $response = Http::post("http://localhost:8080/api/portfolio/update?id={$portfolioId}", $portfolioRequest->toArray());
-        $responseData = $response->json();
-        if ($response->successful()) {
-            $portfolio = $response->json();
-            return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while retrieving the portfolio.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        Http::post("http://localhost:8080/api/portfolio/update?id={$portfolioId}", $portfolioRequest->toArray());
         
+        return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
 
     }
 

@@ -145,6 +145,10 @@ class OutfitController extends Controller
 
         $response = Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
         $responseData = $response->json();
+
+        if ($responseData['statusCode']!=null) {
+            return redirect()->back()->withInput()->with('error', $responseData['description']);
+        } 
         return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
     }
 
