@@ -14,7 +14,6 @@
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                 <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #FF6969">About</h5>
-                
                 <p>
                     <i class="fas fa-home mx-3" style="color: #FF6969"></i>
                     <span class="text-black">

@@ -104,23 +104,15 @@ class OutfitController extends Controller
 
     public function deleteOutfit(Request $request) {
         $outfitId = $request->input('id');
+        Http::delete("http://localhost:8080/api/outfit/delete?id={$outfitId}");
+        return redirect()->back()->with('success', 'Outfit deleted successfully.');
         
-        $response = Http::delete("http://localhost:8080/api/outfit/delete?id={$outfitId}");
-        $responseData = $response->json();
-
-        if ($response->successful()) {
-            return redirect()->back()->with('success', 'Outfit deleted successfully.');
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the outfit.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
     }
 
     public function showUpdateOutfitPage(Request $request) {
         $outfitId = $request->input('id');
         $url = "http://localhost:8080/api/outfit/findById?id=$outfitId";
         $response = Http::get($url);
-        $responseData = $response->json();
 
         $outfit = $response->json();
         return view('outfitUpdateForm', ['outfit' => $outfit]);
@@ -142,13 +134,8 @@ class OutfitController extends Controller
         $outfitRequest->image = $imageBase64;
         $user = session()->get('user'); 
         $outfitRequest->updatedBy = $user['id'];
+        Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
 
-        $response = Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
-        $responseData = $response->json();
-
-        if ($responseData['statusCode']!=null) {
-            return redirect()->back()->withInput()->with('error', $responseData['description']);
-        } 
         return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
     }
 
