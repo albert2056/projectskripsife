@@ -40,10 +40,7 @@
                         <td> <?php echo e($datas['id']); ?> </td>
                         <td><?php echo e($datas['name']); ?></td>
                         <td><?php echo e($datas['venue']); ?> </td>
-                        <td>
-                            <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?>
-
-                        </td>
+                        <td><?php echo e($datas['eventDate']); ?> </td>
                         <?php if($datas['paymentStatus'] == "NOT PAID"): ?>
                             <td>
                                 <p class="status notPaid">Not Paid</p>

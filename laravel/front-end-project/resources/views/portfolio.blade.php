@@ -57,7 +57,7 @@
                         </a>
 
                         <div class="overlay-content">
-                            <p> {{ $datas['name'] }} <br> {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}<br> {{ $datas['venue'] }} </p>
+                            <p> {{ $datas['name'] }} <br> {{ $datas['eventDate'] }}<br> {{ $datas['venue'] }} </p>
                         </div>
                     </div>
                 </div>

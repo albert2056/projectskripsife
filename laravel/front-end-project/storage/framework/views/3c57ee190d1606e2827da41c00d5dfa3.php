@@ -41,7 +41,7 @@
                         <td><?php echo e($datas['name']); ?></td>
                         <td><?php echo e($datas['venue']); ?></td>
                         <td>
-                            <?php echo e(\Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y')); ?>
+                            <?php echo e($datas['eventDate']); ?>
 
                         </td>
                         <?php if($datas['paymentStatus'] == "NOT PAID"): ?>

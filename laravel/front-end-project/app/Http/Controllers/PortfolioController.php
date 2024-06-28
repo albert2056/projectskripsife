@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PortfolioRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -13,6 +14,13 @@ class PortfolioController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+
+        foreach ($responseData as &$portfolio) {
+            if (isset($portfolio['eventDate'])) {
+                $portfolio['eventDate'] = Carbon::parse($portfolio['eventDate'])->format('d-m-Y');
+            }
+        }
+
         return view('portfolio', ['portfolios'=>$responseData]);
     }
     
@@ -21,6 +29,12 @@ class PortfolioController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+        foreach ($responseData as &$portfolio) {
+            if (isset($portfolio['eventDate'])) {
+                $portfolio['eventDate'] = Carbon::parse($portfolio['eventDate'])->format('d-m-Y');
+            }
+        }
+
         return view('portfolioAdmin', ['portfolios'=>$responseData]);
     }
 

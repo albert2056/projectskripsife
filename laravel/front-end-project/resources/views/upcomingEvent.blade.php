@@ -42,9 +42,7 @@
                         <td> {{ $datas['id'] }} </td>
                         <td>{{ $datas['name'] }}</td>
                         <td>{{ $datas['venue'] }} </td>
-                        <td>
-                            {{ \Carbon\Carbon::parse($datas['eventDate'])->format('d/m/Y') }}
-                        </td>
+                        <td>{{ $datas['eventDate'] }} </td>
                         @if ($datas['paymentStatus'] == "NOT PAID")
                             <td>
                                 <p class="status notPaid">Not Paid</p>

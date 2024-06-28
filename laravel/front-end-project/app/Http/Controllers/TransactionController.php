@@ -15,6 +15,11 @@ class TransactionController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+        foreach ($responseData as &$transaction) {
+            if (isset($transaction['eventDate'])) {
+                $transaction['eventDate'] = Carbon::parse($transaction['eventDate'])->format('d-m-Y');
+            }
+        }
         return view('transactionAdmin', ['transactions'=>$responseData]);
     }
 
@@ -24,6 +29,12 @@ class TransactionController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+
+        foreach ($responseData as &$transaction) {
+            if (isset($transaction['eventDate'])) {
+                $transaction['eventDate'] = Carbon::parse($transaction['eventDate'])->format('d-m-Y');
+            }
+        }
         return view('upcomingEvent', ['transactions'=>$responseData]);
     }
 
@@ -33,6 +44,11 @@ class TransactionController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+        foreach ($responseData as &$transaction) {
+            if (isset($transaction['eventDate'])) {
+                $transaction['eventDate'] = Carbon::parse($transaction['eventDate'])->format('d-m-Y');
+            }
+        }
         return view('upcomingEvent', ['transactions'=>$responseData]);
     }
 
@@ -47,6 +63,11 @@ class TransactionController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+        foreach ($responseData as &$transaction) {
+            if (isset($transaction['eventDate'])) {
+                $transaction['eventDate'] = Carbon::parse($transaction['eventDate'])->format('d-m-Y');
+            }
+        }
 
         return view('transaction', ['transactions'=>$responseData]);
     }
@@ -60,7 +81,7 @@ class TransactionController extends Controller
         }
         $response = Http::post('http://localhost:8080/api/transaction/invoice', $transactionRequest->toArray());
         $responseData = $response->json();
-        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $eventDate = Carbon::parse($responseData['eventDate'])->format('d-m-Y');
         $responseData['eventDate'] = $eventDate;
         $user = session()->get('user');
         session()->forget('transactionRequest');
@@ -78,9 +99,7 @@ class TransactionController extends Controller
         $bookRequest->wo = $request['wo'];
         $response = Http::post('http://localhost:8080/api/transaction/book', $bookRequest->toArray());
         $responseData = $response->json();
-        if ($responseData['statusCode']!=null) {
-            return redirect()->back()->withInput()->with('error', $responseData['description']);
-        }
+        
         $user = session()->get('user'); 
         $transactionRequest = new TransactionRequest();
         $transactionRequest->fill($responseData);
@@ -92,30 +111,18 @@ class TransactionController extends Controller
 
     public function deleteTransaction(Request $request) {
         $transactionId = $request->input('id');
-        
-        $response = Http::delete("http://localhost:8080/api/transaction/delete?id={$transactionId}");
-        $responseData = $response->json();
+        Http::delete("http://localhost:8080/api/transaction/delete?id={$transactionId}");
 
-        if ($response->successful()) {
-            return redirect()->back()->with('success', 'Transaction deleted successfully.');
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while deleting the transaction.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        return redirect()->back()->with('success', 'Transaction deleted successfully.');
+        
     }
 
     public function changeStatus(Request $request) {
         $transactionId = $request->input('id');
+        Http::post("http://localhost:8080/api/transaction/changeStatus?id={$transactionId}");
         
-        $response = Http::post("http://localhost:8080/api/transaction/changeStatus?id={$transactionId}");
-        $responseData = $response->json();
-
-        if ($response->successful()) {
-            return redirect()->back()->with('success', 'Payment status changed successfully.');
-        } else {
-            $errorMessage = isset($responseData['description']) ? $responseData['description'] : 'An error occurred while changing the payment status.';
-            return redirect()->back()->with('error', $errorMessage);
-        }
+        return redirect()->back()->with('success', 'Payment status changed successfully.');
+        
     }
 
     public function showUserTransactionDetailPage($id) {
@@ -129,7 +136,7 @@ class TransactionController extends Controller
             return redirect('/transaction');
         }
 
-        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $eventDate = Carbon::parse($responseData['eventDate'])->format('d-m-Y');
         $responseData['eventDate'] = $eventDate;
         
         $packageId = $responseData['packageId'];
@@ -138,9 +145,10 @@ class TransactionController extends Controller
         $url2 = "http://localhost:8080/api/package/findById?id=$packageId";
 
         $package = Http::get($url2);
+        
         $packageData = $package->json();
 
-        if(strpos($package['name'], 'Standard') !== false) {
+        if(strpos($packageData['name'], 'Standard') !== false) {
             $outfitName = null;
         } 
         else {
@@ -160,7 +168,7 @@ class TransactionController extends Controller
         $response = Http::get($url);
         $responseData = $response->json();
 
-        $eventDate = Carbon::parse($responseData['eventDate'])->toDateString();
+        $eventDate = Carbon::parse($responseData['eventDate'])->format('d-m-Y');
         $responseData['eventDate'] = $eventDate;
         
         $user = session()->get('user');
@@ -172,7 +180,7 @@ class TransactionController extends Controller
         $package = Http::get($url2);
         $packageData = $package->json();
 
-        if(strpos($package['name'], 'Standard') !== false) {
+        if(strpos($packageData['name'], 'Standard') !== false) {
             $outfitName = null;
         } 
         else {
