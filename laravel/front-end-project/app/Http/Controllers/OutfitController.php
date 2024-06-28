@@ -94,12 +94,8 @@ class OutfitController extends Controller
         $outfitRequest->image = $imageBase64;
         $user = session()->get('user'); 
         $outfitRequest->updatedBy = $user['id'];
-        $response = Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
-        $responseData = $response->json();
-        if ($responseData['statusCode']!=null) {
-            return redirect()->back()->withInput()->with('error', $responseData['description']);
-        } 
-        return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
+        Http::post('http://localhost:8080/api/outfit/create', $outfitRequest->toArray());
+        return redirect('/outfitadmin');
     }
 
     public function deleteOutfit(Request $request) {

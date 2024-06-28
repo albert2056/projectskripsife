@@ -43,7 +43,7 @@ class PortfolioController extends Controller
     
         Http::post('http://localhost:8080/api/portfolio/create', $portfolioRequest->toArray());
 
-        return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
+        return redirect('/portfolioadmin');
     }
 
     public function deletePortfolio(Request $request) {
@@ -90,7 +90,7 @@ class PortfolioController extends Controller
         
         Http::post("http://localhost:8080/api/portfolio/update?id={$portfolioId}", $portfolioRequest->toArray());
         
-        return redirect('/portfolioadmin')->with('imageBase64', $imageBase64);
+        return redirect('/portfolioadmin');
 
     }
 
