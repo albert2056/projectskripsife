@@ -31,6 +31,12 @@ class OutfitController extends Controller
         return view('outfitChooseByCategory', ['outfits'=>$responseData]);
     }
 
+    public function showOutfitChooseByCategoryPage(Request $request) {
+        $outfitCategoryId = (int) $request['outfitCategoryId'];
+        session()->put('outfitCategoryId', $outfitCategoryId);
+        return redirect('/outfitchoosebycategory');
+    }
+
     public function outfitChoose(Request $request) {
         $transactionRequest = session()->get('transactionRequest');
         if ($transactionRequest == null) {
@@ -69,12 +75,6 @@ class OutfitController extends Controller
         return view('outfitAdmin', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitChooseByCategoryPage(Request $request) {
-        $outfitCategoryId = (int) $request['outfitCategoryId'];
-        session()->put('outfitCategoryId', $outfitCategoryId);
-        return redirect('/outfitchoosebycategory');
-    }
-    
     public function showCreateOutfitPage() {
         return view('outfitCreateFormAdmin');
     }
@@ -132,7 +132,7 @@ class OutfitController extends Controller
         $outfitRequest->updatedBy = $user['id'];
         Http::post("http://localhost:8080/api/outfit/update?id={$outfitId}", $outfitRequest->toArray());
 
-        return redirect('/outfitadmin')->with('imageBase64', $imageBase64);
+        return redirect('/outfitadmin');
     }
 
 }
