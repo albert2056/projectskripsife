@@ -2,10 +2,10 @@ function validatePortfolioForm() {
     var coupleName = document.getElementById("name").value;
     var eventDate = document.getElementById("eventDate").value;
     var image = document.getElementById("image").value;
-    var outfitNamePort = document.getElementById("gownName").value;
+    var outfitId = document.getElementById("outfitId").value;
     var venue = document.getElementById("venue").value;
     
-    if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitNamePort.trim() == '' || venue.trim() == '') {
+    if (coupleName.trim() == '' || eventDate.trim() == '' || image.trim() == '' || outfitId.trim() == '' || venue.trim() == '') {
         alert("Harap isi semua kolom dengan valid.");
         return false;
     }

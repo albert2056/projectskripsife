@@ -31,10 +31,10 @@
                  
                 <div class="form-group">
                     <label for="inputOutfitNamePort" style="margin-bottom: 10px; font-size: 18px">Nama Busana</label>
-                    <select class="form-control" id="gownName-control" name="gownName" style="margin-bottom: 30px;">
+                    <select class="form-control" id="outfitId" name="outfitId" style="margin-bottom: 30px;">
                         <option value="">Pilih Outfit</option>
                         @foreach ($outfits as $datas)
-                            <option value="{{ $datas['name'] }}">{{ $datas['name'] }}</option>
+                            <option value="{{ $datas['id'] }}">{{ $datas['name'] }}</option>
                         @endforeach
                     </select>
                 </div>    
