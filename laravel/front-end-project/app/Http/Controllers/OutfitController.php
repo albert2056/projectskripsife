@@ -16,6 +16,14 @@ class OutfitController extends Controller
         return view('outfitChoose');
     }
 
+    // salah penamaan, ini buat pilih kategori
+    public function showOutfitChooseByCategoryPage(Request $request) {
+        $outfitCategoryId = (int) $request['outfitCategoryId'];
+        session()->put('outfitCategoryId', $outfitCategoryId);
+        return redirect('/outfitchoosebycategory');
+    }
+
+    // ini buat nampilin halaman pilih outfitnya
     public function showOutfitByOutfitCategoryIdPage() {
         $transactionRequest = session()->get('transactionRequest');
         if ($transactionRequest == null) { 
@@ -31,13 +39,8 @@ class OutfitController extends Controller
         return view('outfitChooseByCategory', ['outfits'=>$responseData]);
     }
 
-    public function showOutfitChooseByCategoryPage(Request $request) {
-        $outfitCategoryId = (int) $request['outfitCategoryId'];
-        session()->put('outfitCategoryId', $outfitCategoryId);
-        return redirect('/outfitchoosebycategory');
-    }
-
-    public function outfitChoose(Request $request) {
+    //pilih outfit akhir
+    public function outfitChoose(Request $request) { 
         $transactionRequest = session()->get('transactionRequest');
         if ($transactionRequest == null) {
             return redirect('/bookpage');
