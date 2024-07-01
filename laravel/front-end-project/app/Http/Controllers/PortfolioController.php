@@ -51,7 +51,7 @@ class PortfolioController extends Controller
         $portfolioRequest->name = $request['name'];
         $portfolioRequest->eventDate = $request['eventDate'];
         $portfolioRequest->image = $imageBase64;
-        $portfolioRequest->gownName = $request['gownName'];
+        $portfolioRequest->outfitId = $request['outfitId'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
     
@@ -98,7 +98,7 @@ class PortfolioController extends Controller
         $portfolioRequest->name = $request['name'];
         $portfolioRequest->eventDate = $request['eventDate'];
         $portfolioRequest->image = $imageBase64;
-        $portfolioRequest->gownName = $request['gownName'];
+        $portfolioRequest->outfitId = $request['outfitId'];
         $portfolioRequest->venue = $request['venue'];
         $portfolioRequest->wo = $request['wo'];
         
@@ -121,8 +121,14 @@ class PortfolioController extends Controller
 
         $response = Http::get($url);
         $responseData = $response->json();
+        $outfitId = $responseData['outfitId'];
 
-        return view('portfolioDetail', ['portfolio'=>$responseData]);
+        $url2 = "http://localhost:8080/api/outfit/findById?id=$outfitId";
+        $response2 = Http::get($url2);
+        $responseData2 = $response2->json();
+
+        $outfitName = $responseData2['name'];
+        return view('portfolioDetail', ['portfolio'=>$responseData,'outfitName'=>$outfitName]);
     }
 
 }

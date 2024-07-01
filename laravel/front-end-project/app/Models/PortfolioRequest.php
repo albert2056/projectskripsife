@@ -11,11 +11,10 @@ class PortfolioRequest extends Model
 
     protected $fillable = [
         'image',
-        'gownName',
+        'gownId',
         'eventDate',
         'venue',
         'wo',
-        'column',
         'name',
         'eventName',
     ];

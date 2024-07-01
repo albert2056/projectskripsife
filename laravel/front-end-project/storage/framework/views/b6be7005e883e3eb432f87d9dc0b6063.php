@@ -1,6 +1,6 @@
-@extends('template')
 
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
 <style>
   .bg-image {
@@ -74,7 +74,7 @@
     
   <div class="bg-image">
     <div class="overlay">
-      <div class="overlay-text">{{ $portfolio['name'] }}</div>
+      <div class="overlay-text"><?php echo e($portfolio['name']); ?></div>
     </div>
   </div>
 
@@ -83,16 +83,17 @@
       <div class="row justify-content-center">
         <div class="col-md-7 mb-4">
           <div class="text-detail" style="margin-bottom: 50px">
-            <p>{{ \Carbon\Carbon::parse($portfolio['eventDate'])->format('d/m/Y') }}</p>
-            <p>{{ $portfolio['venue'] }}</p>
-            <p>{{ $outfitName}}</p>
+            <p><?php echo e(\Carbon\Carbon::parse($portfolio['eventDate'])->format('d/m/Y')); ?></p>
+            <p><?php echo e($portfolio['venue']); ?></p>
+            <p><?php echo e($outfitName); ?></p>
           </div>
           <div class="card">
-            <img src="data:image/jpeg;base64,{{ $portfolio['image'] }}" class="d-block w-100" alt="Image 1" style="width: 500px; height: 700px;">
+            <img src="data:image/jpeg;base64,<?php echo e($portfolio['image']); ?>" class="d-block w-100" alt="Image 1" style="width: 500px; height: 700px;">
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\User\Downloads\Skripsi\FE\projectskripsife\laravel\front-end-project\resources\views/portfolioDetail.blade.php ENDPATH**/ ?>
