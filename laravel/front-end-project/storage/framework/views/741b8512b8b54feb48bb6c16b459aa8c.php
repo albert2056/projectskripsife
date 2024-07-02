@@ -26,7 +26,9 @@
                             </ul>
                         </div>
                         <h5 class="card-title text-center btn-text-card" style="position: absolute; bottom: 115px; left: 50%; transform: translateX(-50%)">RP. <?php echo e($datas['price']); ?></h5>
-                        <button type="submit" name="packageId" type="number" value=<?php echo e($datas['id']); ?> class="btn btn-primary btn-block btn-card" style="position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%);">Pilih Paket</button>
+                        <input type="hidden" name="packageName" value="<?php echo e($datas['name']); ?>">
+                        <button type="submit" name="packageId" value="<?php echo e($datas['id']); ?>" class="btn btn-primary btn-block btn-card" style="position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%);" onclick="<?php echo e($datas['id'] == 3 ? 'successfullyBook()' : ''); ?>">Pilih Paket</button>
+
                     </div>
                 </div>
             </div>
@@ -37,6 +39,8 @@
         </form>
     </div>
 </div>
+
+<script src="<?php echo e(asset('js/alert.js')); ?>"></script>
 
 <?php $__env->stopSection(); ?>
 

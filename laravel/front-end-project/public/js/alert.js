@@ -24,6 +24,8 @@ function portfolioDeletePopup() {
     }
 }
 
+
+
 function portfolioCreateSuccessPopup() {
     alert("Berhasil menambahkan portfolio!")
 }
@@ -74,6 +76,8 @@ function successfullyRegisterPopup() {
 function successfullyBook() {
     alert("Berhasil melakukan pemesanan!")
 }
+
+
 
 function validateAndSubmitFormOutfitCreate() {
     if (validateOutfitForm()) {
